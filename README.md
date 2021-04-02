@@ -2,7 +2,7 @@
 
 
 ```
- su sudoers
+      su sudoers
     2  nano sudoers
     3  sudo gedit /etc/sudoers
     4  logout
