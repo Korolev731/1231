@@ -3,6 +3,14 @@
   vars:
    user: IKorolev
   tasks:
+    - name: Create a 2048-bit SSH key for user {{ user_add }} in ~{{ user_add }}/.ssh/id_rsa
+    user:
+      name: "{{ user_add }}"
+      comment: Managed by ansible
+      generate_ssh_key: yes
+      ssh_key_bits: 2048
+      ssh_key_file: .ssh/id_rsa
+      state: present
     - name: Creating user {{ user }}
       user:
         name: "{{ user }}"
