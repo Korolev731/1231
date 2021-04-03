@@ -2,7 +2,15 @@
 - hosts: ec2
   vars:
    user: IKorolev
-  tasks:
+  pre_tasks:
+    - name: Set authorized key taken from file
+      authorized_key:
+        user: "{{ ansible_ssh_user }}"
+        state: present
+        key: "{{ item }}"
+      with_items:
+      - "{{ lookup('file', '/home/user/.ssh/id_rsa.pub') }}"
+  tasks: 
     - name: Creating user {{ user }}
       user:
         name: "{{ user }}"
@@ -36,14 +44,6 @@
         state: present
         line: 'IKorolev ALL=(ALL) NOPASSWD: ALL'
         insertbefore: BOF
-    - name: Create
-       user: "{{ user }}"
-        name: "{{ user }}"
-        comment: Managed by ansible
-        generate_ssh_key: yes
-        ssh_key_bits: 2048
-        ssh_key_file: .ssh/id_rsa
-        state: present
     - name: Check user
       shell: |
         grep "{{ user }}" /etc/passwd
