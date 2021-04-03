@@ -1,5 +1,5 @@
 ---
-- hosts: "{{ group }}"
+- hosts: ec
   vars:
     user: IKorolev
   tasks:
