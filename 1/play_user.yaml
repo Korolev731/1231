@@ -60,13 +60,4 @@
     apt:
       name: "*"
       state: latest
-  - name: "System upgrade by {{ user_add }}"
-        remote_user: "{{ user_add }}"
-      when: ansible_distribution == 'CentOS'
-      shell: |
-        sudo yum upgrade -y
-  - name: "System upgrade by {{ user_add }}"
-      remote_user: "{{ user_add }}"
-      when: ansible_distribution == 'Ubuntu'
-      shell: |
-        sudo apt upgrade -y     
+  
