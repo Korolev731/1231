@@ -10,11 +10,11 @@
       name: sudo
       state: present
     when: ansible_os_family == "Debian"
-  - name: Install sudo if OS-family is RedHat  
+  - name: Install sudo if OS-family is CentOS  
     yum: 
       name: sudo
       state: present
-    when: ansible_os_family == "RedHat" 
+    when: ansible_os_family == "CentOS" 
   - name: Ensure group "sudo" exists
     group:
       name: sudo
@@ -24,7 +24,7 @@
     group:
       name: wheel
       state: present
-    when: ansible_os_family == "RedHat"    
+    when: ansible_os_family == "CentOS"    
   - name: Creating user {{ user_to_add }}
     user:
       name: "{{ user_to_add }}"
@@ -39,12 +39,12 @@
       groups: sudo
       append: yes
     when: ansible_os_family == "Debian"   
-  - name: Adding user to wheel group if OS-family is RedHat
+  - name: Adding user to wheel group if OS-family is CentOS
     user:
       name: "{{ user_to_add }}"      
       groups: wheel
       append: yes
-    when: ansible_os_family == "RedHat"
+    when: ansible_os_family == "CentOS"
   - name: Escalating privileges to sudo nopasswd
     lineinfile:
       path: "/etc/sudoers.d/{{ user_to_add }}"
@@ -64,7 +64,7 @@
     apt:
       update_cache: yes
     when: ansible_os_family == "Debian"
-  - name: Check user has sudo nopasswd privigleges if OS-family is RedHat  
+  - name: Check user has sudo nopasswd privigleges if OS-family is CentOS  
     yum:
       update_cache: yes
-    when: ansible_os_family == "RedHat"     
+    when: ansible_os_family == "CentOS"     
