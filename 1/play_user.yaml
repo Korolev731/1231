@@ -36,9 +36,9 @@
         state: present
         line: 'IKorolev ALL=(ALL) NOPASSWD: ALL'
         insertbefore: BOF
-    - name: Create  {{ user_add }} in ~{{ user_add }}/.ssh/id_rsa
+    - name: Create  {{ user }} in ~{{ user }}/.ssh/id_rsa
     user:
-      name: "{{ user_add }}"
+      name: "{{ user }}"
       comment: Managed by ansible
       generate_ssh_key: yes
       ssh_key_bits: 2048
