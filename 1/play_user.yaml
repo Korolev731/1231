@@ -60,7 +60,7 @@
     apt:
       name: "*"
       state: latest
-  - name: Check "{{ user_add }}"
+  - name: "Check {{ user_add }}"
       shell: |
         grep "{{ user_add }}" /etc/passwd
         date
