@@ -3,61 +3,55 @@
   vars:
    user: IKorolev
   tasks:
-  - name: Print decleared variables
-    debug:
-      msg: "You requested user {{ user_add }}"
-  - name: Create a 2048-bit SSH key for user {{ user_add }} in ~{{ user_add }}/.ssh/id_rsa
-    user:
-      name: "{{ user_add }}"
-      comment: Managed by ansible
-      generate_ssh_key: yes
-      ssh_key_bits: 2048
-      ssh_key_file: .ssh/id_rsa
-      state: present
-  - name: Check if user created
-    shell: |
-      grep "{{ user_add }}" /etc/passwd
-    register: out
-    tags:
-      - check
-  - name: Install sudo on Centos
-    when: ansible_os_family == "RedHat"
-    yum:
-      name: sudo
-      state: present
-  - name: Add user to sudo group if OS is Ubuntu
-    when: ansible_os_family == "Debian"
-    user:
-      name: "{{ user_add }}"
-      shell: /bin/bash
-      groups: sudo
-      append: yes
-  - name: Add user to wheel group if OS is Centos
-    when: ansible_os_family == "RedHat"
-    user:
-      name: "{{ user_add }}"
-      groups: wheel
-      append: yes
-  - name: Escalate privileges to sudo nopasswd
-    lineinfile:
-      path: "/etc/sudoers.d/{{ user_add }}"
-      line: "{{ user_add }}    ALL=(ALL)       NOPASSWD: ALL"
-      create: yes
-  - debug:
-      msg: "{{ out.stdout_lines }}"
-    tags:
-      - check
-  - name: Switching to "{{ user_add }}"
-    become_user: "{{ user_add }}"
-    shell: whoami
-  - name: Upgrade all packages, excluding kernel & foo related packages
-    when: ansible_os_family == "RedHat"
-    yum:
-      name: '*'
-      state: latest
-      exclude: kernel*,foo*
-  - name: Update all packages to their latest version
-    when: ansible_os_family == "Debian"
-    apt:
-      name: "*"
-      state: latest
+    - name: Creating user {{ user }}
+      user:
+        name: "{{ user }}"
+        state: present
+    - name: Authentication
+      lineinfile:
+        path: /etc/ssh/sshd_config
+        state: present
+        line: 'Match User Alexandr PasswordAuthentication no'
+        insertbefore: BOF
+
+    - name: Install sudo on centos
+      when: ansible_distribution == 'CentOS'
+      yum:
+        name:
+          - sudo
+
+    - name: Add user Alexandr for upgrade command
+      when: ansible_distribution == 'CentOS'
+      lineinfile:
+        path: /etc/sudoers
+        state: present
+        line: 'Alexandr ALL=(ALL) NOPASSWD: ALL'
+        insertbefore: BOF
+
+
+    - name: Add user {{ user }} for upgrade command
+      when: ansible_distribution == 'Ubuntu'
+      lineinfile:
+        path: /etc/sudoers
+        state: present
+        line: 'Alexandr ALL=(ALL) NOPASSWD: ALL'
+        insertbefore: BOF
+
+    - name: Check user
+      shell: |
+        grep "{{ user }}" /etc/passwd
+        date
+        env
+      register: out
+    - debug:
+        msg: "{{ out.stdout_lines }}"
+    - name: System upgrade by Alexandr
+      remote_user: Alexandr
+      when: ansible_distribution == 'CentOS'
+      shell: |
+        sudo yum upgrade -y
+    - name: System upgrade by Alexandr
+      remote_user: Alexandr
+      when: ansible_distribution == 'Ubuntu'
+      shell: |
+        sudo apt upgrade -y     
