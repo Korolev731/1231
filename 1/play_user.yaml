@@ -20,7 +20,7 @@
     tags:
       - check
   - name: Install sudo on Centos
-    when: ansible_os_family == "CentOS"
+    when: ansible_os_family == "RedHat"
     yum:
       name: sudo
       state: present
@@ -32,7 +32,7 @@
       groups: sudo
       append: yes
   - name: Add user to wheel group if OS is Centos
-    when: ansible_os_family == "CentOS"
+    when: ansible_os_family == "RedHat"
     user:
       name: "{{ user_add }}"
       groups: wheel
@@ -50,7 +50,7 @@
     become_user: "{{ user_add }}"
     shell: whoami
   - name: Upgrade all packages, excluding kernel & foo related packages
-    when: ansible_os_family == "CentOS"
+    when: ansible_os_family == "RedHat"
     yum:
       name: '*'
       state: latest
