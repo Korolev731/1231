@@ -68,13 +68,13 @@
       register: out
     - debug:
         msg: "{{ out.stdout_lines }}"
-    - name: System upgrade by Alexandr
-      remote_user: Alexandr
+    - name: "System upgrade by {{ user_add }}"
+      remote_user:"{{ user_add }}"
       when: ansible_distribution == 'CentOS'
       shell: |
         sudo yum upgrade -y
-    - name: System upgrade by Alexandr
-      remote_user: Alexandr
+    - name: "System upgrade by {{ user_add }}"
+      remote_user: "{{ user_add }}"
       when: ansible_distribution == 'Ubuntu'
       shell: |
         sudo apt upgrade -y     
