@@ -1,34 +1,69 @@
----
 - hosts: "{{ group }}"
-  # gather_facts: False
-  # strategy: free
-  # serial: 1
-  vars:
-    var_01: "IKorolev"
-    var_02: True
-    var_03: 1374
-  pre_tasks:
-    - name: Set authorized key taken from file
-      authorized_key:
-        user: "{{ ansible_ssh_user }}"
-        state: present
-        key: "{{ item }}"
-      with_items:
-      - "{{ lookup('file', '/home/user/.ssh/id_rsa.pub') }}"
+  become: True
   tasks:
-    - name: Print variables 
-      debug:
-        msg: "{{ var_01 }} | {{ var_02 }} | {{ var_03 }}"
-      tags:
-        - local_vars
-    - name: Print OS
-      debug:
-        msg: "{{ ansible_facts.distribution }} | {{ ansible_facts.distribution_version }}"
-    - name: Print mount
-      debug:
-        msg: "{{ ansible_facts.mounts }}"
-    - name: Print RAM
-      debug:
-        msg: "RAM capacity: {{ ansible_memory_mb.real.total }}, RAM free: {{ ansible_facts.memory_mb.real.free }}"
-      tags:
-        - facts
+  - name: Print variable
+    debug:
+      msg: "You requested user {{ user_to_add }}"
+  - name: Install sudo if OS-family is Debian
+    apt:
+      name: sudo
+      state: present
+    when: ansible_os_family == "Debian"
+  - name: Install sudo if OS-family is RedHat  
+    yum: 
+      name: sudo
+      state: present
+    when: ansible_os_family == "RedHat" 
+  - name: Ensure group "sudo" exists
+    group:
+      name: sudo
+      state: present
+    when: ansible_os_family == "Debian"  
+  - name: Ensure group "wheel" exists
+    group:
+      name: wheel
+      state: present
+    when: ansible_os_family == "RedHat"    
+  - name: Creating user {{ user_to_add }}
+    user:
+      name: "{{ user_to_add }}"
+      comment: Managed by ansible
+      state: present
+      generate_ssh_key: yes
+      ssh_key_bits: 2048
+      ssh_key_file: .ssh/id_rsa
+  - name: Adding user to sudo group if OS-family is Debian     
+    user: 
+      name: "{{ user_to_add }}"
+      groups: sudo
+      append: yes
+    when: ansible_os_family == "Debian"   
+  - name: Adding user to wheel group if OS-family is RedHat
+    user:
+      name: "{{ user_to_add }}"      
+      groups: wheel
+      append: yes
+    when: ansible_os_family == "RedHat"
+  - name: Escalating privileges to sudo nopasswd
+    lineinfile:
+      path: "/etc/sudoers.d/{{ user_to_add }}"
+      line: "{{ user_to_add }}    ALL=(ALL)       NOPASSWD: ALL"
+      create: yes
+  - name: Check user exists
+    shell: |
+      grep "{{ user_to_add }}" /etc/passwd
+    register: out
+    tags:
+      - check
+  - debug:
+      msg: "{{ out.stdout_lines }}"
+    tags:
+      - check
+  - name: Check user has sudo nopasswd privigleges if OS-family is Debian
+    apt:
+      update_cache: yes
+    when: ansible_os_family == "Debian"
+  - name: Check user has sudo nopasswd privigleges if OS-family is RedHat  
+    yum:
+      update_cache: yes
+    when: ansible_os_family == "RedHat"      
