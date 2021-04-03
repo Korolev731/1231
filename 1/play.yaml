@@ -1,13 +1,13 @@
 
 ---
-- hosts: ec2
+- hosts: "{{ group }}"
   # gather_facts: False
   # strategy: free
   # serial: 1
   vars:
-    var_01: "Hi"
+    var_01: "IKorolev"
     var_02: True
-    var_03: 42
+    var_03: 1374
   pre_tasks:
     - name: Set authorized key taken from file
       authorized_key:
@@ -22,9 +22,14 @@
         msg: "{{ var_01 }} | {{ var_02 }} | {{ var_03 }}"
       tags:
         - local_vars
-    - name: Print facts 1
+    - name: Print OS
       debug:
         msg: "{{ ansible_facts.distribution }} | {{ ansible_facts.distribution_version }}"
-    - name: Print facts 2
+    - name: Print mount
       debug:
         msg: "{{ ansible_facts.mounts }}"
+    - name: Print RAM
+      debug:
+        msg: "RAM capacity: {{ ansible_memory_mb.real.total }}, RAM free: {{ ansible_facts.memory_mb.real.free }}"
+      tags:
+        - facts
