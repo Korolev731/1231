@@ -1,6 +1,7 @@
 ---
 - hosts: "{{ group }}"
-  become: True
+  vars:
+   user: IKorolev
   tasks:
   - name: Print decleared variables
     debug:
