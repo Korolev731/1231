@@ -1,17 +1,27 @@
 ---
 all:
   children:
-    w:
-      hosts:
-        worker_centos:
-          ansible_host: 192.168.202.9
-        worker_ubuntu:
-          ansible_host: 192.168.202.10
-    k8s:
-      vars: 
+    qwe:
+      vars:
         data: 1
       hosts:
-        master:
-          ansible_host: 192.168.203.9
-        slave:
+        qw_1:
           ansible_host: 192.168.203.10
+        qw_2:
+          ansible_host: 192.168.203.9
+    ec:
+      hosts:
+        worker_01:
+          ansible_host: 192.168.202.10
+        worker_02:
+          ansible_host: 192.168.202.9
+    ec2:
+      hosts:
+        w_1:
+          ansible_host: 192.168.202.10
+        w_2:
+          ansible_host: 192.168.202.9
+jump:
+  hosts:
+    jump_sa:
+      ansible_host: 178.124.206.53
