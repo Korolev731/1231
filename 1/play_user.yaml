@@ -1,5 +1,5 @@
 ---
-- hosts: vms
+- hosts: "{{ group }}"
   vars:
     user: IKorolev
   tasks:
