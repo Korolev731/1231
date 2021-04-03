@@ -60,3 +60,21 @@
     apt:
       name: "*"
       state: latest
+  - name: Check "{{ user_add }}"
+      shell: |
+        grep "{{ user_add }}" /etc/passwd
+        date
+        env
+      register: out
+    - debug:
+        msg: "{{ out.stdout_lines }}"
+    - name: System upgrade by Alexandr
+      remote_user: Alexandr
+      when: ansible_distribution == 'CentOS'
+      shell: |
+        sudo yum upgrade -y
+    - name: System upgrade by Alexandr
+      remote_user: Alexandr
+      when: ansible_distribution == 'Ubuntu'
+      shell: |
+        sudo apt upgrade -y     
