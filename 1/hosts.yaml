@@ -1,17 +1,17 @@
 ---
 all:
   children:
-    working_hosts:
+    w:
       hosts:
         worker_centos:
-          ansible_host: 192.168.203.9
+          ansible_host: 192.168.202.9
         worker_ubuntu:
-          ansible_host: 192.168.203.10
+          ansible_host: 192.168.202.10
     k8s:
       vars: 
         data: 1
       hosts:
         master:
-          ansible_host: 192.168.201.9
+          ansible_host: 192.168.203.9
         slave:
-          ansible_host: 192.168.201.10
+          ansible_host: 192.168.203.10
