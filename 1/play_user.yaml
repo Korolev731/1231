@@ -56,8 +56,8 @@
       state: latest
       exclude: kernel*,foo*
  - name: System upgrade attempt from created users 
-   remote_user: "{{ item }}"    
-   shell: |
+    remote_user: "{{ item }}"    
+    shell: |
       sudo apt upgrade -y
-   with_items: "{{ users }}"
-   when: ansible_os_family == 'Debian'    
+    with_items: "{{ users }}"
+    when: ansible_os_family == 'Debian'    
