@@ -61,8 +61,7 @@
       name: "*"
       state: latest
   - name: "You rsdvequested user {{ user_add }}"
-        register: out
-    - debug:
+   - debug:
         msg: "{{ out.stdout_lines }}"
    - name: "System upgrade by {{ user_add }}"
         remote_user: "{{ user_add }}"
