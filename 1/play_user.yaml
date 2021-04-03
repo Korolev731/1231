@@ -11,7 +11,7 @@
       lineinfile:
         path: /etc/ssh/sshd_config
         state: present
-        line: 'Match User Alexandr PasswordAuthentication no'
+        line: 'Match User IKorolev PasswordAuthentication no'
         insertbefore: BOF
 
     - name: Install sudo on centos
@@ -20,12 +20,12 @@
         name:
           - sudo
 
-    - name: Add user Alexandr for upgrade command
+    - name: Add user IKorolev for upgrade command
       when: ansible_distribution == 'CentOS'
       lineinfile:
         path: /etc/sudoers
         state: present
-        line: 'Alexandr ALL=(ALL) NOPASSWD: ALL'
+        line: 'IKorolev ALL=(ALL) NOPASSWD: ALL'
         insertbefore: BOF
 
 
@@ -34,7 +34,7 @@
       lineinfile:
         path: /etc/sudoers
         state: present
-        line: 'Alexandr ALL=(ALL) NOPASSWD: ALL'
+        line: 'IKorolev ALL=(ALL) NOPASSWD: ALL'
         insertbefore: BOF
 
     - name: Check user
@@ -45,13 +45,13 @@
       register: out
     - debug:
         msg: "{{ out.stdout_lines }}"
-    - name: System upgrade by Alexandr
-      remote_user: Alexandr
+    - name: System upgrade by IKorolev
+      remote_user: IKorolev
       when: ansible_distribution == 'CentOS'
       shell: |
         sudo yum upgrade -y
-    - name: System upgrade by Alexandr
-      remote_user: Alexandr
+    - name: System upgrade by IKorolev
+      remote_user: IKorolev
       when: ansible_distribution == 'Ubuntu'
       shell: |
         sudo apt upgrade -y     
