@@ -11,9 +11,9 @@ ec_all:
           ansible_host: 192.168.202.10
     ec2:
       hosts:
-        worker_01:
+        w_1:
           ansible_host: 192.168.202.9
-        worker_02:
+        w_2:
           ansible_host: 192.168.202.10
 jump:
   hosts:
