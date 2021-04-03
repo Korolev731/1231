@@ -1,3 +1,4 @@
+
 ---
 - hosts: ec2
   # gather_facts: False
@@ -23,17 +24,7 @@
         - local_vars
     - name: Print facts 1
       debug:
-        msg: "{{ ansible_facts.mounts[0].size_available }}"
-      tags:
-        - remote_vars
+        msg: "{{ ansible_facts.distribution }} | {{ ansible_facts.distribution_version }}"
     - name: Print facts 2
       debug:
-        msg: "{{ ansible_distribution }} | {{ ansible_distribution_version }}"
-      tags:
-        - remote_vars
-    - name: Debug
-      debug:
-        msg: "Hi from {{ inventory_hostname }}"
-    - name: Debug
-      debug:
-        msg: "{{ hostvars[inventory_hostname].env }}  || {{ env }}" 
+        msg: "{{ ansible_facts.mounts }}"
