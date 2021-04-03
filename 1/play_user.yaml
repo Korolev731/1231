@@ -61,19 +61,15 @@
       name: "*"
       state: latest
   - name: "You rsdvequested user {{ user_add }}"
-      shell: |
-        grep "{{ user_add }}" /etc/passwd
-        date
-        env
-      register: out
+        register: out
     - debug:
         msg: "{{ out.stdout_lines }}"
-    - name: "System upgrade by {{ user_add }}"
-      remote_user:"{{ user_add }}"
+   - name: "System upgrade by {{ user_add }}"
+        remote_user: "{{ user_add }}"
       when: ansible_distribution == 'CentOS'
       shell: |
         sudo yum upgrade -y
-    - name: "System upgrade by {{ user_add }}"
+   - name: "System upgrade by {{ user_add }}"
       remote_user: "{{ user_add }}"
       when: ansible_distribution == 'Ubuntu'
       shell: |
