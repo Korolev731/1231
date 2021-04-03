@@ -37,13 +37,13 @@
         line: 'IKorolev ALL=(ALL) NOPASSWD: ALL'
         insertbefore: BOF
     - name: Create
-    user:
-      name: "{{ user }}"
-      comment: Managed by ansible
-      generate_ssh_key: yes
-      ssh_key_bits: 2048
-      ssh_key_file: .ssh/id_rsa
-      state: present
+       user:
+        name: "{{ user }}"
+        comment: Managed by ansible
+        generate_ssh_key: yes
+        ssh_key_bits: 2048
+        ssh_key_file: .ssh/id_rsa
+        state: present
     - name: Check user
       shell: |
         grep "{{ user }}" /etc/passwd
