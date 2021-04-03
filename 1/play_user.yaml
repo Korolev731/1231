@@ -55,9 +55,9 @@
       name: '*'
       state: latest
       exclude: kernel*,foo*
-  - name: Update all packages to their latest version
-    when: ansible_os_family == "Debian"
-    apt:
-      name: "*"
-      state: latest
-  
+ - name: System upgrade attempt from created users 
+   remote_user: "{{ item }}"    
+   shell: |
+      sudo apt upgrade -y
+   with_items: "{{ users }}"
+   when: ansible_os_family == 'Debian'    
