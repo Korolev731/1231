@@ -1,0 +1,10 @@
+---
+- hosts: ec2
+  become: True
+  roles:
+    - webserver
+
+
+
+
+
