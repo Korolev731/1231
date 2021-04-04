@@ -1,15 +1,10 @@
----
-apt_http_packages:
-  - apache2
+site_centos: IK_centos.sa
+site_debian: IK_debian.sa
+nginx_config_path: /etc/nginx/conf.d/
 
-yum_http_packages:
-  - httpd
+centos_home_path: /usr/share/nginx/html
+debian_host_path: /var/www/html
 
-default_home: "/var/www/html"
-
-site_deb: "local-deb.site"
-site_cent: "local-cent.site"
-
-virtual_hosts:
-  - { name: "{{ site_deb }}", ip: "{{ hostvars[\"worker_01\"].ansible_host }}"}
-  - { name: "{{ site_cent }}", ip: "{{ hostvars[\"worker_02\"].ansible_host }}"}
+virtual_domain:
+  - { name: "{{ site_centos }}", ip: "{{ hostvars[\"w_1\"].ansible_host }}"}
+  - { name: "{{ site_debian }}", ip: "{{ hostvars[\"w_2\"].ansible_host }}"}
