@@ -1,12 +1,6 @@
 ---
-- name: restart nginx
+- name: restart apache
   service:
-    name: nginx
+    name: "{{ 'apache2' if (ansible_os_family == 'Debian') else 'httpd' }}"
     state: restarted
     enabled: yes
-
-- name: nginx systemd
-  systemd:
-    name: nginx
-    enabled: yes
-    state: started
