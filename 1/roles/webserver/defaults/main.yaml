@@ -1,16 +1,10 @@
----
-apt_http_packages:
-  - apache2
-yum_http_packages:
-  - httpd
-  - libsemanage-python
-  - libselinux-python
+site_centos: centos.sa
+site_debian: ubuntu.sa
+nginx_config_path: /etc/nginx/conf.d/
 
-default_home: "/var/www/html"
+centos_home_path: /usr/share/nginx/html
+debian_host_path: /var/www/html
 
-site_deb: "local-deb.site"
-site_cent: "local-cent.site"
-
-virtual_hosts:
-  - { name: "{{ site_cent }}", ip: "{{ hostvars[\"worker_01\"].ansible_host }}"}
-  - { name: "{{ site_deb }}", ip: "{{ hostvars[\"worker_02\"].ansible_host }}"}
+virtual_domain:
+  - { name: "{{ site_centos }}", ip: "{{ hostvars[\"centos\"].ansible_host }}"}
+  - { name: "{{ site_debian }}", ip: "{{ hostvars[\"ubuntu\"].ansible_host }}"}
