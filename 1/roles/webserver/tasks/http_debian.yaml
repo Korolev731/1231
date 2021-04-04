@@ -1,11 +1,20 @@
 ---
-- name: Apache2. Install packages
-  apt:
-    name: "{{ apt_http_packages }}"
-    state: present
-    update_cache: yes
-- name: Apache2. Enable and start service
-  service:
-    name: apache2
+- name: Update and Install
+  apt: update_cache=yes name=nginx
+
+- name: Nginx. Enable ans start
+  systemd:
+    name: nginx
     state: started
-    enabled: yes
+
+- name: Copy nginx config
+  template:
+    src: debian.conf.j2
+    dest: "{{ nginx_config_path }}"
+  notify:
+    - restart nginx
+
+- name: Copy index.html Debian
+  copy:
+    src: ubuntu/index.html
+    dest: "{{ debian_host_path }}"
