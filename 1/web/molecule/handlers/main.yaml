@@ -1,0 +1,7 @@
+---
+- name: restart nginx
+  service:
+    name: "{{ 'nginx' if (ansible_distribution == 'Ubuntu') else 'nginx' }}"
+    state: restarted
+    enabled: yes
+
