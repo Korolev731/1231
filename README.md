@@ -1,4 +1,6 @@
 # 1231
+
+ansible-playbook play.yaml -i hosts.yaml -u root --ask-vault-pass
 https://habr.com/ru/company/redhatrussia/blog/519452/
 
 ```
