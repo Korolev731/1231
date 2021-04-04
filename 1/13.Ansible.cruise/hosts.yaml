@@ -4,3 +4,7 @@ vms:
       ansible_host: 192.168.203.9
     ubuntu:
       ansible_host: 192.168.203.10
+jump:
+  hosts:
+    jump_sa:
+      ansible_host: 178.124.206.53
