@@ -1,5 +1,5 @@
 ---
-- hosts: ec
+- hosts: ec2
   become: yes
   #  strategy: free
   roles:

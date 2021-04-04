@@ -1,5 +1,5 @@
 # 1231
-
+https://habr.com/ru/company/redhatrussia/blog/519452/
 
 ```
         su sudoers

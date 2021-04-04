@@ -1,14 +1,20 @@
+---
 ec_all:
+  vars:
+    date_01: 'Testing'
   children:
-    jump:
     ec:
-      vars:
-        data: 1
       hosts:
         worker_01:
-          ansible_host: 192.168.203.9
+          ansible_host: 192.168.202.9
         worker_02:
-          ansible_host: 192.168.203.10
+          ansible_host: 192.168.202.10
+    ec2:
+      hosts:
+        w_1:
+          ansible_host: 192.168.202.9
+        w_2:
+          ansible_host: 192.168.202.10
 jump:
   hosts:
     jump_sa:
