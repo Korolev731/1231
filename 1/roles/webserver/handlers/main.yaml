@@ -1,0 +1,6 @@
+  
+---
+- name: restart apache
+  service:
+    name: "{{ 'nginx' if (ansible_os_family == 'Debian') else 'httpd' }}"
+    state: restarted
