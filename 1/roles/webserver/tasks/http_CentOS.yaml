@@ -30,3 +30,11 @@
     state: reloaded
   tags:
   - tests
+
+# - name: Set httpd_can_network_connect flag on and keep it persistent across reboots
+#   seboolean:
+#     name: httpd_can_network_connect
+#     state: yes
+#     persistent: yes
+#   tags:
+#   - tests
