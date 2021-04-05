@@ -1,12 +1,46 @@
 ---
-- name: Setup nginx vhost
-  template:
-        src=yoursite.com.conf.tpl
-        dest={{ nginx_sites }}/yoursite.com.conf
-- name: Setup nginx conf
-  template:
-        src=nginx.conf.tpl
-        dest={{ nginx_path }}/nginx.conf
-  notify: restart nginx
-  
+- name: centos - Configure repo-file
+  copy:
+    src: nginx.repo
+    dest: /etc/yum.repos.d/nginx.repo
+
+- name: centos - install nginx packages
+  yum:
+    name: "{{ yum_nginx_packages }}"
+    state: present
+    update_cache: yes
+    
+# Создаём системные папки:
+- name: create folders
+  file:
+    path: '/etc/nginx/{{ item }}'
+    state: directory
+    mode: 0755
+  with_items:
+    - conf-available
+    - sites-available
+    - sites-enabled
+
+# Подключаем sites-enabled в конфиг nginx:
+- name: enable sites-enabled dir
+  lineinfile:
+    dest: /etc/nginx/nginx.conf
+    state: present
+    insertafter: "(.*)include /etc/nginx/(.*)"
+    line: " include /etc/nginx/sites-enabled/*.conf;"
+
+# Определяем существует ли default.conf:
+- name: stat /etc/nginx/conf.d/default.conf
+  stat: path=/etc/nginx/conf.d/default.conf
+  register: defaultconf_stat
+
+# Если существует, перемещаем его:
+- name: Move default.conf
+  command: mv /etc/nginx/conf.d/default.conf /etc/nginx/sites-available/default.conf
+  when: defaultconf_stat.stat.exists
+
+# Добавляем в автозагрузку и стартуем вебсервер:
+- name: enable and started nginx
+  command: start nginx
+
 
