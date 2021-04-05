@@ -1,11 +1,14 @@
-site_centos: centos.sa
-site_debian: ubuntu.sa
-nginx_config_path: /etc/nginx/conf.d/
-
-centos_home_path: /usr/share/nginx/html
-debian_host_path: /var/www/html
-
-virtual_domain:
-  - { name: "{{ site_centos }}", ip: "{{ hostvars[\"centos\"].ansible_host }}"}
-  - { name: "{{ site_debian }}", ip: "{{ hostvars[\"ubuntu\"].ansible_host }}"}
-
+---
+apt_redmine_packages: 
+  - git
+  - ruby-full
+  - build-essential
+  - libmysqlclient-dev
+  - imagemagick
+  - libmagickwand-dev
+  - apache2
+  - libapache2-mod-passenger
+  - mysql-server
+  - mysql-client
+  - python-pymysql
+  - python-mysqldb
