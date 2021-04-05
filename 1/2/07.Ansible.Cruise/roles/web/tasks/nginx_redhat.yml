@@ -6,7 +6,7 @@
   copy: src=files/nginx.conf dest=/etc/nginx/sites-available/default
 
 - name: enable configuration
- file: >
+  file: 
         dest=/etc/nginx/sites-enabled/default
         src=/etc/nginx/sites-available/default
         state=link
