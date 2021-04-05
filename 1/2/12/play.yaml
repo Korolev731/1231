@@ -1,5 +1,5 @@
 ---
-- hosts: ec2
+- hosts: ita
   become: yes
   #  strategy: free
   roles:
