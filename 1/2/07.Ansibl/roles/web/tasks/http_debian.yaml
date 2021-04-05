@@ -1,13 +1,8 @@
 ---
 - name: Nginx. Install packages
-  yum:
-    name: "{{ yum_http_packages }}"
+  apt: 
+    name: "{{ apt_http_packages }}"
     state: present
-
-- name: Nginx. Remove welcome file
-  file:
-    path: "/usr/share/nginx/html/index.html"
-    state: absent
 
 - name: Nginx. Enable and start servce
   service:

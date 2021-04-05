@@ -1,20 +1,7 @@
-ec_all:
-  children:
-    ec:
-      vars:
-        data: 1
-      hosts:
-        centos:
-          ansible_host: 192.168.202.9
-        ubuntu:
-          ansible_host: 192.168.202.10
-#    ec_ws:
-#      hosts:
-#        worker_ws_01:
-#          ansible_host: 192.168.31.1
-#        worker_ws_02:
-#          ansible_host: 192.168.32.2
-jump:
+all_hosts:
+  vars: 
+    ansible_ssh_common_args: '-o ProxyCommand="ssh -W %h:%p -q jump_sa@178.124.206.53"'
   hosts:
-    jump_sa:
-      ansible_host: 178.124.206.53
+    redmine:
+      ansible_host: 192.168.201.5
+      ansible_user: root

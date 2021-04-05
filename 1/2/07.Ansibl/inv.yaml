@@ -1,0 +1,16 @@
+---
+all_hosts:
+    webservers:
+       hosts:
+        ce7:
+          ansible_user: root
+          ansible_host: 192.168.56.101
+        ub:
+          ansible_user: bersnev
+          ansible_host: 192.168.56.102
+          ansible_ssh_pass: bersnev 
+        ub2:
+          ansible_user: vagrant
+          ansible_host: 192.168.56.103
+          ansible_ssh_pass: vagrant 
+
