@@ -2,11 +2,20 @@
 - name: Update and Install
   apt: update_cache=yes name=nginx
 
-- name: Nginx. Enable ans start
-  systemd:
+- name: install nginx
+  yum:
     name: nginx
-    state: started
-
+    state: present
+    update_cache: yes
+- name: create folders
+  file:
+    path: '/etc/nginx/{{ item }}'
+    state: directory
+    mode: 0755
+  with_items:
+    - conf-available
+    - sites-available
+    - sites-enabled
 - name: Copy nginx config
   template:
     src: debian.conf.j2
