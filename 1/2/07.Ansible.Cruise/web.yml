@@ -1,5 +1,5 @@
 ---
-- hosts: ec2
+- hosts: slaves
   become: yes
   roles:
     - web
