@@ -1,21 +1,14 @@
 ---
-- name: centos. Add repository repo-file
-  copy:
-    src: nginx.repo
-    dest: /etc/yum.repos.d/nginx.repo
+- name: install nginx
+  apt: name=nginx update_cache=yes
 
-- name: centos - install nginx packages
-  yum:
-    name: "{{ yum_nginx_packages }}"
-    state: present
+- name: copy nginx config file
+  copy: src=files/nginx.conf dest=/etc/nginx/sites-available/default
 
-- name: centos - copy html page
-  copy:
-    src: index.html
-    dest: "{{ default_home_redhat }}"
-
-- name: centos - enable and start nginx service
-  service:
-    name: nginx
-    state: started
-    enabled: yes
+- name: enable configuration
+ file: >
+        dest=/etc/nginx/sites-enabled/default
+        src=/etc/nginx/sites-available/default
+        state=link
+- name: restart nginx
+  service: name=nginx state=restarted
