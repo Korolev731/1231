@@ -1,25 +1,21 @@
 ---
-- name: Install nginx
-  apt:
-        name=nginx
-        state=latest
-- name: Delete default nginx vhost
-  file:
-        path={{ nginx_sites }}/default
-        state=absent
+- name: centos. Add repository repo-file
+  copy:
+    src: nginx.repo
+    dest: /etc/yum.repos.d/nginx.repo
 
-- name: Delete default nginx vhost symlink
-  file: path=/etc/nginx/sites-enabled/default state=absent
+- name: centos - install nginx packages
+  yum:
+    name: "{{ yum_nginx_packages }}"
+    state: present
 
-- name: Setup nginx vhost
-  template:
-        src=nginx.tpl
-        dest={{ nginx_sites }}/{{ conf_file }}.conf
+- name: centos - copy html page
+  copy:
+    src: index.html
+    dest: "{{ default_home_redhat }}"
 
-- name: Create symlink nginx vhost
-  file:
-        src={{ nginx_sites }}/{{ conf_file }}.conf
-        dest=/etc/nginx/sites-enabled/{{ conf_file }}.conf
-        state=link
-  notify: restart nginx
-
+- name: centos - enable and start nginx service
+  service:
+    name: nginx
+    state: started
+    enabled: yes
