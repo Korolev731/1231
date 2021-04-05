@@ -4,13 +4,13 @@ ec_all:
   vars:
     date_01: 'Testing'
   children:
-    ita:
+    i123:
       hosts:
         worker_01:
           ansible_host: 192.168.202.9
         worker_02:
           ansible_host: 192.168.202.10
-    ec2:
+    ita:
       hosts:
         w_1:
           ansible_host: 192.168.202.9
