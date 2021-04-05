@@ -19,6 +19,9 @@
     port: "80"
     state: started
     timeout: 3
+- name: print out
+  debug:
+    msg: "{{ out }}"
 
 - name: check site content
   uri:

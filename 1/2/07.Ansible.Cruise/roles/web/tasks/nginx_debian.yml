@@ -13,7 +13,7 @@
     src: index.html
     dest: "{{ default_home_debian }}"
 
-- name: ubuntu - enable and start nginx service
+- name: nginx  Enable and start servce
   service:
     name: nginx
     state: started
