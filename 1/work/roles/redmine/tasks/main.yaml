@@ -63,3 +63,20 @@
     chdir: "{{ app_home }}"
   tags:
     - setup
+- name: Redmine. Setup 02
+  shell: | 
+    bundle exec rake db:migrate RAILS_ENV=production 
+    bundle exec rake redmine:plugins:migrate RAILS_ENV=production
+    bundle install --without development test
+    RAILS_ENV=production rake db:migrate
+    RAILS_ENV=production REDMINE_LANG='{{ app_lang }}' rake redmine:load_default_data
+  args:
+    chdir: "{{ app_home }}"
+  tags:
+    - setup
+- name: Configuration files for virtualhost
+  template:
+    src: redmine.site.conf.j2
+    dest: "/etc/apache2/sites-enabled/redmine.site.conf"
+  notify:
+    - apache restart 
