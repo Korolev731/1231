@@ -41,8 +41,6 @@
 
 # Добавляем в автозагрузку и стартуем вебсервер:
 - name: enable and started nginx
-  systemd:
-    name: nginx.service
-    state: started
+  command: start nginx
 
 
