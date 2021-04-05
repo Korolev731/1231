@@ -5,8 +5,8 @@
 - name: Nginx Enable and start
   systemd:
     name: nginx
-    state: started
-
+    state: present
+    update_cache: yes
 - name: Copy nginx config
   template:
     src: centos.conf.j2
