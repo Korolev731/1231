@@ -13,3 +13,26 @@
     password: "{{ app_db_pass }}"
     priv: "{{ app_db_name }}.*:ALL"
     login_unix_socket: /var/run/mysqld/mysqld.sock
+  no_log: yes
+- name: Redmine. Clone repository
+  git:
+    repo: "{{ app_repo }}"
+    dest: "{{ app_home }}"
+    version: '{{ app_version }}'
+    accept_hostkey: yes
+    update: no
+- name: Redmine. Change permissions
+  file:
+    path: "{{ app_home }}/public"
+    owner: www-data
+    group: www-data
+    recurse: yes
+- name: Redmine. Change permissions
+  file:
+    path: "{{ app_home }}/tmp"
+    mode: '777'
+    recurse: yes
+- name: Config database
+  template: 
+    src: database.yml.j2 
+    dest: "{{ app_home }}/config/database.yml"
