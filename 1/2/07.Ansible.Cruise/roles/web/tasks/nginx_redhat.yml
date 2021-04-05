@@ -43,7 +43,6 @@
 - name: enable and started nginx
   systemd:
     name: nginx.service
-    enabled: yes
     state: started
 
 
