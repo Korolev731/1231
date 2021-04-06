@@ -16,16 +16,12 @@
 - name: check connection to localhost
   wait_for:
     host: "localhost"
-    port: "80"
+    port: "81"
     state: started
     timeout: 3
-- name: print out
-  debug:
-    msg: "{{ out }}"
 
 - name: check site content
   uri:
     url: http://localhost
     return_content: yes
   register: this
-
