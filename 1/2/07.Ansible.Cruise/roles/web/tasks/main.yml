@@ -38,12 +38,3 @@
     mode: '0644'
     backup: yes
 
-- name: Check template
-  shell: |
-    cat /etc/hosts
-  register: out
-  changed_when: false
-
-- name: print out
-  debug:
-    msg: "{{ out.stdout_lines }}"
