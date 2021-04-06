@@ -1,9 +1,9 @@
 all:
   hosts:
       ubuntu_01:
-        ansible_host: 192.168.222.151
+        ansible_host: 192.168.202.9
       centos_01:
-        ansible_host: 192.168.222.141
+        ansible_host: 192.168.202.10
       
 webservers:
   hosts:

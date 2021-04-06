@@ -8,5 +8,5 @@ apt_nginx_packages:
 default_home_debian: "/var/www/html/"
 default_home_redhat: "/usr/share/nginx/html/"
 virtual_hosts:
-  - { name: "centos_nginx.site", ip: "{{ hostvars[\"centos_11\"].ansible_host }}"}
-  - { name: "ubuntu_nginx.site", ip: "{{ hostvars[\"ubuntu_12\"].ansible_host }}"}
+  - { name: "centos_nginx.site", ip: "{{ hostvars[\"centos_9\"].ansible_host }}"}
+  - { name: "ubuntu_nginx.site", ip: "{{ hostvars[\"ubuntu_10\"].ansible_host }}"}

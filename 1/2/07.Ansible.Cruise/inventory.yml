@@ -6,5 +6,5 @@ all:
             ansible_host: 192.168.202.10
 slaves:
     hosts:
-        centos_11:
-        ubuntu_12:
+        centos_9:
+        ubuntu_10:
