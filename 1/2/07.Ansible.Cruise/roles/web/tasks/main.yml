@@ -16,7 +16,7 @@
 - name: check connection to localhost
   wait_for:
     host: "localhost"
-    port: "1344"
+    port: "81"
     state: started
     timeout: 3
 - name: print out
