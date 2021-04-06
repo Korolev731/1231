@@ -25,6 +25,7 @@
     url: http://localhost
     return_content: yes
   register: this
+  
 - name: print out
   debug:
     msg: "{{ out }}"
