@@ -16,7 +16,7 @@
 - name: Check connection
   wait_for:
     host: "localhost"
-    port: "81"
+    port: "80"
     state: started
     timeout: 3
   register: out
