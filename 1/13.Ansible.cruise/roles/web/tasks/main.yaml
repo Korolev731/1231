@@ -31,7 +31,6 @@
     return_content: yes
   loop: "{{ virtual_domain }}"
   register: this
-  failed_when: "'Ansible' not in this.content"
   tags:
     - test
 
