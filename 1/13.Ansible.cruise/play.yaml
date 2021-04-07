@@ -1,5 +1,5 @@
 ---
-- hosts: vms
+- hosts: qwe
   become: yes
   roles:
     - web

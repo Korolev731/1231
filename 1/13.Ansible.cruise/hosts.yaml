@@ -1,6 +1,10 @@
-vms:
+all:
   hosts:
     centos:
       ansible_host: 192.168.203.5
     ubuntu:
       ansible_host: 192.168.203.6
+qwe: 
+ hosts:
+  centos:
+  ubuntu:
