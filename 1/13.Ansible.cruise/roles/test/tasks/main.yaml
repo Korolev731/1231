@@ -37,6 +37,21 @@
   tags:
     - repo_docker
 
+- name: Check pub repo
+  vars:
+    links:
+      - { url: archive.ubuntu.com, port: 80 }
+      - { url: ftp.wrz.de, port: 80 }
+      - { url: bootstrap.pypa.io, port: 443 }
+  wait_for:
+    host: "{{ item.url }}"
+    port: "{{ item.port }}"
+    timeout: 3
+  register: out
+  with_items: "{{ links }}"
+  tags:
+    - pub_repo
+
 - name: Check SUDO with NOPASSWD
   command: "true"
   become: yes
