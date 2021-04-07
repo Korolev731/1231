@@ -1,5 +1,5 @@
-site_centos: centos.sa
-site_debian: ubuntu.sa
+site_centos: centos9.sa
+site_debian: ubuntu10.sa
 nginx_config_path: /etc/nginx/conf.d/
 
 centos_home_path: /usr/share/nginx/html
