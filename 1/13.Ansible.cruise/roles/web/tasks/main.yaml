@@ -25,6 +25,16 @@
   debug:
     msg: "{{ out }}"
 
+- name: Check content to the sites
+  uri:
+    url: "http://{{ item.name }}"
+    return_content: yes
+  loop: "{{ virtual_domain }}"
+  register: this
+  failed_when: "'Ansible' not in this.content"
+  tags:
+    - test
+
 - name: print out
   debug:
     msg: "{{ this.results[0].content }} | {{ this.results[1].content }}"
