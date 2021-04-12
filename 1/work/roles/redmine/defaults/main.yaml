@@ -6,7 +6,7 @@ apt_redmine_packages:
   - libmysqlclient-dev
   - imagemagick
   - libmagickwand-dev
-  - apache2
+  - nginx
   - libapache2-mod-passenger
   - mysql-server
   - mysql-client

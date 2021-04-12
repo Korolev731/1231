@@ -77,7 +77,7 @@
 - name: Configuration files for virtualhost
   template:
     src: redmine.site.conf.j2
-    dest: "/etc/apache2/sites-enabled/redmine.site.conf"
+    dest: "/etc/nginx/sites-enabled/redmine.site.conf"
   notify:
     - apache restart 
 - name: "Add {{ app_fqdn }} to host file"
