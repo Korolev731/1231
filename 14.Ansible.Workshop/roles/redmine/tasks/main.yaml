@@ -28,9 +28,6 @@
   tags:
     - setup
     
-- name: Update and Install
-  apt: update_cache=yes name=nginx
-
 - name: Nginx. Enable ans start
   systemd:
     name: nginx
