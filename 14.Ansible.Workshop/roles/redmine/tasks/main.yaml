@@ -28,13 +28,16 @@
   tags:
     - setup
     
-- name: Nginx. Enable ans start
-  systemd:
-    name: nginx
-    state: latest
+- name: Install Nginx Web Server on Debian Family
+  apt:
+    name=nginx
+    state=latest
+  when:
+    ansible_os_family == "Debian"
   notify:
-    - nginx systemd 
-- name: Replace nginx.conf
-  template:
-    src: templates/nginx.conf
-    dest: "/etc/nginx/nginx.conf"
+    - nginx systemd
+
+- name: Install EPEL Repo
+  yum:
+    name=epel-release
+    state=present
