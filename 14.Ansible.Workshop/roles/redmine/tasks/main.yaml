@@ -33,11 +33,17 @@
     name=nginx
     state=latest
   when:
-    ansible_os_family == "Debian"
+    ansible_os_family == "Ubuntu"
   notify:
     - nginx systemd
 
-- name: Install EPEL Repo
-  yum:
-    name=epel-release
-    state=present
+- name: Replace nginx.conf
+  template:
+    src: templates/nginx.conf
+    dest: "/etc/nginx/nginx.conf"
+    
+- name: Configuration 
+  template:
+    src: redmine.site.conf.j2
+    dest: "/etc/nginx/sites-enabled/redmine.site.conf"
+  

@@ -1,6 +1,8 @@
 ---
 - hosts: "redmine"
   become: yes
+  vars:
+    nginx_user: www-data
   pre_tasks:
     - name: Redmine. Install packages
       apt:
@@ -30,3 +32,4 @@
   roles:
   - mysql
   - redmine
+        
