@@ -43,7 +43,7 @@
     - restart nginx
 
 - name: "Add {{ app_fqdn }} to host file"
-  shell: echo "192.168.205.10       {{ app_fqdn }}" >> /etc/hosts
+  shell: echo "127.0.0.1       {{ app_fqdn }}" >> /etc/hosts
   tags:
     - test
 - uri:
