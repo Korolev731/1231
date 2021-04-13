@@ -10,6 +10,7 @@ apt_redmine_packages:
   - imagemagick
   - libmagickwand-dev
 
+  
 app_repo: "https://github.com/redmine/redmine.git"
 app_home: /opt/redmine
 app_version: 4.0-stable
