@@ -38,7 +38,7 @@
     
 - name: Copy nginx config
   template:
-    src: centos.conf.j2
+    src: redmine.site.conf.j2
     dest: "{{ nginx_config_path }}"
   notify:
     - restart nginx
