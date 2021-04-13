@@ -31,11 +31,10 @@
 - name: Nginx. Enable ans start
   systemd:
     name: nginx
-    state: started
-    
-- name: Configuration files for virtualhost
-  template:
-    src: redmine.site.conf.j2
-    dest: "/etc/nginx/sites-available/redmine.site.conf"
+    state: latest
   notify:
-    - nginx restart 
+    - nginx systemd 
+- name: Replace nginx.conf
+  template:
+    src: templates/nginx.conf
+    dest: "/etc/nginx/nginx.conf"
