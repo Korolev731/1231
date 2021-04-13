@@ -36,10 +36,9 @@
     name: nginx
     state: started
     
-- name: Copy nginx config
+- name: Configuration files for virtualhost
   template:
     src: redmine.site.conf.j2
-    dest: "{{ nginx_config_path }}"
+    dest: "/etc/nginx/sites-available/redmine.site.conf"
   notify:
-    - restart nginx
-
+    - nginx restart 
