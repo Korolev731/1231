@@ -35,6 +35,11 @@
   systemd:
     name: nginx
     state: started
+    
+- name: Copy nginx config
+  template:
+    src: centos.conf.j2
+    dest: "{{ nginx_config_path }}"
+  notify:
     - restart nginx
-
 
