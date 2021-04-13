@@ -27,16 +27,14 @@
     chdir: "{{ app_home }}"
   tags:
     - setup
+    
+- name: Update and Install
+  apt: update_cache=yes name=nginx
 
 - name: Nginx. Enable ans start
   systemd:
     name: nginx
     state: started
-
-- name: Copy nginx config
-  template:
-    src: redmine.site.conf.j2
-    dest: "/etc/nginx/sites-enabled/redmine.site.conf"
-  notify:
     - restart nginx
+
 
