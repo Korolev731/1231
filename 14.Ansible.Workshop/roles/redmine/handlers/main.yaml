@@ -1,6 +1,6 @@
 ---
-- name: nginx systemd
-  systemd:
-    name: nginx
-    enabled: yes
-    state: started
+- name: apache restart
+  service:
+    name: apache2
+    state: restarted
+
