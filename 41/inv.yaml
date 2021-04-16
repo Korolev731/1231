@@ -5,3 +5,4 @@ all_hosts:
     redmine:
       ansible_host: 192.168.201.5
       ansible_user: root
+
