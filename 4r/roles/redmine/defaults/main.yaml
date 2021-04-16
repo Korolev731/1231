@@ -3,4 +3,4 @@ app_home: /opt/redmine
 app_version: 4.1-stable
 
 app_lang: "en"
-app_fqdn: "redmine-4.sa"
+app_fqdn: "redmine-5.sa"
