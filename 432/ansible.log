@@ -90,3 +90,1261 @@
 2020-11-03 18:08:21,332 p=22571 u=root n=ansible | redmine : Session store secret generation ----------------------------------------------------------------------------------------------------------- 0.57s
 2020-11-03 18:08:21,333 p=22571 u=root n=ansible | redmine : Add redmine-14.sa to host file ------------------------------------------------------------------------------------------------------------ 0.52s
 2020-11-03 18:08:21,333 p=22571 u=root n=ansible | Playbook run took 0 days, 0 hours, 0 minutes, 35 seconds
+2021-04-18 10:08:28,018 p=3338 u=dom n=ansible | PLAY [redmine] *****************************************************************
+2021-04-18 10:08:28,032 p=3338 u=dom n=ansible | TASK [Gathering Facts] *********************************************************
+2021-04-18 10:08:28,032 p=3338 u=dom n=ansible | Sunday 18 April 2021  10:08:28 +0200 (0:00:00.025)       0:00:00.025 ********** 
+2021-04-18 10:08:30,154 p=3338 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:08:30,176 p=3338 u=dom n=ansible | TASK [Redmine. Install packages] ***********************************************
+2021-04-18 10:08:30,176 p=3338 u=dom n=ansible | Sunday 18 April 2021  10:08:30 +0200 (0:00:02.143)       0:00:02.169 ********** 
+2021-04-18 10:08:32,034 p=3338 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:08:32,073 p=3338 u=dom n=ansible | TASK [Redmine. Clone repository] ***********************************************
+2021-04-18 10:08:32,073 p=3338 u=dom n=ansible | Sunday 18 April 2021  10:08:32 +0200 (0:00:01.897)       0:00:04.067 ********** 
+2021-04-18 10:08:32,776 p=3338 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:08:32,813 p=3338 u=dom n=ansible | TASK [Redmine. Change permissions] *********************************************
+2021-04-18 10:08:32,813 p=3338 u=dom n=ansible | Sunday 18 April 2021  10:08:32 +0200 (0:00:00.740)       0:00:04.807 ********** 
+2021-04-18 10:08:33,537 p=3338 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:08:33,572 p=3338 u=dom n=ansible | TASK [Redmine. Change permissions] *********************************************
+2021-04-18 10:08:33,572 p=3338 u=dom n=ansible | Sunday 18 April 2021  10:08:33 +0200 (0:00:00.759)       0:00:05.566 ********** 
+2021-04-18 10:08:34,148 p=3338 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:08:34,191 p=3338 u=dom n=ansible | TASK [db : MySQL. Install and setup] *******************************************
+2021-04-18 10:08:34,191 p=3338 u=dom n=ansible | Sunday 18 April 2021  10:08:34 +0200 (0:00:00.618)       0:00:06.185 ********** 
+2021-04-18 10:08:35,588 p=3338 u=dom n=ansible | changed: [redmine]
+2021-04-18 10:08:35,591 p=3338 u=dom n=ansible | RUNNING HANDLER [db : mysql restart] *******************************************
+2021-04-18 10:08:35,591 p=3338 u=dom n=ansible | Sunday 18 April 2021  10:08:35 +0200 (0:00:01.399)       0:00:07.584 ********** 
+2021-04-18 10:08:36,563 p=3338 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:08:36,599 p=3338 u=dom n=ansible | TASK [db : Configuring encoding DB] ********************************************
+2021-04-18 10:08:36,599 p=3338 u=dom n=ansible | Sunday 18 April 2021  10:08:36 +0200 (0:00:01.007)       0:00:08.592 ********** 
+2021-04-18 10:08:37,282 p=3338 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:08:37,318 p=3338 u=dom n=ansible | TASK [db : Configuring user priviliges] ****************************************
+2021-04-18 10:08:37,318 p=3338 u=dom n=ansible | Sunday 18 April 2021  10:08:37 +0200 (0:00:00.719)       0:00:09.311 ********** 
+2021-04-18 10:08:38,001 p=3338 u=dom n=ansible | [WARNING]: Module did not set no_log for update_password
+
+2021-04-18 10:08:38,002 p=3338 u=dom n=ansible | changed: [redmine]
+2021-04-18 10:08:38,045 p=3338 u=dom n=ansible | TASK [db : Config database] ****************************************************
+2021-04-18 10:08:38,045 p=3338 u=dom n=ansible | Sunday 18 April 2021  10:08:38 +0200 (0:00:00.726)       0:00:10.038 ********** 
+2021-04-18 10:08:39,085 p=3338 u=dom n=ansible | changed: [redmine]
+2021-04-18 10:08:39,121 p=3338 u=dom n=ansible | TASK [redmine : Redmine. Setup 01] *********************************************
+2021-04-18 10:08:39,121 p=3338 u=dom n=ansible | Sunday 18 April 2021  10:08:39 +0200 (0:00:01.075)       0:00:11.114 ********** 
+2021-04-18 10:08:49,372 p=3338 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:08:49,406 p=3338 u=dom n=ansible | TASK [redmine : Session store secret generation] *******************************
+2021-04-18 10:08:49,406 p=3338 u=dom n=ansible | Sunday 18 April 2021  10:08:49 +0200 (0:00:10.285)       0:00:21.400 ********** 
+2021-04-18 10:08:49,982 p=3338 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:08:50,016 p=3338 u=dom n=ansible | TASK [redmine : Redmine. Setup 02] *********************************************
+2021-04-18 10:08:50,016 p=3338 u=dom n=ansible | Sunday 18 April 2021  10:08:50 +0200 (0:00:00.609)       0:00:22.010 ********** 
+2021-04-18 10:08:58,424 p=3338 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:08:58,456 p=3338 u=dom n=ansible | TASK [redmine : Configuration files for virtualhost] ***************************
+2021-04-18 10:08:58,457 p=3338 u=dom n=ansible | Sunday 18 April 2021  10:08:58 +0200 (0:00:08.440)       0:00:30.450 ********** 
+2021-04-18 10:08:59,524 p=3338 u=dom n=ansible | changed: [redmine]
+2021-04-18 10:08:59,579 p=3338 u=dom n=ansible | TASK [redmine : Add redmine-14.sa to host file] ********************************
+2021-04-18 10:08:59,580 p=3338 u=dom n=ansible | Sunday 18 April 2021  10:08:59 +0200 (0:00:01.123)       0:00:31.573 ********** 
+2021-04-18 10:09:00,085 p=3338 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:09:00,108 p=3338 u=dom n=ansible | TASK [redmine : Check content] *************************************************
+2021-04-18 10:09:00,108 p=3338 u=dom n=ansible | Sunday 18 April 2021  10:09:00 +0200 (0:00:00.528)       0:00:32.102 ********** 
+2021-04-18 10:09:00,839 p=3338 u=dom n=ansible | fatal: [redmine]: FAILED! => {"accept_ranges": "bytes", "changed": false, "connection": "close", "content": "\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n  <!--\n    Modified from the Debian original for Ubuntu\n    Last updated: 2014-03-19\n    See: https://launchpad.net/bugs/1288690\n  -->\n  <head>\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n    <title>Apache2 Ubuntu Default Page: It works</title>\n    <style type=\"text/css\" media=\"screen\">\n  * {\n    margin: 0px 0px 0px 0px;\n    padding: 0px 0px 0px 0px;\n  }\n\n  body, html {\n    padding: 3px 3px 3px 3px;\n\n    background-color: #D8DBE2;\n\n    font-family: Verdana, sans-serif;\n    font-size: 11pt;\n    text-align: center;\n  }\n\n  div.main_page {\n    position: relative;\n    display: table;\n\n    width: 800px;\n\n    margin-bottom: 3px;\n    margin-left: auto;\n    margin-right: auto;\n    padding: 0px 0px 0px 0px;\n\n    border-width: 2px;\n    border-color: #212738;\n    border-style: solid;\n\n    background-color: #FFFFFF;\n\n    text-align: center;\n  }\n\n  div.page_header {\n    height: 99px;\n    width: 100%;\n\n    background-color: #F5F6F7;\n  }\n\n  div.page_header span {\n    margin: 15px 0px 0px 50px;\n\n    font-size: 180%;\n    font-weight: bold;\n  }\n\n  div.page_header img {\n    margin: 3px 0px 0px 40px;\n\n    border: 0px 0px 0px;\n  }\n\n  div.table_of_contents {\n    clear: left;\n\n    min-width: 200px;\n\n    margin: 3px 3px 3px 3px;\n\n    background-color: #FFFFFF;\n\n    text-align: left;\n  }\n\n  div.table_of_contents_item {\n    clear: left;\n\n    width: 100%;\n\n    margin: 4px 0px 0px 0px;\n\n    background-color: #FFFFFF;\n\n    color: #000000;\n    text-align: left;\n  }\n\n  div.table_of_contents_item a {\n    margin: 6px 0px 0px 6px;\n  }\n\n  div.content_section {\n    margin: 3px 3px 3px 3px;\n\n    background-color: #FFFFFF;\n\n    text-align: left;\n  }\n\n  div.content_section_text {\n    padding: 4px 8px 4px 8px;\n\n    color: #000000;\n    font-size: 100%;\n  }\n\n  div.content_section_text pre {\n    margin: 8px 0px 8px 0px;\n    padding: 8px 8px 8px 8px;\n\n    border-width: 1px;\n    border-style: dotted;\n    border-color: #000000;\n\n    background-color: #F5F6F7;\n\n    font-style: italic;\n  }\n\n  div.content_section_text p {\n    margin-bottom: 6px;\n  }\n\n  div.content_section_text ul, div.content_section_text li {\n    padding: 4px 8px 4px 16px;\n  }\n\n  div.section_header {\n    padding: 3px 6px 3px 6px;\n\n    background-color: #8E9CB2;\n\n    color: #FFFFFF;\n    font-weight: bold;\n    font-size: 112%;\n    text-align: center;\n  }\n\n  div.section_header_red {\n    background-color: #CD214F;\n  }\n\n  div.section_header_grey {\n    background-color: #9F9386;\n  }\n\n  .floating_element {\n    position: relative;\n    float: left;\n  }\n\n  div.table_of_contents_item a,\n  div.content_section_text a {\n    text-decoration: none;\n    font-weight: bold;\n  }\n\n  div.table_of_contents_item a:link,\n  div.table_of_contents_item a:visited,\n  div.table_of_contents_item a:active {\n    color: #000000;\n  }\n\n  div.table_of_contents_item a:hover {\n    background-color: #000000;\n\n    color: #FFFFFF;\n  }\n\n  div.content_section_text a:link,\n  div.content_section_text a:visited,\n   div.content_section_text a:active {\n    background-color: #DCDFE6;\n\n    color: #000000;\n  }\n\n  div.content_section_text a:hover {\n    background-color: #000000;\n\n    color: #DCDFE6;\n  }\n\n  div.validator {\n  }\n    </style>\n  </head>\n  <body>\n    <div class=\"main_page\">\n      <div class=\"page_header floating_element\">\n        <img src=\"/icons/ubuntu-logo.png\" alt=\"Ubuntu Logo\" class=\"floating_element\"/>\n        <span class=\"floating_element\">\n          Apache2 Ubuntu Default Page\n        </span>\n      </div>\n<!--      <div class=\"table_of_contents floating_element\">\n        <div class=\"section_header section_header_grey\">\n          TABLE OF CONTENTS\n        </div>\n        <div class=\"table_of_contents_item floating_element\">\n          <a href=\"#about\">About</a>\n        </div>\n        <div class=\"table_of_contents_item floating_element\">\n          <a href=\"#changes\">Changes</a>\n        </div>\n        <div class=\"table_of_contents_item floating_element\">\n          <a href=\"#scope\">Scope</a>\n        </div>\n        <div class=\"table_of_contents_item floating_element\">\n          <a href=\"#files\">Config files</a>\n        </div>\n      </div>\n-->\n      <div class=\"content_section floating_element\">\n\n\n        <div class=\"section_header section_header_red\">\n          <div id=\"about\"></div>\n          It works!\n        </div>\n        <div class=\"content_section_text\">\n          <p>\n                This is the default welcome page used to test the correct \n                operation of the Apache2 server after installation on Ubuntu systems.\n                It is based on the equivalent page on Debian, from which the Ubuntu Apache\n                packaging is derived.\n                If you can read this page, it means that the Apache HTTP server installed at\n                this site is working properly. You should <b>replace this file</b> (located at\n                <tt>/var/www/html/index.html</tt>) before continuing to operate your HTTP server.\n          </p>\n\n\n          <p>\n                If you are a normal user of this web site and don't know what this page is\n                about, this probably means that the site is currently unavailable due to\n                maintenance.\n                If the problem persists, please contact the site's administrator.\n          </p>\n\n        </div>\n        <div class=\"section_header\">\n          <div id=\"changes\"></div>\n                Configuration Overview\n        </div>\n        <div class=\"content_section_text\">\n          <p>\n                Ubuntu's Apache2 default configuration is different from the\n                upstream default configuration, and split into several files optimized for\n                interaction with Ubuntu tools. The configuration system is\n                <b>fully documented in\n                /usr/share/doc/apache2/README.Debian.gz</b>. Refer to this for the full\n                documentation. Documentation for the web server itself can be\n                found by accessing the <a href=\"/manual\">manual</a> if the <tt>apache2-doc</tt>\n                package was installed on this server.\n\n          </p>\n          <p>\n                The configuration layout for an Apache2 web server installation on Ubuntu systems is as follows:\n          </p>\n          <pre>\n/etc/apache2/\n|-- apache2.conf\n|       `--  ports.conf\n|-- mods-enabled\n|       |-- *.load\n|       `-- *.conf\n|-- conf-enabled\n|       `-- *.conf\n|-- sites-enabled\n|       `-- *.conf\n          </pre>\n          <ul>\n                        <li>\n                           <tt>apache2.conf</tt> is the main configuration\n                           file. It puts the pieces together by including all remaining configuration\n                           files when starting up the web server.\n                        </li>\n\n                        <li>\n                           <tt>ports.conf</tt> is always included from the\n                           main configuration file. It is used to determine the listening ports for\n                           incoming connections, and this file can be customized anytime.\n                        </li>\n\n                        <li>\n                           Configuration files in the <tt>mods-enabled/</tt>,\n                           <tt>conf-enabled/</tt> and <tt>sites-enabled/</tt> directories contain\n                           particular configuration snippets which manage modules, global configuration\n                           fragments, or virtual host configurations, respectively.\n                        </li>\n\n                        <li>\n                           They are activated by symlinking available\n                           configuration files from their respective\n                           *-available/ counterparts. These should be managed\n                           by using our helpers\n                           <tt>\n                                <a href=\"http://manpages.debian.org/cgi-bin/man.cgi?query=a2enmod\">a2enmod</a>,\n                                <a href=\"http://manpages.debian.org/cgi-bin/man.cgi?query=a2dismod\">a2dismod</a>,\n                           </tt>\n                           <tt>\n                                <a href=\"http://manpages.debian.org/cgi-bin/man.cgi?query=a2ensite\">a2ensite</a>,\n                                <a href=\"http://manpages.debian.org/cgi-bin/man.cgi?query=a2dissite\">a2dissite</a>,\n                            </tt>\n                                and\n                           <tt>\n                                <a href=\"http://manpages.debian.org/cgi-bin/man.cgi?query=a2enconf\">a2enconf</a>,\n                                <a href=\"http://manpages.debian.org/cgi-bin/man.cgi?query=a2disconf\">a2disconf</a>\n                           </tt>. See their respective man pages for detailed information.\n                        </li>\n\n                        <li>\n                           The binary is called apache2. Due to the use of\n                           environment variables, in the default configuration, apache2 needs to be\n                           started/stopped with <tt>/etc/init.d/apache2</tt> or <tt>apache2ctl</tt>.\n                           <b>Calling <tt>/usr/bin/apache2</tt> directly will not work</b> with the\n                           default configuration.\n                        </li>\n          </ul>\n        </div>\n\n        <div class=\"section_header\">\n            <div id=\"docroot\"></div>\n                Document Roots\n        </div>\n\n        <div class=\"content_section_text\">\n            <p>\n                By default, Ubuntu does not allow access through the web browser to\n                <em>any</em> file apart of those located in <tt>/var/www</tt>,\n                <a href=\"http://httpd.apache.org/docs/2.4/mod/mod_userdir.html\">public_html</a>\n                directories (when enabled) and <tt>/usr/share</tt> (for web\n                applications). If your site is using a web document root\n                located elsewhere (such as in <tt>/srv</tt>) you may need to whitelist your\n                document root directory in <tt>/etc/apache2/apache2.conf</tt>.\n            </p>\n            <p>\n                The default Ubuntu document root is <tt>/var/www/html</tt>. You\n                can make your own virtual hosts under /var/www. This is different\n                to previous releases which provides better security out of the box.\n            </p>\n        </div>\n\n        <div class=\"section_header\">\n          <div id=\"bugs\"></div>\n                Reporting Problems\n        </div>\n        <div class=\"content_section_text\">\n          <p>\n                Please use the <tt>ubuntu-bug</tt> tool to report bugs in the\n                Apache2 package with Ubuntu. However, check <a\n                href=\"https://bugs.launchpad.net/ubuntu/+source/apache2\">existing\n                bug reports</a> before reporting a new bug.\n          </p>\n          <p>\n                Please report bugs specific to modules (such as PHP and others)\n                to respective packages, not to the web server itself.\n          </p>\n        </div>\n\n\n\n\n      </div>\n    </div>\n    <div class=\"validator\">\n    </div>\n  </body>\n</html>\n\n", "content_length": "11321", "content_type": "text/html", "cookies": {}, "cookies_string": "", "date": "Sun, 18 Apr 2021 08:09:00 GMT", "elapsed": 0, "etag": "\"2c39-5c01a04bd7df0\"", "failed_when_result": true, "last_modified": "Fri, 16 Apr 2021 17:07:44 GMT", "msg": "OK (11321 bytes)", "redirected": false, "server": "Apache/2.4.18 (Ubuntu)", "status": 200, "url": "http://redmine-14.sa", "vary": "Accept-Encoding"}
+2021-04-18 10:09:00,842 p=3338 u=dom n=ansible | RUNNING HANDLER [redmine : apache restart] *************************************
+2021-04-18 10:09:00,842 p=3338 u=dom n=ansible | Sunday 18 April 2021  10:09:00 +0200 (0:00:00.733)       0:00:32.835 ********** 
+2021-04-18 10:09:00,845 p=3338 u=dom n=ansible | PLAY RECAP *********************************************************************
+2021-04-18 10:09:00,846 p=3338 u=dom n=ansible | redmine                    : ok=15   changed=4    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2021-04-18 10:09:00,846 p=3338 u=dom n=ansible | Sunday 18 April 2021  10:09:00 +0200 (0:00:00.004)       0:00:32.839 ********** 
+2021-04-18 10:09:00,846 p=3338 u=dom n=ansible | =============================================================================== 
+2021-04-18 10:09:00,847 p=3338 u=dom n=ansible | redmine : Redmine. Setup 01 -------------------------------------------- 10.29s
+2021-04-18 10:09:00,847 p=3338 u=dom n=ansible | redmine : Redmine. Setup 02 --------------------------------------------- 8.44s
+2021-04-18 10:09:00,847 p=3338 u=dom n=ansible | Gathering Facts --------------------------------------------------------- 2.14s
+2021-04-18 10:09:00,848 p=3338 u=dom n=ansible | Redmine. Install packages ----------------------------------------------- 1.90s
+2021-04-18 10:09:00,848 p=3338 u=dom n=ansible | db : MySQL. Install and setup ------------------------------------------- 1.40s
+2021-04-18 10:09:00,848 p=3338 u=dom n=ansible | redmine : Configuration files for virtualhost --------------------------- 1.12s
+2021-04-18 10:09:00,848 p=3338 u=dom n=ansible | db : Config database ---------------------------------------------------- 1.08s
+2021-04-18 10:09:00,849 p=3338 u=dom n=ansible | db : mysql restart ------------------------------------------------------ 1.01s
+2021-04-18 10:09:00,849 p=3338 u=dom n=ansible | Redmine. Change permissions --------------------------------------------- 0.76s
+2021-04-18 10:09:00,849 p=3338 u=dom n=ansible | Redmine. Clone repository ----------------------------------------------- 0.74s
+2021-04-18 10:09:00,849 p=3338 u=dom n=ansible | redmine : Check content ------------------------------------------------- 0.73s
+2021-04-18 10:09:00,850 p=3338 u=dom n=ansible | db : Configuring user priviliges ---------------------------------------- 0.73s
+2021-04-18 10:09:00,850 p=3338 u=dom n=ansible | db : Configuring encoding DB -------------------------------------------- 0.72s
+2021-04-18 10:09:00,850 p=3338 u=dom n=ansible | Redmine. Change permissions --------------------------------------------- 0.62s
+2021-04-18 10:09:00,850 p=3338 u=dom n=ansible | redmine : Session store secret generation ------------------------------- 0.61s
+2021-04-18 10:09:00,850 p=3338 u=dom n=ansible | redmine : Add redmine-14.sa to host file -------------------------------- 0.53s
+2021-04-18 10:09:00,851 p=3338 u=dom n=ansible | redmine : apache restart ------------------------------------------------ 0.00s
+2021-04-18 10:09:00,851 p=3338 u=dom n=ansible | Playbook run took 0 days, 0 hours, 0 minutes, 32 seconds
+2021-04-18 10:10:25,166 p=3655 u=dom n=ansible | PLAY [redmine] *****************************************************************
+2021-04-18 10:10:25,179 p=3655 u=dom n=ansible | TASK [Gathering Facts] *********************************************************
+2021-04-18 10:10:25,179 p=3655 u=dom n=ansible | Sunday 18 April 2021  10:10:25 +0200 (0:00:00.024)       0:00:00.024 ********** 
+2021-04-18 10:10:27,565 p=3655 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:10:27,587 p=3655 u=dom n=ansible | TASK [Redmine. Install packages] ***********************************************
+2021-04-18 10:10:27,587 p=3655 u=dom n=ansible | Sunday 18 April 2021  10:10:27 +0200 (0:00:02.408)       0:00:02.432 ********** 
+2021-04-18 10:10:29,408 p=3655 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:10:29,425 p=3655 u=dom n=ansible | TASK [Redmine. Clone repository] ***********************************************
+2021-04-18 10:10:29,425 p=3655 u=dom n=ansible | Sunday 18 April 2021  10:10:29 +0200 (0:00:01.837)       0:00:04.270 ********** 
+2021-04-18 10:10:30,088 p=3655 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:10:30,107 p=3655 u=dom n=ansible | TASK [Redmine. Change permissions] *********************************************
+2021-04-18 10:10:30,107 p=3655 u=dom n=ansible | Sunday 18 April 2021  10:10:30 +0200 (0:00:00.681)       0:00:04.952 ********** 
+2021-04-18 10:10:30,781 p=3655 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:10:30,807 p=3655 u=dom n=ansible | TASK [Redmine. Change permissions] *********************************************
+2021-04-18 10:10:30,808 p=3655 u=dom n=ansible | Sunday 18 April 2021  10:10:30 +0200 (0:00:00.700)       0:00:05.652 ********** 
+2021-04-18 10:10:31,315 p=3655 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:10:31,391 p=3655 u=dom n=ansible | TASK [db : MySQL. Install and setup] *******************************************
+2021-04-18 10:10:31,392 p=3655 u=dom n=ansible | Sunday 18 April 2021  10:10:31 +0200 (0:00:00.583)       0:00:06.236 ********** 
+2021-04-18 10:10:32,491 p=3655 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:10:32,529 p=3655 u=dom n=ansible | TASK [db : Configuring encoding DB] ********************************************
+2021-04-18 10:10:32,529 p=3655 u=dom n=ansible | Sunday 18 April 2021  10:10:32 +0200 (0:00:01.137)       0:00:07.374 ********** 
+2021-04-18 10:10:33,227 p=3655 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:10:33,269 p=3655 u=dom n=ansible | TASK [db : Configuring user priviliges] ****************************************
+2021-04-18 10:10:33,269 p=3655 u=dom n=ansible | Sunday 18 April 2021  10:10:33 +0200 (0:00:00.739)       0:00:08.114 ********** 
+2021-04-18 10:10:33,924 p=3655 u=dom n=ansible | [WARNING]: Module did not set no_log for update_password
+
+2021-04-18 10:10:33,924 p=3655 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:10:33,947 p=3655 u=dom n=ansible | TASK [db : Config database] ****************************************************
+2021-04-18 10:10:33,947 p=3655 u=dom n=ansible | Sunday 18 April 2021  10:10:33 +0200 (0:00:00.678)       0:00:08.792 ********** 
+2021-04-18 10:10:34,769 p=3655 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:10:34,803 p=3655 u=dom n=ansible | TASK [redmine : Redmine. Setup 01] *********************************************
+2021-04-18 10:10:34,804 p=3655 u=dom n=ansible | Sunday 18 April 2021  10:10:34 +0200 (0:00:00.856)       0:00:09.648 ********** 
+2021-04-18 10:10:45,192 p=3655 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:10:45,228 p=3655 u=dom n=ansible | TASK [redmine : Session store secret generation] *******************************
+2021-04-18 10:10:45,229 p=3655 u=dom n=ansible | Sunday 18 April 2021  10:10:45 +0200 (0:00:10.425)       0:00:20.073 ********** 
+2021-04-18 10:10:45,723 p=3655 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:10:45,741 p=3655 u=dom n=ansible | TASK [redmine : Redmine. Setup 02] *********************************************
+2021-04-18 10:10:45,741 p=3655 u=dom n=ansible | Sunday 18 April 2021  10:10:45 +0200 (0:00:00.512)       0:00:20.586 ********** 
+2021-04-18 10:10:53,949 p=3655 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:10:53,976 p=3655 u=dom n=ansible | TASK [redmine : Configuration files for virtualhost] ***************************
+2021-04-18 10:10:53,977 p=3655 u=dom n=ansible | Sunday 18 April 2021  10:10:53 +0200 (0:00:08.235)       0:00:28.821 ********** 
+2021-04-18 10:10:55,060 p=3655 u=dom n=ansible | changed: [redmine]
+2021-04-18 10:10:55,125 p=3655 u=dom n=ansible | TASK [redmine : Add redmine-5.sa to host file] *********************************
+2021-04-18 10:10:55,125 p=3655 u=dom n=ansible | Sunday 18 April 2021  10:10:55 +0200 (0:00:01.148)       0:00:29.970 ********** 
+2021-04-18 10:10:55,792 p=3655 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:10:55,836 p=3655 u=dom n=ansible | TASK [redmine : Check content] *************************************************
+2021-04-18 10:10:55,836 p=3655 u=dom n=ansible | Sunday 18 April 2021  10:10:55 +0200 (0:00:00.710)       0:00:30.680 ********** 
+2021-04-18 10:10:56,515 p=3655 u=dom n=ansible | fatal: [redmine]: FAILED! => {"changed": false, "connection": "close", "content": "<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\">\n<html><head>\n<title>403 Forbidden</title>\n</head><body>\n<h1>Forbidden</h1>\n<p>You don't have permission to access this resource.</p>\n<hr>\n<address>Apache/2.4.18 (Ubuntu) Server at redmine-5.sa Port 80</address>\n</body></html>\n", "content_length": "277", "content_type": "text/html; charset=iso-8859-1", "date": "Sun, 18 Apr 2021 08:10:56 GMT", "elapsed": 0, "failed_when_result": true, "msg": "Status code was 403 and not [200]: HTTP Error 403: Forbidden", "redirected": false, "server": "Apache/2.4.18 (Ubuntu)", "status": 403, "url": "http://redmine-5.sa"}
+2021-04-18 10:10:56,517 p=3655 u=dom n=ansible | RUNNING HANDLER [redmine : apache restart] *************************************
+2021-04-18 10:10:56,518 p=3655 u=dom n=ansible | Sunday 18 April 2021  10:10:56 +0200 (0:00:00.681)       0:00:31.362 ********** 
+2021-04-18 10:10:56,521 p=3655 u=dom n=ansible | PLAY RECAP *********************************************************************
+2021-04-18 10:10:56,522 p=3655 u=dom n=ansible | redmine                    : ok=14   changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2021-04-18 10:10:56,522 p=3655 u=dom n=ansible | Sunday 18 April 2021  10:10:56 +0200 (0:00:00.004)       0:00:31.367 ********** 
+2021-04-18 10:10:56,522 p=3655 u=dom n=ansible | =============================================================================== 
+2021-04-18 10:10:56,522 p=3655 u=dom n=ansible | redmine : Redmine. Setup 01 -------------------------------------------- 10.43s
+2021-04-18 10:10:56,523 p=3655 u=dom n=ansible | redmine : Redmine. Setup 02 --------------------------------------------- 8.24s
+2021-04-18 10:10:56,523 p=3655 u=dom n=ansible | Gathering Facts --------------------------------------------------------- 2.41s
+2021-04-18 10:10:56,523 p=3655 u=dom n=ansible | Redmine. Install packages ----------------------------------------------- 1.84s
+2021-04-18 10:10:56,523 p=3655 u=dom n=ansible | redmine : Configuration files for virtualhost --------------------------- 1.15s
+2021-04-18 10:10:56,523 p=3655 u=dom n=ansible | db : MySQL. Install and setup ------------------------------------------- 1.14s
+2021-04-18 10:10:56,523 p=3655 u=dom n=ansible | db : Config database ---------------------------------------------------- 0.86s
+2021-04-18 10:10:56,523 p=3655 u=dom n=ansible | db : Configuring encoding DB -------------------------------------------- 0.74s
+2021-04-18 10:10:56,524 p=3655 u=dom n=ansible | redmine : Add redmine-5.sa to host file --------------------------------- 0.71s
+2021-04-18 10:10:56,524 p=3655 u=dom n=ansible | Redmine. Change permissions --------------------------------------------- 0.70s
+2021-04-18 10:10:56,524 p=3655 u=dom n=ansible | redmine : Check content ------------------------------------------------- 0.68s
+2021-04-18 10:10:56,524 p=3655 u=dom n=ansible | Redmine. Clone repository ----------------------------------------------- 0.68s
+2021-04-18 10:10:56,524 p=3655 u=dom n=ansible | db : Configuring user priviliges ---------------------------------------- 0.68s
+2021-04-18 10:10:56,524 p=3655 u=dom n=ansible | Redmine. Change permissions --------------------------------------------- 0.58s
+2021-04-18 10:10:56,525 p=3655 u=dom n=ansible | redmine : Session store secret generation ------------------------------- 0.51s
+2021-04-18 10:10:56,525 p=3655 u=dom n=ansible | redmine : apache restart ------------------------------------------------ 0.00s
+2021-04-18 10:10:56,525 p=3655 u=dom n=ansible | Playbook run took 0 days, 0 hours, 0 minutes, 31 seconds
+2021-04-18 10:15:54,305 p=4215 u=dom n=ansible | PLAY [redmine] *****************************************************************
+2021-04-18 10:15:54,318 p=4215 u=dom n=ansible | TASK [Gathering Facts] *********************************************************
+2021-04-18 10:15:54,319 p=4215 u=dom n=ansible | Sunday 18 April 2021  10:15:54 +0200 (0:00:00.024)       0:00:00.025 ********** 
+2021-04-18 10:15:57,062 p=4215 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:15:57,084 p=4215 u=dom n=ansible | TASK [Redmine. Install packages] ***********************************************
+2021-04-18 10:15:57,084 p=4215 u=dom n=ansible | Sunday 18 April 2021  10:15:57 +0200 (0:00:02.765)       0:00:02.790 ********** 
+2021-04-18 10:15:59,525 p=4215 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:15:59,565 p=4215 u=dom n=ansible | TASK [Redmine. Clone repository] ***********************************************
+2021-04-18 10:15:59,565 p=4215 u=dom n=ansible | Sunday 18 April 2021  10:15:59 +0200 (0:00:02.481)       0:00:05.271 ********** 
+2021-04-18 10:16:00,280 p=4215 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:16:00,319 p=4215 u=dom n=ansible | TASK [Redmine. Change permissions] *********************************************
+2021-04-18 10:16:00,319 p=4215 u=dom n=ansible | Sunday 18 April 2021  10:16:00 +0200 (0:00:00.753)       0:00:06.025 ********** 
+2021-04-18 10:16:01,053 p=4215 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:16:01,090 p=4215 u=dom n=ansible | TASK [Redmine. Change permissions] *********************************************
+2021-04-18 10:16:01,090 p=4215 u=dom n=ansible | Sunday 18 April 2021  10:16:01 +0200 (0:00:00.771)       0:00:06.796 ********** 
+2021-04-18 10:16:01,706 p=4215 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:16:01,746 p=4215 u=dom n=ansible | TASK [db : MySQL. Install and setup] *******************************************
+2021-04-18 10:16:01,746 p=4215 u=dom n=ansible | Sunday 18 April 2021  10:16:01 +0200 (0:00:00.655)       0:00:07.452 ********** 
+2021-04-18 10:16:02,732 p=4215 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:16:02,768 p=4215 u=dom n=ansible | TASK [db : Configuring encoding DB] ********************************************
+2021-04-18 10:16:02,768 p=4215 u=dom n=ansible | Sunday 18 April 2021  10:16:02 +0200 (0:00:01.021)       0:00:08.474 ********** 
+2021-04-18 10:16:03,465 p=4215 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:16:03,499 p=4215 u=dom n=ansible | TASK [db : Configuring user priviliges] ****************************************
+2021-04-18 10:16:03,499 p=4215 u=dom n=ansible | Sunday 18 April 2021  10:16:03 +0200 (0:00:00.730)       0:00:09.205 ********** 
+2021-04-18 10:16:04,287 p=4215 u=dom n=ansible | [WARNING]: Module did not set no_log for update_password
+
+2021-04-18 10:16:04,288 p=4215 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:16:04,327 p=4215 u=dom n=ansible | TASK [db : Config database] ****************************************************
+2021-04-18 10:16:04,327 p=4215 u=dom n=ansible | Sunday 18 April 2021  10:16:04 +0200 (0:00:00.827)       0:00:10.033 ********** 
+2021-04-18 10:16:05,341 p=4215 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:16:05,375 p=4215 u=dom n=ansible | TASK [redmine : Redmine. Setup 01] *********************************************
+2021-04-18 10:16:05,376 p=4215 u=dom n=ansible | Sunday 18 April 2021  10:16:05 +0200 (0:00:01.048)       0:00:11.081 ********** 
+2021-04-18 10:16:16,527 p=4215 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:16:16,558 p=4215 u=dom n=ansible | TASK [redmine : Session store secret generation] *******************************
+2021-04-18 10:16:16,558 p=4215 u=dom n=ansible | Sunday 18 April 2021  10:16:16 +0200 (0:00:11.182)       0:00:22.264 ********** 
+2021-04-18 10:16:17,302 p=4215 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:16:17,326 p=4215 u=dom n=ansible | TASK [redmine : Redmine. Setup 02] *********************************************
+2021-04-18 10:16:17,326 p=4215 u=dom n=ansible | Sunday 18 April 2021  10:16:17 +0200 (0:00:00.767)       0:00:23.032 ********** 
+2021-04-18 10:16:27,764 p=4215 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:16:27,803 p=4215 u=dom n=ansible | TASK [redmine : Configuration files for virtualhost] ***************************
+2021-04-18 10:16:27,803 p=4215 u=dom n=ansible | Sunday 18 April 2021  10:16:27 +0200 (0:00:10.477)       0:00:33.509 ********** 
+2021-04-18 10:16:28,690 p=4215 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:16:28,741 p=4215 u=dom n=ansible | TASK [redmine : Add redmine-5.sa to host file] *********************************
+2021-04-18 10:16:28,741 p=4215 u=dom n=ansible | Sunday 18 April 2021  10:16:28 +0200 (0:00:00.938)       0:00:34.447 ********** 
+2021-04-18 10:16:29,262 p=4215 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:16:29,291 p=4215 u=dom n=ansible | TASK [redmine : Check content] *************************************************
+2021-04-18 10:16:29,291 p=4215 u=dom n=ansible | Sunday 18 April 2021  10:16:29 +0200 (0:00:00.549)       0:00:34.997 ********** 
+2021-04-18 10:16:29,983 p=4215 u=dom n=ansible | fatal: [redmine]: FAILED! => {"changed": false, "connection": "close", "content": "<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\">\n<html><head>\n<title>403 Forbidden</title>\n</head><body>\n<h1>Forbidden</h1>\n<p>You don't have permission to access this resource.</p>\n<hr>\n<address>Apache/2.4.18 (Ubuntu) Server at redmine-5.sa Port 80</address>\n</body></html>\n", "content_length": "277", "content_type": "text/html; charset=iso-8859-1", "date": "Sun, 18 Apr 2021 08:16:29 GMT", "elapsed": 0, "failed_when_result": true, "msg": "Status code was 403 and not [200]: HTTP Error 403: Forbidden", "redirected": false, "server": "Apache/2.4.18 (Ubuntu)", "status": 403, "url": "http://redmine-5.sa"}
+2021-04-18 10:16:29,985 p=4215 u=dom n=ansible | PLAY RECAP *********************************************************************
+2021-04-18 10:16:29,985 p=4215 u=dom n=ansible | redmine                    : ok=14   changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2021-04-18 10:16:29,986 p=4215 u=dom n=ansible | Sunday 18 April 2021  10:16:29 +0200 (0:00:00.694)       0:00:35.691 ********** 
+2021-04-18 10:16:29,986 p=4215 u=dom n=ansible | =============================================================================== 
+2021-04-18 10:16:29,986 p=4215 u=dom n=ansible | redmine : Redmine. Setup 01 -------------------------------------------- 11.18s
+2021-04-18 10:16:29,986 p=4215 u=dom n=ansible | redmine : Redmine. Setup 02 -------------------------------------------- 10.48s
+2021-04-18 10:16:29,986 p=4215 u=dom n=ansible | Gathering Facts --------------------------------------------------------- 2.77s
+2021-04-18 10:16:29,986 p=4215 u=dom n=ansible | Redmine. Install packages ----------------------------------------------- 2.48s
+2021-04-18 10:16:29,987 p=4215 u=dom n=ansible | db : Config database ---------------------------------------------------- 1.05s
+2021-04-18 10:16:29,987 p=4215 u=dom n=ansible | db : MySQL. Install and setup ------------------------------------------- 1.02s
+2021-04-18 10:16:29,987 p=4215 u=dom n=ansible | redmine : Configuration files for virtualhost --------------------------- 0.94s
+2021-04-18 10:16:29,987 p=4215 u=dom n=ansible | db : Configuring user priviliges ---------------------------------------- 0.83s
+2021-04-18 10:16:29,987 p=4215 u=dom n=ansible | Redmine. Change permissions --------------------------------------------- 0.77s
+2021-04-18 10:16:29,987 p=4215 u=dom n=ansible | redmine : Session store secret generation ------------------------------- 0.77s
+2021-04-18 10:16:29,987 p=4215 u=dom n=ansible | Redmine. Clone repository ----------------------------------------------- 0.75s
+2021-04-18 10:16:29,988 p=4215 u=dom n=ansible | db : Configuring encoding DB -------------------------------------------- 0.73s
+2021-04-18 10:16:29,988 p=4215 u=dom n=ansible | redmine : Check content ------------------------------------------------- 0.69s
+2021-04-18 10:16:29,988 p=4215 u=dom n=ansible | Redmine. Change permissions --------------------------------------------- 0.66s
+2021-04-18 10:16:29,988 p=4215 u=dom n=ansible | redmine : Add redmine-5.sa to host file --------------------------------- 0.55s
+2021-04-18 10:16:29,988 p=4215 u=dom n=ansible | Playbook run took 0 days, 0 hours, 0 minutes, 35 seconds
+2021-04-18 10:21:51,062 p=4728 u=dom n=ansible | PLAY [redmine] *****************************************************************
+2021-04-18 10:21:51,074 p=4728 u=dom n=ansible | TASK [Gathering Facts] *********************************************************
+2021-04-18 10:21:51,074 p=4728 u=dom n=ansible | Sunday 18 April 2021  10:21:51 +0200 (0:00:00.024)       0:00:00.024 ********** 
+2021-04-18 10:21:53,619 p=4728 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:21:53,642 p=4728 u=dom n=ansible | TASK [Redmine. Install packages] ***********************************************
+2021-04-18 10:21:53,642 p=4728 u=dom n=ansible | Sunday 18 April 2021  10:21:53 +0200 (0:00:02.567)       0:00:02.591 ********** 
+2021-04-18 10:21:56,089 p=4728 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:21:56,130 p=4728 u=dom n=ansible | TASK [Redmine. Clone repository] ***********************************************
+2021-04-18 10:21:56,131 p=4728 u=dom n=ansible | Sunday 18 April 2021  10:21:56 +0200 (0:00:02.488)       0:00:05.080 ********** 
+2021-04-18 10:21:56,922 p=4728 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:21:56,958 p=4728 u=dom n=ansible | TASK [Redmine. Change permissions] *********************************************
+2021-04-18 10:21:56,958 p=4728 u=dom n=ansible | Sunday 18 April 2021  10:21:56 +0200 (0:00:00.827)       0:00:05.907 ********** 
+2021-04-18 10:21:57,664 p=4728 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:21:57,705 p=4728 u=dom n=ansible | TASK [Redmine. Change permissions] *********************************************
+2021-04-18 10:21:57,705 p=4728 u=dom n=ansible | Sunday 18 April 2021  10:21:57 +0200 (0:00:00.747)       0:00:06.655 ********** 
+2021-04-18 10:21:58,303 p=4728 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:21:58,342 p=4728 u=dom n=ansible | TASK [db : MySQL. Install and setup] *******************************************
+2021-04-18 10:21:58,342 p=4728 u=dom n=ansible | Sunday 18 April 2021  10:21:58 +0200 (0:00:00.637)       0:00:07.292 ********** 
+2021-04-18 10:21:59,467 p=4728 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:21:59,502 p=4728 u=dom n=ansible | TASK [db : Configuring encoding DB] ********************************************
+2021-04-18 10:21:59,503 p=4728 u=dom n=ansible | Sunday 18 April 2021  10:21:59 +0200 (0:00:01.160)       0:00:08.452 ********** 
+2021-04-18 10:22:00,284 p=4728 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:22:00,326 p=4728 u=dom n=ansible | TASK [db : Configuring user priviliges] ****************************************
+2021-04-18 10:22:00,326 p=4728 u=dom n=ansible | Sunday 18 April 2021  10:22:00 +0200 (0:00:00.823)       0:00:09.276 ********** 
+2021-04-18 10:22:01,057 p=4728 u=dom n=ansible | [WARNING]: Module did not set no_log for update_password
+
+2021-04-18 10:22:01,058 p=4728 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:22:01,092 p=4728 u=dom n=ansible | TASK [db : Config database] ****************************************************
+2021-04-18 10:22:01,093 p=4728 u=dom n=ansible | Sunday 18 April 2021  10:22:01 +0200 (0:00:00.766)       0:00:10.042 ********** 
+2021-04-18 10:22:01,973 p=4728 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:22:02,012 p=4728 u=dom n=ansible | TASK [redmine : Redmine. Setup 01] *********************************************
+2021-04-18 10:22:02,012 p=4728 u=dom n=ansible | Sunday 18 April 2021  10:22:02 +0200 (0:00:00.919)       0:00:10.961 ********** 
+2021-04-18 10:22:13,420 p=4728 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:22:13,460 p=4728 u=dom n=ansible | TASK [redmine : Session store secret generation] *******************************
+2021-04-18 10:22:13,460 p=4728 u=dom n=ansible | Sunday 18 April 2021  10:22:13 +0200 (0:00:11.448)       0:00:22.410 ********** 
+2021-04-18 10:22:14,103 p=4728 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:22:14,143 p=4728 u=dom n=ansible | TASK [redmine : Redmine. Setup 02] *********************************************
+2021-04-18 10:22:14,144 p=4728 u=dom n=ansible | Sunday 18 April 2021  10:22:14 +0200 (0:00:00.683)       0:00:23.093 ********** 
+2021-04-18 10:22:25,108 p=4728 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:22:25,146 p=4728 u=dom n=ansible | TASK [redmine : Configuration files for virtualhost] ***************************
+2021-04-18 10:22:25,146 p=4728 u=dom n=ansible | Sunday 18 April 2021  10:22:25 +0200 (0:00:11.002)       0:00:34.095 ********** 
+2021-04-18 10:22:26,070 p=4728 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:22:26,128 p=4728 u=dom n=ansible | TASK [redmine : Add redmine-5.sa to host file] *********************************
+2021-04-18 10:22:26,128 p=4728 u=dom n=ansible | Sunday 18 April 2021  10:22:26 +0200 (0:00:00.982)       0:00:35.078 ********** 
+2021-04-18 10:22:26,701 p=4728 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:22:26,738 p=4728 u=dom n=ansible | TASK [redmine : Check content] *************************************************
+2021-04-18 10:22:26,738 p=4728 u=dom n=ansible | Sunday 18 April 2021  10:22:26 +0200 (0:00:00.609)       0:00:35.688 ********** 
+2021-04-18 10:22:27,501 p=4728 u=dom n=ansible | fatal: [redmine]: FAILED! => {"changed": false, "connection": "close", "content": "<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\">\n<html><head>\n<title>403 Forbidden</title>\n</head><body>\n<h1>Forbidden</h1>\n<p>You don't have permission to access this resource.</p>\n<hr>\n<address>Apache/2.4.18 (Ubuntu) Server at redmine-5.sa Port 80</address>\n</body></html>\n", "content_length": "277", "content_type": "text/html; charset=iso-8859-1", "date": "Sun, 18 Apr 2021 08:22:27 GMT", "elapsed": 0, "failed_when_result": true, "msg": "Status code was 403 and not [200]: HTTP Error 403: Forbidden", "redirected": false, "server": "Apache/2.4.18 (Ubuntu)", "status": 403, "url": "http://redmine-5.sa"}
+2021-04-18 10:22:27,505 p=4728 u=dom n=ansible | PLAY RECAP *********************************************************************
+2021-04-18 10:22:27,505 p=4728 u=dom n=ansible | redmine                    : ok=14   changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2021-04-18 10:22:27,506 p=4728 u=dom n=ansible | Sunday 18 April 2021  10:22:27 +0200 (0:00:00.767)       0:00:36.455 ********** 
+2021-04-18 10:22:27,506 p=4728 u=dom n=ansible | =============================================================================== 
+2021-04-18 10:22:27,506 p=4728 u=dom n=ansible | redmine : Redmine. Setup 01 -------------------------------------------- 11.45s
+2021-04-18 10:22:27,506 p=4728 u=dom n=ansible | redmine : Redmine. Setup 02 -------------------------------------------- 11.00s
+2021-04-18 10:22:27,506 p=4728 u=dom n=ansible | Gathering Facts --------------------------------------------------------- 2.57s
+2021-04-18 10:22:27,506 p=4728 u=dom n=ansible | Redmine. Install packages ----------------------------------------------- 2.49s
+2021-04-18 10:22:27,506 p=4728 u=dom n=ansible | db : MySQL. Install and setup ------------------------------------------- 1.16s
+2021-04-18 10:22:27,507 p=4728 u=dom n=ansible | redmine : Configuration files for virtualhost --------------------------- 0.98s
+2021-04-18 10:22:27,507 p=4728 u=dom n=ansible | db : Config database ---------------------------------------------------- 0.92s
+2021-04-18 10:22:27,507 p=4728 u=dom n=ansible | Redmine. Clone repository ----------------------------------------------- 0.83s
+2021-04-18 10:22:27,507 p=4728 u=dom n=ansible | db : Configuring encoding DB -------------------------------------------- 0.82s
+2021-04-18 10:22:27,507 p=4728 u=dom n=ansible | redmine : Check content ------------------------------------------------- 0.77s
+2021-04-18 10:22:27,507 p=4728 u=dom n=ansible | db : Configuring user priviliges ---------------------------------------- 0.77s
+2021-04-18 10:22:27,507 p=4728 u=dom n=ansible | Redmine. Change permissions --------------------------------------------- 0.75s
+2021-04-18 10:22:27,508 p=4728 u=dom n=ansible | redmine : Session store secret generation ------------------------------- 0.68s
+2021-04-18 10:22:27,508 p=4728 u=dom n=ansible | Redmine. Change permissions --------------------------------------------- 0.64s
+2021-04-18 10:22:27,508 p=4728 u=dom n=ansible | redmine : Add redmine-5.sa to host file --------------------------------- 0.61s
+2021-04-18 10:22:27,508 p=4728 u=dom n=ansible | Playbook run took 0 days, 0 hours, 0 minutes, 36 seconds
+2021-04-18 10:25:10,525 p=5044 u=dom n=ansible | PLAY [redmine] *****************************************************************
+2021-04-18 10:25:10,538 p=5044 u=dom n=ansible | TASK [Gathering Facts] *********************************************************
+2021-04-18 10:25:10,538 p=5044 u=dom n=ansible | Sunday 18 April 2021  10:25:10 +0200 (0:00:00.025)       0:00:00.025 ********** 
+2021-04-18 10:25:12,933 p=5044 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:25:12,956 p=5044 u=dom n=ansible | TASK [Redmine. Install packages] ***********************************************
+2021-04-18 10:25:12,956 p=5044 u=dom n=ansible | Sunday 18 April 2021  10:25:12 +0200 (0:00:02.417)       0:00:02.442 ********** 
+2021-04-18 10:25:15,500 p=5044 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:25:15,516 p=5044 u=dom n=ansible | TASK [Redmine. Clone repository] ***********************************************
+2021-04-18 10:25:15,516 p=5044 u=dom n=ansible | Sunday 18 April 2021  10:25:15 +0200 (0:00:02.559)       0:00:05.002 ********** 
+2021-04-18 10:25:16,172 p=5044 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:25:16,187 p=5044 u=dom n=ansible | TASK [Redmine. Change permissions] *********************************************
+2021-04-18 10:25:16,187 p=5044 u=dom n=ansible | Sunday 18 April 2021  10:25:16 +0200 (0:00:00.671)       0:00:05.673 ********** 
+2021-04-18 10:25:16,868 p=5044 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:25:16,883 p=5044 u=dom n=ansible | TASK [Redmine. Change permissions] *********************************************
+2021-04-18 10:25:16,883 p=5044 u=dom n=ansible | Sunday 18 April 2021  10:25:16 +0200 (0:00:00.695)       0:00:06.369 ********** 
+2021-04-18 10:25:17,352 p=5044 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:25:17,367 p=5044 u=dom n=ansible | TASK [db : MySQL. Install and setup] *******************************************
+2021-04-18 10:25:17,367 p=5044 u=dom n=ansible | Sunday 18 April 2021  10:25:17 +0200 (0:00:00.484)       0:00:06.854 ********** 
+2021-04-18 10:25:18,316 p=5044 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:25:18,345 p=5044 u=dom n=ansible | TASK [db : Configuring encoding DB] ********************************************
+2021-04-18 10:25:18,346 p=5044 u=dom n=ansible | Sunday 18 April 2021  10:25:18 +0200 (0:00:00.978)       0:00:07.832 ********** 
+2021-04-18 10:25:19,064 p=5044 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:25:19,079 p=5044 u=dom n=ansible | TASK [db : Configuring user priviliges] ****************************************
+2021-04-18 10:25:19,079 p=5044 u=dom n=ansible | Sunday 18 April 2021  10:25:19 +0200 (0:00:00.733)       0:00:08.565 ********** 
+2021-04-18 10:25:19,684 p=5044 u=dom n=ansible | [WARNING]: Module did not set no_log for update_password
+
+2021-04-18 10:25:19,684 p=5044 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:25:19,708 p=5044 u=dom n=ansible | TASK [db : Config database] ****************************************************
+2021-04-18 10:25:19,708 p=5044 u=dom n=ansible | Sunday 18 April 2021  10:25:19 +0200 (0:00:00.628)       0:00:09.194 ********** 
+2021-04-18 10:25:20,444 p=5044 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:25:20,459 p=5044 u=dom n=ansible | TASK [redmine : Redmine. Setup 01] *********************************************
+2021-04-18 10:25:20,459 p=5044 u=dom n=ansible | Sunday 18 April 2021  10:25:20 +0200 (0:00:00.751)       0:00:09.946 ********** 
+2021-04-18 10:25:36,204 p=5044 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:25:36,244 p=5044 u=dom n=ansible | TASK [redmine : Session store secret generation] *******************************
+2021-04-18 10:25:36,244 p=5044 u=dom n=ansible | Sunday 18 April 2021  10:25:36 +0200 (0:00:15.784)       0:00:25.730 ********** 
+2021-04-18 10:25:36,856 p=5044 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:25:36,891 p=5044 u=dom n=ansible | TASK [redmine : Redmine. Setup 02] *********************************************
+2021-04-18 10:25:36,891 p=5044 u=dom n=ansible | Sunday 18 April 2021  10:25:36 +0200 (0:00:00.646)       0:00:26.377 ********** 
+2021-04-18 10:25:45,909 p=5044 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:25:45,944 p=5044 u=dom n=ansible | TASK [redmine : Configuration files for virtualhost] ***************************
+2021-04-18 10:25:45,944 p=5044 u=dom n=ansible | Sunday 18 April 2021  10:25:45 +0200 (0:00:09.053)       0:00:35.430 ********** 
+2021-04-18 10:25:46,829 p=5044 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:25:46,869 p=5044 u=dom n=ansible | TASK [redmine : Add redmine-5.sa to host file] *********************************
+2021-04-18 10:25:46,869 p=5044 u=dom n=ansible | Sunday 18 April 2021  10:25:46 +0200 (0:00:00.925)       0:00:36.356 ********** 
+2021-04-18 10:25:47,327 p=5044 u=dom n=ansible | ok: [redmine]
+2021-04-18 10:25:47,362 p=5044 u=dom n=ansible | TASK [redmine : Check content] *************************************************
+2021-04-18 10:25:47,363 p=5044 u=dom n=ansible | Sunday 18 April 2021  10:25:47 +0200 (0:00:00.493)       0:00:36.849 ********** 
+2021-04-18 10:25:48,088 p=5044 u=dom n=ansible | fatal: [redmine]: FAILED! => {"changed": false, "connection": "close", "content": "<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\">\n<html><head>\n<title>403 Forbidden</title>\n</head><body>\n<h1>Forbidden</h1>\n<p>You don't have permission to access this resource.</p>\n<hr>\n<address>Apache/2.4.18 (Ubuntu) Server at redmine-5.sa Port 80</address>\n</body></html>\n", "content_length": "277", "content_type": "text/html; charset=iso-8859-1", "date": "Sun, 18 Apr 2021 08:25:47 GMT", "elapsed": 0, "failed_when_result": true, "msg": "Status code was 403 and not [200]: HTTP Error 403: Forbidden", "redirected": false, "server": "Apache/2.4.18 (Ubuntu)", "status": 403, "url": "http://redmine-5.sa"}
+2021-04-18 10:25:48,092 p=5044 u=dom n=ansible | PLAY RECAP *********************************************************************
+2021-04-18 10:25:48,092 p=5044 u=dom n=ansible | redmine                    : ok=14   changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2021-04-18 10:25:48,093 p=5044 u=dom n=ansible | Sunday 18 April 2021  10:25:48 +0200 (0:00:00.730)       0:00:37.579 ********** 
+2021-04-18 10:25:48,093 p=5044 u=dom n=ansible | =============================================================================== 
+2021-04-18 10:25:48,094 p=5044 u=dom n=ansible | redmine : Redmine. Setup 01 -------------------------------------------- 15.78s
+2021-04-18 10:25:48,094 p=5044 u=dom n=ansible | redmine : Redmine. Setup 02 --------------------------------------------- 9.05s
+2021-04-18 10:25:48,094 p=5044 u=dom n=ansible | Redmine. Install packages ----------------------------------------------- 2.56s
+2021-04-18 10:25:48,095 p=5044 u=dom n=ansible | Gathering Facts --------------------------------------------------------- 2.42s
+2021-04-18 10:25:48,095 p=5044 u=dom n=ansible | db : MySQL. Install and setup ------------------------------------------- 0.98s
+2021-04-18 10:25:48,095 p=5044 u=dom n=ansible | redmine : Configuration files for virtualhost --------------------------- 0.93s
+2021-04-18 10:25:48,096 p=5044 u=dom n=ansible | db : Config database ---------------------------------------------------- 0.75s
+2021-04-18 10:25:48,096 p=5044 u=dom n=ansible | db : Configuring encoding DB -------------------------------------------- 0.73s
+2021-04-18 10:25:48,096 p=5044 u=dom n=ansible | redmine : Check content ------------------------------------------------- 0.73s
+2021-04-18 10:25:48,097 p=5044 u=dom n=ansible | Redmine. Change permissions --------------------------------------------- 0.70s
+2021-04-18 10:25:48,097 p=5044 u=dom n=ansible | Redmine. Clone repository ----------------------------------------------- 0.67s
+2021-04-18 10:25:48,097 p=5044 u=dom n=ansible | redmine : Session store secret generation ------------------------------- 0.65s
+2021-04-18 10:25:48,098 p=5044 u=dom n=ansible | db : Configuring user priviliges ---------------------------------------- 0.63s
+2021-04-18 10:25:48,098 p=5044 u=dom n=ansible | redmine : Add redmine-5.sa to host file --------------------------------- 0.49s
+2021-04-18 10:25:48,098 p=5044 u=dom n=ansible | Redmine. Change permissions --------------------------------------------- 0.48s
+2021-04-18 10:25:48,099 p=5044 u=dom n=ansible | Playbook run took 0 days, 0 hours, 0 minutes, 37 seconds
+2021-04-18 11:13:55,290 p=82874 u=dom n=ansible | PLAY [redmine] *****************************************************************
+2021-04-18 11:13:55,303 p=82874 u=dom n=ansible | TASK [Gathering Facts] *********************************************************
+2021-04-18 11:13:55,303 p=82874 u=dom n=ansible | Sunday 18 April 2021  11:13:55 +0200 (0:00:00.024)       0:00:00.024 ********** 
+2021-04-18 11:13:58,237 p=82874 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:13:58,260 p=82874 u=dom n=ansible | TASK [Redmine. Install packages] ***********************************************
+2021-04-18 11:13:58,260 p=82874 u=dom n=ansible | Sunday 18 April 2021  11:13:58 +0200 (0:00:02.956)       0:00:02.981 ********** 
+2021-04-18 11:15:26,682 p=82874 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:15:26,724 p=82874 u=dom n=ansible | TASK [Redmine. Clone repository] ***********************************************
+2021-04-18 11:15:26,724 p=82874 u=dom n=ansible | Sunday 18 April 2021  11:15:26 +0200 (0:01:28.463)       0:01:31.445 ********** 
+2021-04-18 11:15:27,586 p=82874 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:15:27,624 p=82874 u=dom n=ansible | TASK [Redmine. Change permissions] *********************************************
+2021-04-18 11:15:27,624 p=82874 u=dom n=ansible | Sunday 18 April 2021  11:15:27 +0200 (0:00:00.900)       0:01:32.345 ********** 
+2021-04-18 11:15:28,404 p=82874 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:15:28,446 p=82874 u=dom n=ansible | TASK [Redmine. Change permissions] *********************************************
+2021-04-18 11:15:28,446 p=82874 u=dom n=ansible | Sunday 18 April 2021  11:15:28 +0200 (0:00:00.821)       0:01:33.167 ********** 
+2021-04-18 11:15:29,036 p=82874 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:15:29,080 p=82874 u=dom n=ansible | TASK [db : MySQL. Install and setup] *******************************************
+2021-04-18 11:15:29,080 p=82874 u=dom n=ansible | Sunday 18 April 2021  11:15:29 +0200 (0:00:00.634)       0:01:33.801 ********** 
+2021-04-18 11:15:30,159 p=82874 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:15:30,189 p=82874 u=dom n=ansible | TASK [db : Configuring encoding DB] ********************************************
+2021-04-18 11:15:30,189 p=82874 u=dom n=ansible | Sunday 18 April 2021  11:15:30 +0200 (0:00:01.108)       0:01:34.910 ********** 
+2021-04-18 11:15:30,955 p=82874 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:15:30,991 p=82874 u=dom n=ansible | TASK [db : Configuring user priviliges] ****************************************
+2021-04-18 11:15:30,991 p=82874 u=dom n=ansible | Sunday 18 April 2021  11:15:30 +0200 (0:00:00.802)       0:01:35.712 ********** 
+2021-04-18 11:15:32,411 p=82874 u=dom n=ansible | [WARNING]: Module did not set no_log for update_password
+
+2021-04-18 11:15:32,412 p=82874 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:15:32,454 p=82874 u=dom n=ansible | TASK [db : Config database] ****************************************************
+2021-04-18 11:15:32,454 p=82874 u=dom n=ansible | Sunday 18 April 2021  11:15:32 +0200 (0:00:01.463)       0:01:37.175 ********** 
+2021-04-18 11:15:33,694 p=82874 u=dom n=ansible | changed: [redmine]
+2021-04-18 11:15:33,730 p=82874 u=dom n=ansible | TASK [redmine : Redmine. Setup 01] *********************************************
+2021-04-18 11:15:33,730 p=82874 u=dom n=ansible | Sunday 18 April 2021  11:15:33 +0200 (0:00:01.275)       0:01:38.451 ********** 
+2021-04-18 11:15:45,372 p=82874 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:15:45,406 p=82874 u=dom n=ansible | TASK [redmine : Session store secret generation] *******************************
+2021-04-18 11:15:45,406 p=82874 u=dom n=ansible | Sunday 18 April 2021  11:15:45 +0200 (0:00:11.676)       0:01:50.127 ********** 
+2021-04-18 11:15:46,029 p=82874 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:15:46,067 p=82874 u=dom n=ansible | TASK [redmine : Redmine. Setup 02] *********************************************
+2021-04-18 11:15:46,068 p=82874 u=dom n=ansible | Sunday 18 April 2021  11:15:46 +0200 (0:00:00.661)       0:01:50.789 ********** 
+2021-04-18 11:15:56,803 p=82874 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:15:56,864 p=82874 u=dom n=ansible | TASK [redmine : Configuration files for virtualhost] ***************************
+2021-04-18 11:15:56,864 p=82874 u=dom n=ansible | Sunday 18 April 2021  11:15:56 +0200 (0:00:10.796)       0:02:01.585 ********** 
+2021-04-18 11:15:58,047 p=82874 u=dom n=ansible | changed: [redmine]
+2021-04-18 11:15:58,121 p=82874 u=dom n=ansible | TASK [redmine : Add redmine-5.sa to host file] *********************************
+2021-04-18 11:15:58,122 p=82874 u=dom n=ansible | Sunday 18 April 2021  11:15:58 +0200 (0:00:01.257)       0:02:02.843 ********** 
+2021-04-18 11:15:58,748 p=82874 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:15:58,810 p=82874 u=dom n=ansible | TASK [redmine : Check content] *************************************************
+2021-04-18 11:15:58,810 p=82874 u=dom n=ansible | Sunday 18 April 2021  11:15:58 +0200 (0:00:00.688)       0:02:03.531 ********** 
+2021-04-18 11:15:59,551 p=82874 u=dom n=ansible | fatal: [redmine]: FAILED! => {"changed": false, "connection": "close", "content": "<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\">\n<html><head>\n<title>403 Forbidden</title>\n</head><body>\n<h1>Forbidden</h1>\n<p>You don't have permission to access this resource.</p>\n<hr>\n<address>Apache/2.4.18 (Ubuntu) Server at redmine-5.sa Port 80</address>\n</body></html>\n", "content_length": "277", "content_type": "text/html; charset=iso-8859-1", "date": "Sun, 18 Apr 2021 09:15:59 GMT", "elapsed": 0, "failed_when_result": true, "msg": "Status code was 403 and not [200]: HTTP Error 403: Forbidden", "redirected": false, "server": "Apache/2.4.18 (Ubuntu)", "status": 403, "url": "http://redmine-5.sa"}
+2021-04-18 11:15:59,555 p=82874 u=dom n=ansible | RUNNING HANDLER [redmine : apache restart] *************************************
+2021-04-18 11:15:59,555 p=82874 u=dom n=ansible | Sunday 18 April 2021  11:15:59 +0200 (0:00:00.745)       0:02:04.276 ********** 
+2021-04-18 11:15:59,559 p=82874 u=dom n=ansible | PLAY RECAP *********************************************************************
+2021-04-18 11:15:59,559 p=82874 u=dom n=ansible | redmine                    : ok=14   changed=2    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2021-04-18 11:15:59,560 p=82874 u=dom n=ansible | Sunday 18 April 2021  11:15:59 +0200 (0:00:00.004)       0:02:04.281 ********** 
+2021-04-18 11:15:59,560 p=82874 u=dom n=ansible | =============================================================================== 
+2021-04-18 11:15:59,560 p=82874 u=dom n=ansible | Redmine. Install packages ---------------------------------------------- 88.46s
+2021-04-18 11:15:59,561 p=82874 u=dom n=ansible | redmine : Redmine. Setup 01 -------------------------------------------- 11.68s
+2021-04-18 11:15:59,561 p=82874 u=dom n=ansible | redmine : Redmine. Setup 02 -------------------------------------------- 10.80s
+2021-04-18 11:15:59,561 p=82874 u=dom n=ansible | Gathering Facts --------------------------------------------------------- 2.96s
+2021-04-18 11:15:59,561 p=82874 u=dom n=ansible | db : Configuring user priviliges ---------------------------------------- 1.46s
+2021-04-18 11:15:59,561 p=82874 u=dom n=ansible | db : Config database ---------------------------------------------------- 1.28s
+2021-04-18 11:15:59,562 p=82874 u=dom n=ansible | redmine : Configuration files for virtualhost --------------------------- 1.26s
+2021-04-18 11:15:59,562 p=82874 u=dom n=ansible | db : MySQL. Install and setup ------------------------------------------- 1.11s
+2021-04-18 11:15:59,562 p=82874 u=dom n=ansible | Redmine. Clone repository ----------------------------------------------- 0.90s
+2021-04-18 11:15:59,562 p=82874 u=dom n=ansible | Redmine. Change permissions --------------------------------------------- 0.82s
+2021-04-18 11:15:59,563 p=82874 u=dom n=ansible | db : Configuring encoding DB -------------------------------------------- 0.80s
+2021-04-18 11:15:59,563 p=82874 u=dom n=ansible | redmine : Check content ------------------------------------------------- 0.75s
+2021-04-18 11:15:59,563 p=82874 u=dom n=ansible | redmine : Add redmine-5.sa to host file --------------------------------- 0.69s
+2021-04-18 11:15:59,563 p=82874 u=dom n=ansible | redmine : Session store secret generation ------------------------------- 0.66s
+2021-04-18 11:15:59,563 p=82874 u=dom n=ansible | Redmine. Change permissions --------------------------------------------- 0.63s
+2021-04-18 11:15:59,564 p=82874 u=dom n=ansible | redmine : apache restart ------------------------------------------------ 0.00s
+2021-04-18 11:15:59,564 p=82874 u=dom n=ansible | Playbook run took 0 days, 0 hours, 2 minutes, 4 seconds
+2021-04-18 11:18:18,447 p=83267 u=root n=ansible | PLAY [redmine] *****************************************************************
+2021-04-18 11:18:18,460 p=83267 u=root n=ansible | TASK [Gathering Facts] *********************************************************
+2021-04-18 11:18:18,460 p=83267 u=root n=ansible | Sunday 18 April 2021  11:18:18 +0200 (0:00:00.024)       0:00:00.024 ********** 
+2021-04-18 11:20:18,583 p=83267 u=root n=ansible | fatal: [redmine]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 192.168.201.5 port 22: Connection timed out", "unreachable": true}
+2021-04-18 11:20:18,585 p=83267 u=root n=ansible | PLAY RECAP *********************************************************************
+2021-04-18 11:20:18,585 p=83267 u=root n=ansible | redmine                    : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2021-04-18 11:20:18,585 p=83267 u=root n=ansible | Sunday 18 April 2021  11:20:18 +0200 (0:02:00.125)       0:02:00.150 ********** 
+2021-04-18 11:20:18,585 p=83267 u=root n=ansible | =============================================================================== 
+2021-04-18 11:20:18,586 p=83267 u=root n=ansible | Gathering Facts ------------------------------------------------------- 120.13s
+2021-04-18 11:20:18,586 p=83267 u=root n=ansible | Playbook run took 0 days, 0 hours, 2 minutes, 0 seconds
+2021-04-18 11:33:30,083 p=83692 u=dom n=ansible | PLAY [redmine] *****************************************************************
+2021-04-18 11:33:30,096 p=83692 u=dom n=ansible | TASK [Gathering Facts] *********************************************************
+2021-04-18 11:33:30,097 p=83692 u=dom n=ansible | Sunday 18 April 2021  11:33:30 +0200 (0:00:00.025)       0:00:00.025 ********** 
+2021-04-18 11:33:32,632 p=83692 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:33:32,655 p=83692 u=dom n=ansible | TASK [Redmine. Install packages] ***********************************************
+2021-04-18 11:33:32,655 p=83692 u=dom n=ansible | Sunday 18 April 2021  11:33:32 +0200 (0:00:02.558)       0:00:02.583 ********** 
+2021-04-18 11:33:35,028 p=83692 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:33:35,065 p=83692 u=dom n=ansible | TASK [Redmine. Clone repository] ***********************************************
+2021-04-18 11:33:35,065 p=83692 u=dom n=ansible | Sunday 18 April 2021  11:33:35 +0200 (0:00:02.410)       0:00:04.993 ********** 
+2021-04-18 11:33:35,791 p=83692 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:33:35,828 p=83692 u=dom n=ansible | TASK [Redmine. Change permissions] *********************************************
+2021-04-18 11:33:35,828 p=83692 u=dom n=ansible | Sunday 18 April 2021  11:33:35 +0200 (0:00:00.763)       0:00:05.756 ********** 
+2021-04-18 11:33:36,561 p=83692 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:33:36,597 p=83692 u=dom n=ansible | TASK [Redmine. Change permissions] *********************************************
+2021-04-18 11:33:36,597 p=83692 u=dom n=ansible | Sunday 18 April 2021  11:33:36 +0200 (0:00:00.768)       0:00:06.525 ********** 
+2021-04-18 11:33:37,182 p=83692 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:33:37,225 p=83692 u=dom n=ansible | TASK [db : MySQL. Install and setup] *******************************************
+2021-04-18 11:33:37,226 p=83692 u=dom n=ansible | Sunday 18 April 2021  11:33:37 +0200 (0:00:00.628)       0:00:07.154 ********** 
+2021-04-18 11:33:38,249 p=83692 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:33:38,291 p=83692 u=dom n=ansible | TASK [db : Configuring encoding DB] ********************************************
+2021-04-18 11:33:38,292 p=83692 u=dom n=ansible | Sunday 18 April 2021  11:33:38 +0200 (0:00:01.065)       0:00:08.220 ********** 
+2021-04-18 11:33:39,068 p=83692 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:33:39,104 p=83692 u=dom n=ansible | TASK [db : Configuring user priviliges] ****************************************
+2021-04-18 11:33:39,104 p=83692 u=dom n=ansible | Sunday 18 April 2021  11:33:39 +0200 (0:00:00.812)       0:00:09.032 ********** 
+2021-04-18 11:33:39,814 p=83692 u=dom n=ansible | [WARNING]: Module did not set no_log for update_password
+
+2021-04-18 11:33:39,815 p=83692 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:33:39,848 p=83692 u=dom n=ansible | TASK [db : Config database] ****************************************************
+2021-04-18 11:33:39,848 p=83692 u=dom n=ansible | Sunday 18 April 2021  11:33:39 +0200 (0:00:00.744)       0:00:09.776 ********** 
+2021-04-18 11:33:41,021 p=83692 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:33:41,064 p=83692 u=dom n=ansible | TASK [redmine : Redmine. Install packages] *************************************
+2021-04-18 11:33:41,065 p=83692 u=dom n=ansible | Sunday 18 April 2021  11:33:41 +0200 (0:00:01.216)       0:00:10.993 ********** 
+2021-04-18 11:33:43,175 p=83692 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:33:43,210 p=83692 u=dom n=ansible | TASK [redmine : mysql_db] ******************************************************
+2021-04-18 11:33:43,211 p=83692 u=dom n=ansible | Sunday 18 April 2021  11:33:43 +0200 (0:00:02.145)       0:00:13.139 ********** 
+2021-04-18 11:33:43,712 p=83692 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:33:43,744 p=83692 u=dom n=ansible | TASK [redmine : mysql_user] ****************************************************
+2021-04-18 11:33:43,744 p=83692 u=dom n=ansible | Sunday 18 April 2021  11:33:43 +0200 (0:00:00.533)       0:00:13.672 ********** 
+2021-04-18 11:33:44,331 p=83692 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:33:44,376 p=83692 u=dom n=ansible | TASK [redmine : Redmine. Clone repository] *************************************
+2021-04-18 11:33:44,376 p=83692 u=dom n=ansible | Sunday 18 April 2021  11:33:44 +0200 (0:00:00.631)       0:00:14.304 ********** 
+2021-04-18 11:33:44,968 p=83692 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:33:45,007 p=83692 u=dom n=ansible | TASK [redmine : Redmine. Change permissions] ***********************************
+2021-04-18 11:33:45,007 p=83692 u=dom n=ansible | Sunday 18 April 2021  11:33:45 +0200 (0:00:00.630)       0:00:14.935 ********** 
+2021-04-18 11:33:45,611 p=83692 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:33:45,653 p=83692 u=dom n=ansible | TASK [redmine : Redmine. Change permissions] ***********************************
+2021-04-18 11:33:45,653 p=83692 u=dom n=ansible | Sunday 18 April 2021  11:33:45 +0200 (0:00:00.645)       0:00:15.581 ********** 
+2021-04-18 11:33:46,224 p=83692 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:33:46,264 p=83692 u=dom n=ansible | TASK [redmine : Config database] ***********************************************
+2021-04-18 11:33:46,264 p=83692 u=dom n=ansible | Sunday 18 April 2021  11:33:46 +0200 (0:00:00.611)       0:00:16.192 ********** 
+2021-04-18 11:33:46,432 p=83692 u=dom n=ansible | fatal: [redmine]: FAILED! => {"changed": false, "msg": "Could not find or access 'database.yml.j2'\nSearched in:\n\t/home/dom/1/1231/432/roles/redmine/templates/database.yml.j2\n\t/home/dom/1/1231/432/roles/redmine/database.yml.j2\n\t/home/dom/1/1231/432/roles/redmine/tasks/templates/database.yml.j2\n\t/home/dom/1/1231/432/roles/redmine/tasks/database.yml.j2\n\t/home/dom/1/1231/432/templates/database.yml.j2\n\t/home/dom/1/1231/432/database.yml.j2 on the Ansible Controller.\nIf you are using a module and expect the file to exist on the remote, see the remote_src option"}
+2021-04-18 11:33:46,436 p=83692 u=dom n=ansible | PLAY RECAP *********************************************************************
+2021-04-18 11:33:46,437 p=83692 u=dom n=ansible | redmine                    : ok=15   changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2021-04-18 11:33:46,437 p=83692 u=dom n=ansible | Sunday 18 April 2021  11:33:46 +0200 (0:00:00.172)       0:00:16.365 ********** 
+2021-04-18 11:33:46,438 p=83692 u=dom n=ansible | =============================================================================== 
+2021-04-18 11:33:46,438 p=83692 u=dom n=ansible | Gathering Facts --------------------------------------------------------- 2.56s
+2021-04-18 11:33:46,438 p=83692 u=dom n=ansible | Redmine. Install packages ----------------------------------------------- 2.41s
+2021-04-18 11:33:46,439 p=83692 u=dom n=ansible | redmine : Redmine. Install packages ------------------------------------- 2.15s
+2021-04-18 11:33:46,439 p=83692 u=dom n=ansible | db : Config database ---------------------------------------------------- 1.22s
+2021-04-18 11:33:46,439 p=83692 u=dom n=ansible | db : MySQL. Install and setup ------------------------------------------- 1.07s
+2021-04-18 11:33:46,439 p=83692 u=dom n=ansible | db : Configuring encoding DB -------------------------------------------- 0.81s
+2021-04-18 11:33:46,439 p=83692 u=dom n=ansible | Redmine. Change permissions --------------------------------------------- 0.77s
+2021-04-18 11:33:46,440 p=83692 u=dom n=ansible | Redmine. Clone repository ----------------------------------------------- 0.76s
+2021-04-18 11:33:46,440 p=83692 u=dom n=ansible | db : Configuring user priviliges ---------------------------------------- 0.74s
+2021-04-18 11:33:46,440 p=83692 u=dom n=ansible | redmine : Redmine. Change permissions ----------------------------------- 0.65s
+2021-04-18 11:33:46,440 p=83692 u=dom n=ansible | redmine : mysql_user ---------------------------------------------------- 0.63s
+2021-04-18 11:33:46,441 p=83692 u=dom n=ansible | redmine : Redmine. Clone repository ------------------------------------- 0.63s
+2021-04-18 11:33:46,441 p=83692 u=dom n=ansible | Redmine. Change permissions --------------------------------------------- 0.63s
+2021-04-18 11:33:46,441 p=83692 u=dom n=ansible | redmine : Redmine. Change permissions ----------------------------------- 0.61s
+2021-04-18 11:33:46,441 p=83692 u=dom n=ansible | redmine : mysql_db ------------------------------------------------------ 0.53s
+2021-04-18 11:33:46,442 p=83692 u=dom n=ansible | redmine : Config database ----------------------------------------------- 0.17s
+2021-04-18 11:33:46,442 p=83692 u=dom n=ansible | Playbook run took 0 days, 0 hours, 0 minutes, 16 seconds
+2021-04-18 11:35:19,197 p=83893 u=dom n=ansible | PLAY [redmine] *****************************************************************
+2021-04-18 11:35:19,210 p=83893 u=dom n=ansible | TASK [Gathering Facts] *********************************************************
+2021-04-18 11:35:19,210 p=83893 u=dom n=ansible | Sunday 18 April 2021  11:35:19 +0200 (0:00:00.024)       0:00:00.024 ********** 
+2021-04-18 11:35:21,254 p=83893 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:35:21,276 p=83893 u=dom n=ansible | TASK [Redmine. Install packages] ***********************************************
+2021-04-18 11:35:21,277 p=83893 u=dom n=ansible | Sunday 18 April 2021  11:35:21 +0200 (0:00:02.066)       0:00:02.091 ********** 
+2021-04-18 11:35:23,644 p=83893 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:35:23,682 p=83893 u=dom n=ansible | TASK [Redmine. Clone repository] ***********************************************
+2021-04-18 11:35:23,682 p=83893 u=dom n=ansible | Sunday 18 April 2021  11:35:23 +0200 (0:00:02.405)       0:00:04.497 ********** 
+2021-04-18 11:35:24,375 p=83893 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:35:24,411 p=83893 u=dom n=ansible | TASK [Redmine. Change permissions] *********************************************
+2021-04-18 11:35:24,411 p=83893 u=dom n=ansible | Sunday 18 April 2021  11:35:24 +0200 (0:00:00.728)       0:00:05.226 ********** 
+2021-04-18 11:35:25,125 p=83893 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:35:25,160 p=83893 u=dom n=ansible | TASK [Redmine. Change permissions] *********************************************
+2021-04-18 11:35:25,160 p=83893 u=dom n=ansible | Sunday 18 April 2021  11:35:25 +0200 (0:00:00.749)       0:00:05.975 ********** 
+2021-04-18 11:35:25,656 p=83893 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:35:25,693 p=83893 u=dom n=ansible | TASK [db : MySQL. Install and setup] *******************************************
+2021-04-18 11:35:25,693 p=83893 u=dom n=ansible | Sunday 18 April 2021  11:35:25 +0200 (0:00:00.532)       0:00:06.508 ********** 
+2021-04-18 11:35:26,813 p=83893 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:35:26,855 p=83893 u=dom n=ansible | TASK [db : Configuring encoding DB] ********************************************
+2021-04-18 11:35:26,855 p=83893 u=dom n=ansible | Sunday 18 April 2021  11:35:26 +0200 (0:00:01.162)       0:00:07.670 ********** 
+2021-04-18 11:35:27,539 p=83893 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:35:27,583 p=83893 u=dom n=ansible | TASK [db : Configuring user priviliges] ****************************************
+2021-04-18 11:35:27,583 p=83893 u=dom n=ansible | Sunday 18 April 2021  11:35:27 +0200 (0:00:00.727)       0:00:08.398 ********** 
+2021-04-18 11:35:28,270 p=83893 u=dom n=ansible | [WARNING]: Module did not set no_log for update_password
+
+2021-04-18 11:35:28,271 p=83893 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:35:28,303 p=83893 u=dom n=ansible | TASK [db : Config database] ****************************************************
+2021-04-18 11:35:28,304 p=83893 u=dom n=ansible | Sunday 18 April 2021  11:35:28 +0200 (0:00:00.720)       0:00:09.118 ********** 
+2021-04-18 11:35:29,237 p=83893 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:35:29,278 p=83893 u=dom n=ansible | TASK [redmine : Redmine. Install packages] *************************************
+2021-04-18 11:35:29,278 p=83893 u=dom n=ansible | Sunday 18 April 2021  11:35:29 +0200 (0:00:00.974)       0:00:10.093 ********** 
+2021-04-18 11:35:31,301 p=83893 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:35:31,341 p=83893 u=dom n=ansible | TASK [redmine : mysql_db] ******************************************************
+2021-04-18 11:35:31,341 p=83893 u=dom n=ansible | Sunday 18 April 2021  11:35:31 +0200 (0:00:02.062)       0:00:12.156 ********** 
+2021-04-18 11:35:31,865 p=83893 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:35:31,897 p=83893 u=dom n=ansible | TASK [redmine : mysql_user] ****************************************************
+2021-04-18 11:35:31,898 p=83893 u=dom n=ansible | Sunday 18 April 2021  11:35:31 +0200 (0:00:00.556)       0:00:12.712 ********** 
+2021-04-18 11:35:32,515 p=83893 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:35:32,552 p=83893 u=dom n=ansible | TASK [redmine : Redmine. Clone repository] *************************************
+2021-04-18 11:35:32,553 p=83893 u=dom n=ansible | Sunday 18 April 2021  11:35:32 +0200 (0:00:00.655)       0:00:13.367 ********** 
+2021-04-18 11:35:33,134 p=83893 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:35:33,170 p=83893 u=dom n=ansible | TASK [redmine : Redmine. Change permissions] ***********************************
+2021-04-18 11:35:33,170 p=83893 u=dom n=ansible | Sunday 18 April 2021  11:35:33 +0200 (0:00:00.617)       0:00:13.985 ********** 
+2021-04-18 11:35:33,686 p=83893 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:35:33,724 p=83893 u=dom n=ansible | TASK [redmine : Redmine. Change permissions] ***********************************
+2021-04-18 11:35:33,724 p=83893 u=dom n=ansible | Sunday 18 April 2021  11:35:33 +0200 (0:00:00.554)       0:00:14.539 ********** 
+2021-04-18 11:35:34,314 p=83893 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:35:34,349 p=83893 u=dom n=ansible | TASK [redmine : Configuration files for virtualhost] ***************************
+2021-04-18 11:35:34,349 p=83893 u=dom n=ansible | Sunday 18 April 2021  11:35:34 +0200 (0:00:00.625)       0:00:15.164 ********** 
+2021-04-18 11:35:35,190 p=83893 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:35:35,228 p=83893 u=dom n=ansible | TASK [redmine : Redmine. Setup 01] *********************************************
+2021-04-18 11:35:35,228 p=83893 u=dom n=ansible | Sunday 18 April 2021  11:35:35 +0200 (0:00:00.878)       0:00:16.043 ********** 
+2021-04-18 11:35:45,906 p=83893 u=dom n=ansible | changed: [redmine]
+2021-04-18 11:35:45,946 p=83893 u=dom n=ansible | TASK [redmine : Session store secret generation] *******************************
+2021-04-18 11:35:45,946 p=83893 u=dom n=ansible | Sunday 18 April 2021  11:35:45 +0200 (0:00:10.717)       0:00:26.761 ********** 
+2021-04-18 11:35:46,447 p=83893 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:35:46,483 p=83893 u=dom n=ansible | TASK [redmine : Redmine. Setup 02] *********************************************
+2021-04-18 11:35:46,483 p=83893 u=dom n=ansible | Sunday 18 April 2021  11:35:46 +0200 (0:00:00.537)       0:00:27.298 ********** 
+2021-04-18 11:35:58,204 p=83893 u=dom n=ansible | changed: [redmine]
+2021-04-18 11:35:58,246 p=83893 u=dom n=ansible | TASK [redmine : Configuration files for virtualhost] ***************************
+2021-04-18 11:35:58,247 p=83893 u=dom n=ansible | Sunday 18 April 2021  11:35:58 +0200 (0:00:11.763)       0:00:39.061 ********** 
+2021-04-18 11:35:59,106 p=83893 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:35:59,162 p=83893 u=dom n=ansible | TASK [redmine : Add redmine-5.sa to host file] *********************************
+2021-04-18 11:35:59,162 p=83893 u=dom n=ansible | Sunday 18 April 2021  11:35:59 +0200 (0:00:00.915)       0:00:39.977 ********** 
+2021-04-18 11:35:59,694 p=83893 u=dom n=ansible | changed: [redmine]
+2021-04-18 11:35:59,729 p=83893 u=dom n=ansible | TASK [redmine : uri] ***********************************************************
+2021-04-18 11:35:59,730 p=83893 u=dom n=ansible | Sunday 18 April 2021  11:35:59 +0200 (0:00:00.567)       0:00:40.544 ********** 
+2021-04-18 11:36:00,447 p=83893 u=dom n=ansible | fatal: [redmine]: FAILED! => {"changed": false, "connection": "close", "content": "<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\">\n<html><head>\n<title>403 Forbidden</title>\n</head><body>\n<h1>Forbidden</h1>\n<p>You don't have permission to access this resource.</p>\n<hr>\n<address>Apache/2.4.18 (Ubuntu) Server at redmine-5.sa Port 80</address>\n</body></html>\n", "content_length": "277", "content_type": "text/html; charset=iso-8859-1", "date": "Sun, 18 Apr 2021 09:36:00 GMT", "elapsed": 0, "failed_when_result": true, "msg": "Status code was 403 and not [200]: HTTP Error 403: Forbidden", "redirected": false, "server": "Apache/2.4.18 (Ubuntu)", "status": 403, "url": "http://redmine-5.sa"}
+2021-04-18 11:36:00,450 p=83893 u=dom n=ansible | PLAY RECAP *********************************************************************
+2021-04-18 11:36:00,451 p=83893 u=dom n=ansible | redmine                    : ok=21   changed=3    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2021-04-18 11:36:00,451 p=83893 u=dom n=ansible | Sunday 18 April 2021  11:36:00 +0200 (0:00:00.721)       0:00:41.266 ********** 
+2021-04-18 11:36:00,451 p=83893 u=dom n=ansible | =============================================================================== 
+2021-04-18 11:36:00,451 p=83893 u=dom n=ansible | redmine : Redmine. Setup 02 -------------------------------------------- 11.76s
+2021-04-18 11:36:00,452 p=83893 u=dom n=ansible | redmine : Redmine. Setup 01 -------------------------------------------- 10.72s
+2021-04-18 11:36:00,452 p=83893 u=dom n=ansible | Redmine. Install packages ----------------------------------------------- 2.41s
+2021-04-18 11:36:00,452 p=83893 u=dom n=ansible | Gathering Facts --------------------------------------------------------- 2.07s
+2021-04-18 11:36:00,452 p=83893 u=dom n=ansible | redmine : Redmine. Install packages ------------------------------------- 2.06s
+2021-04-18 11:36:00,452 p=83893 u=dom n=ansible | db : MySQL. Install and setup ------------------------------------------- 1.16s
+2021-04-18 11:36:00,452 p=83893 u=dom n=ansible | db : Config database ---------------------------------------------------- 0.97s
+2021-04-18 11:36:00,453 p=83893 u=dom n=ansible | redmine : Configuration files for virtualhost --------------------------- 0.92s
+2021-04-18 11:36:00,453 p=83893 u=dom n=ansible | redmine : Configuration files for virtualhost --------------------------- 0.88s
+2021-04-18 11:36:00,453 p=83893 u=dom n=ansible | Redmine. Change permissions --------------------------------------------- 0.75s
+2021-04-18 11:36:00,453 p=83893 u=dom n=ansible | Redmine. Clone repository ----------------------------------------------- 0.73s
+2021-04-18 11:36:00,453 p=83893 u=dom n=ansible | db : Configuring encoding DB -------------------------------------------- 0.73s
+2021-04-18 11:36:00,453 p=83893 u=dom n=ansible | redmine : uri ----------------------------------------------------------- 0.72s
+2021-04-18 11:36:00,454 p=83893 u=dom n=ansible | db : Configuring user priviliges ---------------------------------------- 0.72s
+2021-04-18 11:36:00,454 p=83893 u=dom n=ansible | redmine : mysql_user ---------------------------------------------------- 0.66s
+2021-04-18 11:36:00,454 p=83893 u=dom n=ansible | redmine : Redmine. Change permissions ----------------------------------- 0.63s
+2021-04-18 11:36:00,454 p=83893 u=dom n=ansible | redmine : Redmine. Clone repository ------------------------------------- 0.62s
+2021-04-18 11:36:00,454 p=83893 u=dom n=ansible | redmine : Add redmine-5.sa to host file --------------------------------- 0.57s
+2021-04-18 11:36:00,454 p=83893 u=dom n=ansible | redmine : mysql_db ------------------------------------------------------ 0.56s
+2021-04-18 11:36:00,454 p=83893 u=dom n=ansible | redmine : Redmine. Change permissions ----------------------------------- 0.55s
+2021-04-18 11:36:00,455 p=83893 u=dom n=ansible | Playbook run took 0 days, 0 hours, 0 minutes, 41 seconds
+2021-04-18 11:37:06,127 p=84140 u=dom n=ansible | PLAY [redmine] *****************************************************************
+2021-04-18 11:37:06,141 p=84140 u=dom n=ansible | TASK [Gathering Facts] *********************************************************
+2021-04-18 11:37:06,141 p=84140 u=dom n=ansible | Sunday 18 April 2021  11:37:06 +0200 (0:00:00.025)       0:00:00.025 ********** 
+2021-04-18 11:37:08,183 p=84140 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:37:08,206 p=84140 u=dom n=ansible | TASK [Redmine. Install packages] ***********************************************
+2021-04-18 11:37:08,206 p=84140 u=dom n=ansible | Sunday 18 April 2021  11:37:08 +0200 (0:00:02.064)       0:00:02.090 ********** 
+2021-04-18 11:37:14,071 p=84140 u=dom n=ansible | changed: [redmine]
+2021-04-18 11:37:14,104 p=84140 u=dom n=ansible | TASK [Redmine. Clone repository] ***********************************************
+2021-04-18 11:37:14,104 p=84140 u=dom n=ansible | Sunday 18 April 2021  11:37:14 +0200 (0:00:05.898)       0:00:07.988 ********** 
+2021-04-18 11:37:14,824 p=84140 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:37:14,864 p=84140 u=dom n=ansible | TASK [Redmine. Change permissions] *********************************************
+2021-04-18 11:37:14,864 p=84140 u=dom n=ansible | Sunday 18 April 2021  11:37:14 +0200 (0:00:00.760)       0:00:08.749 ********** 
+2021-04-18 11:37:15,598 p=84140 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:37:15,637 p=84140 u=dom n=ansible | TASK [Redmine. Change permissions] *********************************************
+2021-04-18 11:37:15,637 p=84140 u=dom n=ansible | Sunday 18 April 2021  11:37:15 +0200 (0:00:00.772)       0:00:09.521 ********** 
+2021-04-18 11:37:16,123 p=84140 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:37:16,158 p=84140 u=dom n=ansible | TASK [db : MySQL. Install and setup] *******************************************
+2021-04-18 11:37:16,159 p=84140 u=dom n=ansible | Sunday 18 April 2021  11:37:16 +0200 (0:00:00.521)       0:00:10.043 ********** 
+2021-04-18 11:37:17,225 p=84140 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:37:17,268 p=84140 u=dom n=ansible | TASK [db : Configuring encoding DB] ********************************************
+2021-04-18 11:37:17,268 p=84140 u=dom n=ansible | Sunday 18 April 2021  11:37:17 +0200 (0:00:01.109)       0:00:11.152 ********** 
+2021-04-18 11:37:17,974 p=84140 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:37:18,013 p=84140 u=dom n=ansible | TASK [db : Configuring user priviliges] ****************************************
+2021-04-18 11:37:18,013 p=84140 u=dom n=ansible | Sunday 18 April 2021  11:37:18 +0200 (0:00:00.745)       0:00:11.897 ********** 
+2021-04-18 11:37:18,706 p=84140 u=dom n=ansible | [WARNING]: Module did not set no_log for update_password
+
+2021-04-18 11:37:18,706 p=84140 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:37:18,745 p=84140 u=dom n=ansible | TASK [db : Config database] ****************************************************
+2021-04-18 11:37:18,746 p=84140 u=dom n=ansible | Sunday 18 April 2021  11:37:18 +0200 (0:00:00.732)       0:00:12.630 ********** 
+2021-04-18 11:37:19,608 p=84140 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:37:19,639 p=84140 u=dom n=ansible | TASK [redmine : Redmine. Install packages] *************************************
+2021-04-18 11:37:19,639 p=84140 u=dom n=ansible | Sunday 18 April 2021  11:37:19 +0200 (0:00:00.893)       0:00:13.523 ********** 
+2021-04-18 11:37:21,437 p=84140 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:37:21,479 p=84140 u=dom n=ansible | TASK [redmine : mysql_db] ******************************************************
+2021-04-18 11:37:21,479 p=84140 u=dom n=ansible | Sunday 18 April 2021  11:37:21 +0200 (0:00:01.840)       0:00:15.363 ********** 
+2021-04-18 11:37:21,967 p=84140 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:37:22,003 p=84140 u=dom n=ansible | TASK [redmine : mysql_user] ****************************************************
+2021-04-18 11:37:22,003 p=84140 u=dom n=ansible | Sunday 18 April 2021  11:37:22 +0200 (0:00:00.523)       0:00:15.887 ********** 
+2021-04-18 11:37:22,615 p=84140 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:37:22,655 p=84140 u=dom n=ansible | TASK [redmine : Redmine. Clone repository] *************************************
+2021-04-18 11:37:22,655 p=84140 u=dom n=ansible | Sunday 18 April 2021  11:37:22 +0200 (0:00:00.652)       0:00:16.539 ********** 
+2021-04-18 11:37:23,234 p=84140 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:37:23,266 p=84140 u=dom n=ansible | TASK [redmine : Redmine. Change permissions] ***********************************
+2021-04-18 11:37:23,267 p=84140 u=dom n=ansible | Sunday 18 April 2021  11:37:23 +0200 (0:00:00.611)       0:00:17.151 ********** 
+2021-04-18 11:37:23,865 p=84140 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:37:23,899 p=84140 u=dom n=ansible | TASK [redmine : Redmine. Change permissions] ***********************************
+2021-04-18 11:37:23,899 p=84140 u=dom n=ansible | Sunday 18 April 2021  11:37:23 +0200 (0:00:00.632)       0:00:17.783 ********** 
+2021-04-18 11:37:24,403 p=84140 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:37:24,438 p=84140 u=dom n=ansible | TASK [redmine : Configuration files for virtualhost] ***************************
+2021-04-18 11:37:24,438 p=84140 u=dom n=ansible | Sunday 18 April 2021  11:37:24 +0200 (0:00:00.539)       0:00:18.322 ********** 
+2021-04-18 11:37:25,381 p=84140 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:37:25,420 p=84140 u=dom n=ansible | TASK [redmine : Redmine. Setup 01] *********************************************
+2021-04-18 11:37:25,420 p=84140 u=dom n=ansible | Sunday 18 April 2021  11:37:25 +0200 (0:00:00.982)       0:00:19.304 ********** 
+2021-04-18 11:37:35,646 p=84140 u=dom n=ansible | changed: [redmine]
+2021-04-18 11:37:35,686 p=84140 u=dom n=ansible | TASK [redmine : Session store secret generation] *******************************
+2021-04-18 11:37:35,686 p=84140 u=dom n=ansible | Sunday 18 April 2021  11:37:35 +0200 (0:00:10.266)       0:00:29.570 ********** 
+2021-04-18 11:37:36,245 p=84140 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:37:36,282 p=84140 u=dom n=ansible | TASK [redmine : Redmine. Setup 02] *********************************************
+2021-04-18 11:37:36,282 p=84140 u=dom n=ansible | Sunday 18 April 2021  11:37:36 +0200 (0:00:00.595)       0:00:30.166 ********** 
+2021-04-18 11:37:47,515 p=84140 u=dom n=ansible | changed: [redmine]
+2021-04-18 11:37:47,556 p=84140 u=dom n=ansible | TASK [redmine : Configuration files for virtualhost] ***************************
+2021-04-18 11:37:47,556 p=84140 u=dom n=ansible | Sunday 18 April 2021  11:37:47 +0200 (0:00:11.273)       0:00:41.440 ********** 
+2021-04-18 11:37:48,445 p=84140 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:37:48,505 p=84140 u=dom n=ansible | TASK [redmine : Add redmine-5.sa to host file] *********************************
+2021-04-18 11:37:48,505 p=84140 u=dom n=ansible | Sunday 18 April 2021  11:37:48 +0200 (0:00:00.949)       0:00:42.389 ********** 
+2021-04-18 11:37:49,063 p=84140 u=dom n=ansible | changed: [redmine]
+2021-04-18 11:37:49,105 p=84140 u=dom n=ansible | TASK [redmine : uri] ***********************************************************
+2021-04-18 11:37:49,105 p=84140 u=dom n=ansible | Sunday 18 April 2021  11:37:49 +0200 (0:00:00.599)       0:00:42.989 ********** 
+2021-04-18 11:37:49,818 p=84140 u=dom n=ansible | fatal: [redmine]: FAILED! => {"changed": false, "connection": "close", "content": "<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\">\n<html><head>\n<title>403 Forbidden</title>\n</head><body>\n<h1>Forbidden</h1>\n<p>You don't have permission to access this resource.</p>\n<hr>\n<address>Apache/2.4.18 (Ubuntu) Server at redmine-5.sa Port 80</address>\n</body></html>\n", "content_length": "277", "content_type": "text/html; charset=iso-8859-1", "date": "Sun, 18 Apr 2021 09:37:49 GMT", "elapsed": 0, "failed_when_result": true, "msg": "Status code was 403 and not [200]: HTTP Error 403: Forbidden", "redirected": false, "server": "Apache/2.4.18 (Ubuntu)", "status": 403, "url": "http://redmine-5.sa"}
+2021-04-18 11:37:49,822 p=84140 u=dom n=ansible | PLAY RECAP *********************************************************************
+2021-04-18 11:37:49,823 p=84140 u=dom n=ansible | redmine                    : ok=21   changed=4    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2021-04-18 11:37:49,823 p=84140 u=dom n=ansible | Sunday 18 April 2021  11:37:49 +0200 (0:00:00.717)       0:00:43.707 ********** 
+2021-04-18 11:37:49,823 p=84140 u=dom n=ansible | =============================================================================== 
+2021-04-18 11:37:49,823 p=84140 u=dom n=ansible | redmine : Redmine. Setup 02 -------------------------------------------- 11.27s
+2021-04-18 11:37:49,824 p=84140 u=dom n=ansible | redmine : Redmine. Setup 01 -------------------------------------------- 10.27s
+2021-04-18 11:37:49,824 p=84140 u=dom n=ansible | Redmine. Install packages ----------------------------------------------- 5.90s
+2021-04-18 11:37:49,824 p=84140 u=dom n=ansible | Gathering Facts --------------------------------------------------------- 2.06s
+2021-04-18 11:37:49,824 p=84140 u=dom n=ansible | redmine : Redmine. Install packages ------------------------------------- 1.84s
+2021-04-18 11:37:49,824 p=84140 u=dom n=ansible | db : MySQL. Install and setup ------------------------------------------- 1.11s
+2021-04-18 11:37:49,824 p=84140 u=dom n=ansible | redmine : Configuration files for virtualhost --------------------------- 0.98s
+2021-04-18 11:37:49,824 p=84140 u=dom n=ansible | redmine : Configuration files for virtualhost --------------------------- 0.95s
+2021-04-18 11:37:49,824 p=84140 u=dom n=ansible | db : Config database ---------------------------------------------------- 0.89s
+2021-04-18 11:37:49,825 p=84140 u=dom n=ansible | Redmine. Change permissions --------------------------------------------- 0.77s
+2021-04-18 11:37:49,825 p=84140 u=dom n=ansible | Redmine. Clone repository ----------------------------------------------- 0.76s
+2021-04-18 11:37:49,825 p=84140 u=dom n=ansible | db : Configuring encoding DB -------------------------------------------- 0.75s
+2021-04-18 11:37:49,825 p=84140 u=dom n=ansible | db : Configuring user priviliges ---------------------------------------- 0.73s
+2021-04-18 11:37:49,825 p=84140 u=dom n=ansible | redmine : uri ----------------------------------------------------------- 0.72s
+2021-04-18 11:37:49,825 p=84140 u=dom n=ansible | redmine : mysql_user ---------------------------------------------------- 0.65s
+2021-04-18 11:37:49,825 p=84140 u=dom n=ansible | redmine : Redmine. Change permissions ----------------------------------- 0.63s
+2021-04-18 11:37:49,825 p=84140 u=dom n=ansible | redmine : Redmine. Clone repository ------------------------------------- 0.61s
+2021-04-18 11:37:49,826 p=84140 u=dom n=ansible | redmine : Add redmine-5.sa to host file --------------------------------- 0.60s
+2021-04-18 11:37:49,826 p=84140 u=dom n=ansible | redmine : Session store secret generation ------------------------------- 0.60s
+2021-04-18 11:37:49,826 p=84140 u=dom n=ansible | redmine : Redmine. Change permissions ----------------------------------- 0.54s
+2021-04-18 11:37:49,826 p=84140 u=dom n=ansible | Playbook run took 0 days, 0 hours, 0 minutes, 43 seconds
+2021-04-18 11:38:36,326 p=84388 u=dom n=ansible | PLAY [redmine] *****************************************************************
+2021-04-18 11:38:36,340 p=84388 u=dom n=ansible | TASK [Gathering Facts] *********************************************************
+2021-04-18 11:38:36,341 p=84388 u=dom n=ansible | Sunday 18 April 2021  11:38:36 +0200 (0:00:00.026)       0:00:00.026 ********** 
+2021-04-18 11:38:37,790 p=84388 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:38:37,812 p=84388 u=dom n=ansible | TASK [Redmine. Install packages] ***********************************************
+2021-04-18 11:38:37,812 p=84388 u=dom n=ansible | Sunday 18 April 2021  11:38:37 +0200 (0:00:01.471)       0:00:01.497 ********** 
+2021-04-18 11:38:39,639 p=84388 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:38:39,677 p=84388 u=dom n=ansible | TASK [Redmine. Clone repository] ***********************************************
+2021-04-18 11:38:39,678 p=84388 u=dom n=ansible | Sunday 18 April 2021  11:38:39 +0200 (0:00:01.865)       0:00:03.363 ********** 
+2021-04-18 11:38:40,359 p=84388 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:38:40,404 p=84388 u=dom n=ansible | TASK [Redmine. Change permissions] *********************************************
+2021-04-18 11:38:40,405 p=84388 u=dom n=ansible | Sunday 18 April 2021  11:38:40 +0200 (0:00:00.726)       0:00:04.090 ********** 
+2021-04-18 11:38:41,111 p=84388 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:38:41,154 p=84388 u=dom n=ansible | TASK [Redmine. Change permissions] *********************************************
+2021-04-18 11:38:41,155 p=84388 u=dom n=ansible | Sunday 18 April 2021  11:38:41 +0200 (0:00:00.750)       0:00:04.840 ********** 
+2021-04-18 11:38:41,738 p=84388 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:38:41,773 p=84388 u=dom n=ansible | TASK [db : MySQL. Install and setup] *******************************************
+2021-04-18 11:38:41,773 p=84388 u=dom n=ansible | Sunday 18 April 2021  11:38:41 +0200 (0:00:00.618)       0:00:05.458 ********** 
+2021-04-18 11:38:42,830 p=84388 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:38:42,866 p=84388 u=dom n=ansible | TASK [db : Configuring encoding DB] ********************************************
+2021-04-18 11:38:42,866 p=84388 u=dom n=ansible | Sunday 18 April 2021  11:38:42 +0200 (0:00:01.092)       0:00:06.551 ********** 
+2021-04-18 11:38:43,541 p=84388 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:38:43,584 p=84388 u=dom n=ansible | TASK [db : Configuring user priviliges] ****************************************
+2021-04-18 11:38:43,584 p=84388 u=dom n=ansible | Sunday 18 April 2021  11:38:43 +0200 (0:00:00.717)       0:00:07.269 ********** 
+2021-04-18 11:38:44,268 p=84388 u=dom n=ansible | [WARNING]: Module did not set no_log for update_password
+
+2021-04-18 11:38:44,269 p=84388 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:38:44,300 p=84388 u=dom n=ansible | TASK [db : Config database] ****************************************************
+2021-04-18 11:38:44,300 p=84388 u=dom n=ansible | Sunday 18 April 2021  11:38:44 +0200 (0:00:00.716)       0:00:07.985 ********** 
+2021-04-18 11:38:45,211 p=84388 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:38:45,248 p=84388 u=dom n=ansible | TASK [redmine : Redmine. Install packages] *************************************
+2021-04-18 11:38:45,248 p=84388 u=dom n=ansible | Sunday 18 April 2021  11:38:45 +0200 (0:00:00.947)       0:00:08.933 ********** 
+2021-04-18 11:38:47,077 p=84388 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:38:47,114 p=84388 u=dom n=ansible | TASK [redmine : mysql_db] ******************************************************
+2021-04-18 11:38:47,114 p=84388 u=dom n=ansible | Sunday 18 April 2021  11:38:47 +0200 (0:00:01.866)       0:00:10.800 ********** 
+2021-04-18 11:38:47,704 p=84388 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:38:47,746 p=84388 u=dom n=ansible | TASK [redmine : mysql_user] ****************************************************
+2021-04-18 11:38:47,746 p=84388 u=dom n=ansible | Sunday 18 April 2021  11:38:47 +0200 (0:00:00.631)       0:00:11.431 ********** 
+2021-04-18 11:38:48,326 p=84388 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:38:48,364 p=84388 u=dom n=ansible | TASK [redmine : Redmine. Clone repository] *************************************
+2021-04-18 11:38:48,364 p=84388 u=dom n=ansible | Sunday 18 April 2021  11:38:48 +0200 (0:00:00.618)       0:00:12.049 ********** 
+2021-04-18 11:38:48,960 p=84388 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:38:48,996 p=84388 u=dom n=ansible | TASK [redmine : Redmine. Change permissions] ***********************************
+2021-04-18 11:38:48,997 p=84388 u=dom n=ansible | Sunday 18 April 2021  11:38:48 +0200 (0:00:00.632)       0:00:12.682 ********** 
+2021-04-18 11:38:49,598 p=84388 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:38:49,639 p=84388 u=dom n=ansible | TASK [redmine : Redmine. Change permissions] ***********************************
+2021-04-18 11:38:49,639 p=84388 u=dom n=ansible | Sunday 18 April 2021  11:38:49 +0200 (0:00:00.642)       0:00:13.324 ********** 
+2021-04-18 11:38:50,209 p=84388 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:38:50,250 p=84388 u=dom n=ansible | TASK [redmine : Configuration files for virtualhost] ***************************
+2021-04-18 11:38:50,250 p=84388 u=dom n=ansible | Sunday 18 April 2021  11:38:50 +0200 (0:00:00.611)       0:00:13.935 ********** 
+2021-04-18 11:38:51,187 p=84388 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:38:51,228 p=84388 u=dom n=ansible | TASK [redmine : Redmine. Setup 01] *********************************************
+2021-04-18 11:38:51,228 p=84388 u=dom n=ansible | Sunday 18 April 2021  11:38:51 +0200 (0:00:00.977)       0:00:14.913 ********** 
+2021-04-18 11:39:01,548 p=84388 u=dom n=ansible | changed: [redmine]
+2021-04-18 11:39:01,585 p=84388 u=dom n=ansible | TASK [redmine : Session store secret generation] *******************************
+2021-04-18 11:39:01,585 p=84388 u=dom n=ansible | Sunday 18 April 2021  11:39:01 +0200 (0:00:10.357)       0:00:25.270 ********** 
+2021-04-18 11:39:02,191 p=84388 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:39:02,231 p=84388 u=dom n=ansible | TASK [redmine : Redmine. Setup 02] *********************************************
+2021-04-18 11:39:02,231 p=84388 u=dom n=ansible | Sunday 18 April 2021  11:39:02 +0200 (0:00:00.646)       0:00:25.917 ********** 
+2021-04-18 11:39:13,568 p=84388 u=dom n=ansible | changed: [redmine]
+2021-04-18 11:39:13,605 p=84388 u=dom n=ansible | TASK [redmine : Configuration files for virtualhost] ***************************
+2021-04-18 11:39:13,605 p=84388 u=dom n=ansible | Sunday 18 April 2021  11:39:13 +0200 (0:00:11.373)       0:00:37.290 ********** 
+2021-04-18 11:39:14,571 p=84388 u=dom n=ansible | ok: [redmine]
+2021-04-18 11:39:14,631 p=84388 u=dom n=ansible | TASK [redmine : Add redmine-5.sa to host file] *********************************
+2021-04-18 11:39:14,631 p=84388 u=dom n=ansible | Sunday 18 April 2021  11:39:14 +0200 (0:00:01.026)       0:00:38.316 ********** 
+2021-04-18 11:39:15,192 p=84388 u=dom n=ansible | changed: [redmine]
+2021-04-18 11:39:15,226 p=84388 u=dom n=ansible | TASK [redmine : lineinfile] ****************************************************
+2021-04-18 11:39:15,226 p=84388 u=dom n=ansible | Sunday 18 April 2021  11:39:15 +0200 (0:00:00.594)       0:00:38.911 ********** 
+2021-04-18 11:39:15,816 p=84388 u=dom n=ansible | changed: [redmine]
+2021-04-18 11:39:15,824 p=84388 u=dom n=ansible | PLAY RECAP *********************************************************************
+2021-04-18 11:39:15,824 p=84388 u=dom n=ansible | redmine                    : ok=22   changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2021-04-18 11:39:15,825 p=84388 u=dom n=ansible | Sunday 18 April 2021  11:39:15 +0200 (0:00:00.598)       0:00:39.510 ********** 
+2021-04-18 11:39:15,825 p=84388 u=dom n=ansible | =============================================================================== 
+2021-04-18 11:39:15,825 p=84388 u=dom n=ansible | redmine : Redmine. Setup 02 -------------------------------------------- 11.37s
+2021-04-18 11:39:15,826 p=84388 u=dom n=ansible | redmine : Redmine. Setup 01 -------------------------------------------- 10.36s
+2021-04-18 11:39:15,826 p=84388 u=dom n=ansible | redmine : Redmine. Install packages ------------------------------------- 1.87s
+2021-04-18 11:39:15,826 p=84388 u=dom n=ansible | Redmine. Install packages ----------------------------------------------- 1.87s
+2021-04-18 11:39:15,826 p=84388 u=dom n=ansible | Gathering Facts --------------------------------------------------------- 1.47s
+2021-04-18 11:39:15,826 p=84388 u=dom n=ansible | db : MySQL. Install and setup ------------------------------------------- 1.09s
+2021-04-18 11:39:15,827 p=84388 u=dom n=ansible | redmine : Configuration files for virtualhost --------------------------- 1.03s
+2021-04-18 11:39:15,827 p=84388 u=dom n=ansible | redmine : Configuration files for virtualhost --------------------------- 0.98s
+2021-04-18 11:39:15,827 p=84388 u=dom n=ansible | db : Config database ---------------------------------------------------- 0.95s
+2021-04-18 11:39:15,827 p=84388 u=dom n=ansible | Redmine. Change permissions --------------------------------------------- 0.75s
+2021-04-18 11:39:15,828 p=84388 u=dom n=ansible | Redmine. Clone repository ----------------------------------------------- 0.73s
+2021-04-18 11:39:15,828 p=84388 u=dom n=ansible | db : Configuring encoding DB -------------------------------------------- 0.72s
+2021-04-18 11:39:15,828 p=84388 u=dom n=ansible | db : Configuring user priviliges ---------------------------------------- 0.72s
+2021-04-18 11:39:15,829 p=84388 u=dom n=ansible | redmine : Session store secret generation ------------------------------- 0.65s
+2021-04-18 11:39:15,829 p=84388 u=dom n=ansible | redmine : Redmine. Change permissions ----------------------------------- 0.64s
+2021-04-18 11:39:15,829 p=84388 u=dom n=ansible | redmine : Redmine. Clone repository ------------------------------------- 0.63s
+2021-04-18 11:39:15,829 p=84388 u=dom n=ansible | redmine : mysql_db ------------------------------------------------------ 0.63s
+2021-04-18 11:39:15,830 p=84388 u=dom n=ansible | Redmine. Change permissions --------------------------------------------- 0.62s
+2021-04-18 11:39:15,830 p=84388 u=dom n=ansible | redmine : mysql_user ---------------------------------------------------- 0.62s
+2021-04-18 11:39:15,830 p=84388 u=dom n=ansible | redmine : Redmine. Change permissions ----------------------------------- 0.61s
+2021-04-18 11:39:15,830 p=84388 u=dom n=ansible | Playbook run took 0 days, 0 hours, 0 minutes, 39 seconds
+2021-04-18 13:56:24,831 p=93766 u=dom n=ansible | PLAY [redmine] *****************************************************************
+2021-04-18 13:56:24,844 p=93766 u=dom n=ansible | TASK [Gathering Facts] *********************************************************
+2021-04-18 13:56:24,844 p=93766 u=dom n=ansible | Sunday 18 April 2021  13:56:24 +0200 (0:00:00.024)       0:00:00.024 ********** 
+2021-04-18 13:56:26,900 p=93766 u=dom n=ansible | ok: [redmine]
+2021-04-18 13:56:26,922 p=93766 u=dom n=ansible | TASK [Redmine. Install packages] ***********************************************
+2021-04-18 13:56:26,923 p=93766 u=dom n=ansible | Sunday 18 April 2021  13:56:26 +0200 (0:00:02.078)       0:00:02.103 ********** 
+2021-04-18 13:56:28,914 p=93766 u=dom n=ansible | ok: [redmine]
+2021-04-18 13:56:28,948 p=93766 u=dom n=ansible | TASK [Redmine. Clone repository] ***********************************************
+2021-04-18 13:56:28,949 p=93766 u=dom n=ansible | Sunday 18 April 2021  13:56:28 +0200 (0:00:02.025)       0:00:04.129 ********** 
+2021-04-18 13:56:29,665 p=93766 u=dom n=ansible | ok: [redmine]
+2021-04-18 13:56:29,702 p=93766 u=dom n=ansible | TASK [Redmine. Change permissions] *********************************************
+2021-04-18 13:56:29,702 p=93766 u=dom n=ansible | Sunday 18 April 2021  13:56:29 +0200 (0:00:00.753)       0:00:04.883 ********** 
+2021-04-18 13:56:30,424 p=93766 u=dom n=ansible | ok: [redmine]
+2021-04-18 13:56:30,465 p=93766 u=dom n=ansible | TASK [Redmine. Change permissions] *********************************************
+2021-04-18 13:56:30,465 p=93766 u=dom n=ansible | Sunday 18 April 2021  13:56:30 +0200 (0:00:00.762)       0:00:05.645 ********** 
+2021-04-18 13:56:31,041 p=93766 u=dom n=ansible | ok: [redmine]
+2021-04-18 13:56:31,075 p=93766 u=dom n=ansible | TASK [db : MySQL. Install and setup] *******************************************
+2021-04-18 13:56:31,075 p=93766 u=dom n=ansible | Sunday 18 April 2021  13:56:31 +0200 (0:00:00.610)       0:00:06.256 ********** 
+2021-04-18 13:56:32,136 p=93766 u=dom n=ansible | ok: [redmine]
+2021-04-18 13:56:32,176 p=93766 u=dom n=ansible | TASK [db : Configuring encoding DB] ********************************************
+2021-04-18 13:56:32,177 p=93766 u=dom n=ansible | Sunday 18 April 2021  13:56:32 +0200 (0:00:01.101)       0:00:07.357 ********** 
+2021-04-18 13:56:32,864 p=93766 u=dom n=ansible | ok: [redmine]
+2021-04-18 13:56:32,904 p=93766 u=dom n=ansible | TASK [db : Configuring user priviliges] ****************************************
+2021-04-18 13:56:32,904 p=93766 u=dom n=ansible | Sunday 18 April 2021  13:56:32 +0200 (0:00:00.727)       0:00:08.085 ********** 
+2021-04-18 13:56:33,605 p=93766 u=dom n=ansible | [WARNING]: Module did not set no_log for update_password
+
+2021-04-18 13:56:33,605 p=93766 u=dom n=ansible | ok: [redmine]
+2021-04-18 13:56:33,639 p=93766 u=dom n=ansible | TASK [db : Config database] ****************************************************
+2021-04-18 13:56:33,639 p=93766 u=dom n=ansible | Sunday 18 April 2021  13:56:33 +0200 (0:00:00.735)       0:00:08.820 ********** 
+2021-04-18 13:56:34,515 p=93766 u=dom n=ansible | ok: [redmine]
+2021-04-18 13:56:34,544 p=93766 u=dom n=ansible | TASK [redmine : Redmine. Install packages] *************************************
+2021-04-18 13:56:34,544 p=93766 u=dom n=ansible | Sunday 18 April 2021  13:56:34 +0200 (0:00:00.904)       0:00:09.725 ********** 
+2021-04-18 13:56:36,383 p=93766 u=dom n=ansible | ok: [redmine]
+2021-04-18 13:56:36,419 p=93766 u=dom n=ansible | TASK [redmine : mysql_db] ******************************************************
+2021-04-18 13:56:36,420 p=93766 u=dom n=ansible | Sunday 18 April 2021  13:56:36 +0200 (0:00:01.875)       0:00:11.600 ********** 
+2021-04-18 13:56:36,945 p=93766 u=dom n=ansible | ok: [redmine]
+2021-04-18 13:56:36,977 p=93766 u=dom n=ansible | TASK [redmine : mysql_user] ****************************************************
+2021-04-18 13:56:36,978 p=93766 u=dom n=ansible | Sunday 18 April 2021  13:56:36 +0200 (0:00:00.557)       0:00:12.158 ********** 
+2021-04-18 13:56:37,600 p=93766 u=dom n=ansible | ok: [redmine]
+2021-04-18 13:56:37,642 p=93766 u=dom n=ansible | TASK [redmine : Redmine. Clone repository] *************************************
+2021-04-18 13:56:37,642 p=93766 u=dom n=ansible | Sunday 18 April 2021  13:56:37 +0200 (0:00:00.664)       0:00:12.822 ********** 
+2021-04-18 13:56:38,224 p=93766 u=dom n=ansible | ok: [redmine]
+2021-04-18 13:56:38,265 p=93766 u=dom n=ansible | TASK [redmine : Redmine. Change permissions] ***********************************
+2021-04-18 13:56:38,265 p=93766 u=dom n=ansible | Sunday 18 April 2021  13:56:38 +0200 (0:00:00.623)       0:00:13.446 ********** 
+2021-04-18 13:56:38,870 p=93766 u=dom n=ansible | ok: [redmine]
+2021-04-18 13:56:38,911 p=93766 u=dom n=ansible | TASK [redmine : Redmine. Change permissions] ***********************************
+2021-04-18 13:56:38,911 p=93766 u=dom n=ansible | Sunday 18 April 2021  13:56:38 +0200 (0:00:00.645)       0:00:14.091 ********** 
+2021-04-18 13:56:39,496 p=93766 u=dom n=ansible | ok: [redmine]
+2021-04-18 13:56:39,530 p=93766 u=dom n=ansible | TASK [redmine : Configuration files for virtualhost] ***************************
+2021-04-18 13:56:39,531 p=93766 u=dom n=ansible | Sunday 18 April 2021  13:56:39 +0200 (0:00:00.619)       0:00:14.711 ********** 
+2021-04-18 13:56:40,716 p=93766 u=dom n=ansible | changed: [redmine]
+2021-04-18 13:56:40,753 p=93766 u=dom n=ansible | TASK [redmine : Redmine. Setup 01] *********************************************
+2021-04-18 13:56:40,753 p=93766 u=dom n=ansible | Sunday 18 April 2021  13:56:40 +0200 (0:00:01.222)       0:00:15.933 ********** 
+2021-04-18 13:56:50,924 p=93766 u=dom n=ansible | changed: [redmine]
+2021-04-18 13:56:50,946 p=93766 u=dom n=ansible | TASK [redmine : Session store secret generation] *******************************
+2021-04-18 13:56:50,947 p=93766 u=dom n=ansible | Sunday 18 April 2021  13:56:50 +0200 (0:00:10.193)       0:00:26.127 ********** 
+2021-04-18 13:56:51,654 p=93766 u=dom n=ansible | ok: [redmine]
+2021-04-18 13:56:51,687 p=93766 u=dom n=ansible | TASK [redmine : Redmine. Setup 02] *********************************************
+2021-04-18 13:56:51,687 p=93766 u=dom n=ansible | Sunday 18 April 2021  13:56:51 +0200 (0:00:00.740)       0:00:26.867 ********** 
+2021-04-18 13:57:02,937 p=93766 u=dom n=ansible | changed: [redmine]
+2021-04-18 13:57:02,972 p=93766 u=dom n=ansible | TASK [redmine : Configuration files for virtualhost] ***************************
+2021-04-18 13:57:02,972 p=93766 u=dom n=ansible | Sunday 18 April 2021  13:57:02 +0200 (0:00:11.285)       0:00:38.152 ********** 
+2021-04-18 13:57:03,822 p=93766 u=dom n=ansible | ok: [redmine]
+2021-04-18 13:57:03,869 p=93766 u=dom n=ansible | TASK [redmine : Add redmine-5.sa to host file] *********************************
+2021-04-18 13:57:03,869 p=93766 u=dom n=ansible | Sunday 18 April 2021  13:57:03 +0200 (0:00:00.897)       0:00:39.049 ********** 
+2021-04-18 13:57:04,337 p=93766 u=dom n=ansible | changed: [redmine]
+2021-04-18 13:57:04,377 p=93766 u=dom n=ansible | TASK [redmine : lineinfile] ****************************************************
+2021-04-18 13:57:04,378 p=93766 u=dom n=ansible | Sunday 18 April 2021  13:57:04 +0200 (0:00:00.508)       0:00:39.558 ********** 
+2021-04-18 13:57:05,012 p=93766 u=dom n=ansible | changed: [redmine]
+2021-04-18 13:57:05,015 p=93766 u=dom n=ansible | RUNNING HANDLER [redmine : apache restart] *************************************
+2021-04-18 13:57:05,016 p=93766 u=dom n=ansible | Sunday 18 April 2021  13:57:05 +0200 (0:00:00.637)       0:00:40.196 ********** 
+2021-04-18 13:57:08,010 p=93766 u=dom n=ansible | changed: [redmine]
+2021-04-18 13:57:08,014 p=93766 u=dom n=ansible | PLAY RECAP *********************************************************************
+2021-04-18 13:57:08,014 p=93766 u=dom n=ansible | redmine                    : ok=23   changed=6    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2021-04-18 13:57:08,014 p=93766 u=dom n=ansible | Sunday 18 April 2021  13:57:08 +0200 (0:00:02.998)       0:00:43.195 ********** 
+2021-04-18 13:57:08,015 p=93766 u=dom n=ansible | =============================================================================== 
+2021-04-18 13:57:08,015 p=93766 u=dom n=ansible | redmine : Redmine. Setup 02 -------------------------------------------- 11.29s
+2021-04-18 13:57:08,015 p=93766 u=dom n=ansible | redmine : Redmine. Setup 01 -------------------------------------------- 10.19s
+2021-04-18 13:57:08,015 p=93766 u=dom n=ansible | redmine : apache restart ------------------------------------------------ 3.00s
+2021-04-18 13:57:08,015 p=93766 u=dom n=ansible | Gathering Facts --------------------------------------------------------- 2.08s
+2021-04-18 13:57:08,015 p=93766 u=dom n=ansible | Redmine. Install packages ----------------------------------------------- 2.03s
+2021-04-18 13:57:08,015 p=93766 u=dom n=ansible | redmine : Redmine. Install packages ------------------------------------- 1.88s
+2021-04-18 13:57:08,015 p=93766 u=dom n=ansible | redmine : Configuration files for virtualhost --------------------------- 1.22s
+2021-04-18 13:57:08,015 p=93766 u=dom n=ansible | db : MySQL. Install and setup ------------------------------------------- 1.10s
+2021-04-18 13:57:08,016 p=93766 u=dom n=ansible | db : Config database ---------------------------------------------------- 0.90s
+2021-04-18 13:57:08,016 p=93766 u=dom n=ansible | redmine : Configuration files for virtualhost --------------------------- 0.90s
+2021-04-18 13:57:08,016 p=93766 u=dom n=ansible | Redmine. Change permissions --------------------------------------------- 0.76s
+2021-04-18 13:57:08,016 p=93766 u=dom n=ansible | Redmine. Clone repository ----------------------------------------------- 0.75s
+2021-04-18 13:57:08,016 p=93766 u=dom n=ansible | redmine : Session store secret generation ------------------------------- 0.74s
+2021-04-18 13:57:08,016 p=93766 u=dom n=ansible | db : Configuring user priviliges ---------------------------------------- 0.74s
+2021-04-18 13:57:08,016 p=93766 u=dom n=ansible | db : Configuring encoding DB -------------------------------------------- 0.73s
+2021-04-18 13:57:08,016 p=93766 u=dom n=ansible | redmine : mysql_user ---------------------------------------------------- 0.66s
+2021-04-18 13:57:08,017 p=93766 u=dom n=ansible | redmine : Redmine. Change permissions ----------------------------------- 0.65s
+2021-04-18 13:57:08,017 p=93766 u=dom n=ansible | redmine : lineinfile ---------------------------------------------------- 0.64s
+2021-04-18 13:57:08,017 p=93766 u=dom n=ansible | redmine : Redmine. Clone repository ------------------------------------- 0.62s
+2021-04-18 13:57:08,017 p=93766 u=dom n=ansible | redmine : Redmine. Change permissions ----------------------------------- 0.62s
+2021-04-18 13:57:08,017 p=93766 u=dom n=ansible | Playbook run took 0 days, 0 hours, 0 minutes, 43 seconds
+2021-04-18 14:02:07,493 p=94597 u=dom n=ansible | PLAY [redmine] *****************************************************************
+2021-04-18 14:02:07,507 p=94597 u=dom n=ansible | TASK [Gathering Facts] *********************************************************
+2021-04-18 14:02:07,507 p=94597 u=dom n=ansible | Sunday 18 April 2021  14:02:07 +0200 (0:00:00.025)       0:00:00.025 ********** 
+2021-04-18 14:02:09,543 p=94597 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:02:09,565 p=94597 u=dom n=ansible | TASK [Redmine. Install packages] ***********************************************
+2021-04-18 14:02:09,565 p=94597 u=dom n=ansible | Sunday 18 April 2021  14:02:09 +0200 (0:00:02.058)       0:00:02.083 ********** 
+2021-04-18 14:02:11,482 p=94597 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:02:11,522 p=94597 u=dom n=ansible | TASK [Redmine. Clone repository] ***********************************************
+2021-04-18 14:02:11,523 p=94597 u=dom n=ansible | Sunday 18 April 2021  14:02:11 +0200 (0:00:01.956)       0:00:04.040 ********** 
+2021-04-18 14:02:12,217 p=94597 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:02:12,252 p=94597 u=dom n=ansible | TASK [Redmine. Change permissions] *********************************************
+2021-04-18 14:02:12,252 p=94597 u=dom n=ansible | Sunday 18 April 2021  14:02:12 +0200 (0:00:00.730)       0:00:04.771 ********** 
+2021-04-18 14:02:12,973 p=94597 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:02:13,007 p=94597 u=dom n=ansible | TASK [Redmine. Change permissions] *********************************************
+2021-04-18 14:02:13,008 p=94597 u=dom n=ansible | Sunday 18 April 2021  14:02:13 +0200 (0:00:00.755)       0:00:05.526 ********** 
+2021-04-18 14:02:13,576 p=94597 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:02:13,613 p=94597 u=dom n=ansible | TASK [db : MySQL. Install and setup] *******************************************
+2021-04-18 14:02:13,613 p=94597 u=dom n=ansible | Sunday 18 April 2021  14:02:13 +0200 (0:00:00.605)       0:00:06.131 ********** 
+2021-04-18 14:02:14,556 p=94597 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:02:14,572 p=94597 u=dom n=ansible | TASK [db : Configuring encoding DB] ********************************************
+2021-04-18 14:02:14,573 p=94597 u=dom n=ansible | Sunday 18 April 2021  14:02:14 +0200 (0:00:00.959)       0:00:07.091 ********** 
+2021-04-18 14:02:15,121 p=94597 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:02:15,146 p=94597 u=dom n=ansible | TASK [db : Configuring user priviliges] ****************************************
+2021-04-18 14:02:15,146 p=94597 u=dom n=ansible | Sunday 18 April 2021  14:02:15 +0200 (0:00:00.573)       0:00:07.665 ********** 
+2021-04-18 14:02:15,890 p=94597 u=dom n=ansible | [WARNING]: Module did not set no_log for update_password
+
+2021-04-18 14:02:15,891 p=94597 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:02:15,937 p=94597 u=dom n=ansible | TASK [db : Config database] ****************************************************
+2021-04-18 14:02:15,938 p=94597 u=dom n=ansible | Sunday 18 April 2021  14:02:15 +0200 (0:00:00.791)       0:00:08.456 ********** 
+2021-04-18 14:02:16,869 p=94597 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:02:16,910 p=94597 u=dom n=ansible | TASK [redmine : Redmine. Install packages] *************************************
+2021-04-18 14:02:16,911 p=94597 u=dom n=ansible | Sunday 18 April 2021  14:02:16 +0200 (0:00:00.973)       0:00:09.429 ********** 
+2021-04-18 14:02:18,728 p=94597 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:02:18,757 p=94597 u=dom n=ansible | TASK [redmine : mysql_db] ******************************************************
+2021-04-18 14:02:18,758 p=94597 u=dom n=ansible | Sunday 18 April 2021  14:02:18 +0200 (0:00:01.846)       0:00:11.276 ********** 
+2021-04-18 14:02:19,329 p=94597 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:02:19,368 p=94597 u=dom n=ansible | TASK [redmine : mysql_user] ****************************************************
+2021-04-18 14:02:19,368 p=94597 u=dom n=ansible | Sunday 18 April 2021  14:02:19 +0200 (0:00:00.610)       0:00:11.887 ********** 
+2021-04-18 14:02:19,928 p=94597 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:02:19,961 p=94597 u=dom n=ansible | TASK [redmine : Redmine. Clone repository] *************************************
+2021-04-18 14:02:19,961 p=94597 u=dom n=ansible | Sunday 18 April 2021  14:02:19 +0200 (0:00:00.593)       0:00:12.480 ********** 
+2021-04-18 14:02:20,549 p=94597 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:02:20,584 p=94597 u=dom n=ansible | TASK [redmine : Redmine. Change permissions] ***********************************
+2021-04-18 14:02:20,585 p=94597 u=dom n=ansible | Sunday 18 April 2021  14:02:20 +0200 (0:00:00.623)       0:00:13.103 ********** 
+2021-04-18 14:02:21,093 p=94597 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:02:21,130 p=94597 u=dom n=ansible | TASK [redmine : Redmine. Change permissions] ***********************************
+2021-04-18 14:02:21,130 p=94597 u=dom n=ansible | Sunday 18 April 2021  14:02:21 +0200 (0:00:00.545)       0:00:13.648 ********** 
+2021-04-18 14:02:21,698 p=94597 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:02:21,738 p=94597 u=dom n=ansible | TASK [redmine : Configuration files for virtualhost] ***************************
+2021-04-18 14:02:21,738 p=94597 u=dom n=ansible | Sunday 18 April 2021  14:02:21 +0200 (0:00:00.607)       0:00:14.256 ********** 
+2021-04-18 14:02:22,748 p=94597 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:02:22,781 p=94597 u=dom n=ansible | TASK [redmine : Redmine. Setup 01] *********************************************
+2021-04-18 14:02:22,781 p=94597 u=dom n=ansible | Sunday 18 April 2021  14:02:22 +0200 (0:00:01.043)       0:00:15.299 ********** 
+2021-04-18 14:02:38,102 p=94597 u=dom n=ansible | changed: [redmine]
+2021-04-18 14:02:38,140 p=94597 u=dom n=ansible | TASK [redmine : Session store secret generation] *******************************
+2021-04-18 14:02:38,141 p=94597 u=dom n=ansible | Sunday 18 April 2021  14:02:38 +0200 (0:00:15.359)       0:00:30.659 ********** 
+2021-04-18 14:02:38,687 p=94597 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:02:38,725 p=94597 u=dom n=ansible | TASK [redmine : Redmine. Setup 02] *********************************************
+2021-04-18 14:02:38,725 p=94597 u=dom n=ansible | Sunday 18 April 2021  14:02:38 +0200 (0:00:00.584)       0:00:31.244 ********** 
+2021-04-18 14:02:49,997 p=94597 u=dom n=ansible | changed: [redmine]
+2021-04-18 14:02:50,033 p=94597 u=dom n=ansible | TASK [redmine : Configuration files for virtualhost] ***************************
+2021-04-18 14:02:50,033 p=94597 u=dom n=ansible | Sunday 18 April 2021  14:02:50 +0200 (0:00:11.307)       0:00:42.552 ********** 
+2021-04-18 14:02:50,956 p=94597 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:02:51,022 p=94597 u=dom n=ansible | TASK [redmine : Add redmine-5.sa to host file] *********************************
+2021-04-18 14:02:51,022 p=94597 u=dom n=ansible | Sunday 18 April 2021  14:02:51 +0200 (0:00:00.988)       0:00:43.540 ********** 
+2021-04-18 14:02:51,566 p=94597 u=dom n=ansible | changed: [redmine]
+2021-04-18 14:02:51,592 p=94597 u=dom n=ansible | TASK [redmine : lineinfile] ****************************************************
+2021-04-18 14:02:51,592 p=94597 u=dom n=ansible | Sunday 18 April 2021  14:02:51 +0200 (0:00:00.569)       0:00:44.110 ********** 
+2021-04-18 14:02:52,245 p=94597 u=dom n=ansible | changed: [redmine]
+2021-04-18 14:02:52,384 p=94597 u=dom n=ansible | PLAY RECAP *********************************************************************
+2021-04-18 14:02:52,384 p=94597 u=dom n=ansible | redmine                    : ok=22   changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2021-04-18 14:02:52,384 p=94597 u=dom n=ansible | Sunday 18 April 2021  14:02:52 +0200 (0:00:00.792)       0:00:44.903 ********** 
+2021-04-18 14:02:52,384 p=94597 u=dom n=ansible | =============================================================================== 
+2021-04-18 14:02:52,385 p=94597 u=dom n=ansible | redmine : Redmine. Setup 01 -------------------------------------------- 15.36s
+2021-04-18 14:02:52,385 p=94597 u=dom n=ansible | redmine : Redmine. Setup 02 -------------------------------------------- 11.31s
+2021-04-18 14:02:52,385 p=94597 u=dom n=ansible | Gathering Facts --------------------------------------------------------- 2.06s
+2021-04-18 14:02:52,385 p=94597 u=dom n=ansible | Redmine. Install packages ----------------------------------------------- 1.96s
+2021-04-18 14:02:52,385 p=94597 u=dom n=ansible | redmine : Redmine. Install packages ------------------------------------- 1.85s
+2021-04-18 14:02:52,385 p=94597 u=dom n=ansible | redmine : Configuration files for virtualhost --------------------------- 1.04s
+2021-04-18 14:02:52,385 p=94597 u=dom n=ansible | redmine : Configuration files for virtualhost --------------------------- 0.99s
+2021-04-18 14:02:52,386 p=94597 u=dom n=ansible | db : Config database ---------------------------------------------------- 0.97s
+2021-04-18 14:02:52,386 p=94597 u=dom n=ansible | db : MySQL. Install and setup ------------------------------------------- 0.96s
+2021-04-18 14:02:52,386 p=94597 u=dom n=ansible | redmine : lineinfile ---------------------------------------------------- 0.79s
+2021-04-18 14:02:52,386 p=94597 u=dom n=ansible | db : Configuring user priviliges ---------------------------------------- 0.79s
+2021-04-18 14:02:52,386 p=94597 u=dom n=ansible | Redmine. Change permissions --------------------------------------------- 0.76s
+2021-04-18 14:02:52,386 p=94597 u=dom n=ansible | Redmine. Clone repository ----------------------------------------------- 0.73s
+2021-04-18 14:02:52,386 p=94597 u=dom n=ansible | redmine : Redmine. Clone repository ------------------------------------- 0.62s
+2021-04-18 14:02:52,386 p=94597 u=dom n=ansible | redmine : mysql_db ------------------------------------------------------ 0.61s
+2021-04-18 14:02:52,387 p=94597 u=dom n=ansible | redmine : Redmine. Change permissions ----------------------------------- 0.61s
+2021-04-18 14:02:52,387 p=94597 u=dom n=ansible | Redmine. Change permissions --------------------------------------------- 0.61s
+2021-04-18 14:02:52,387 p=94597 u=dom n=ansible | redmine : mysql_user ---------------------------------------------------- 0.59s
+2021-04-18 14:02:52,387 p=94597 u=dom n=ansible | redmine : Session store secret generation ------------------------------- 0.58s
+2021-04-18 14:02:52,387 p=94597 u=dom n=ansible | db : Configuring encoding DB -------------------------------------------- 0.57s
+2021-04-18 14:02:52,387 p=94597 u=dom n=ansible | Playbook run took 0 days, 0 hours, 0 minutes, 44 seconds
+2021-04-18 14:06:17,096 p=94908 u=dom n=ansible | PLAY [redmine] *****************************************************************
+2021-04-18 14:06:17,110 p=94908 u=dom n=ansible | TASK [Gathering Facts] *********************************************************
+2021-04-18 14:06:17,110 p=94908 u=dom n=ansible | Sunday 18 April 2021  14:06:17 +0200 (0:00:00.026)       0:00:00.026 ********** 
+2021-04-18 14:06:19,085 p=94908 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:06:19,107 p=94908 u=dom n=ansible | TASK [Redmine. Install packages] ***********************************************
+2021-04-18 14:06:19,108 p=94908 u=dom n=ansible | Sunday 18 April 2021  14:06:19 +0200 (0:00:01.997)       0:00:02.023 ********** 
+2021-04-18 14:06:21,018 p=94908 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:06:21,059 p=94908 u=dom n=ansible | TASK [Redmine. Clone repository] ***********************************************
+2021-04-18 14:06:21,060 p=94908 u=dom n=ansible | Sunday 18 April 2021  14:06:21 +0200 (0:00:01.952)       0:00:03.975 ********** 
+2021-04-18 14:06:21,776 p=94908 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:06:21,814 p=94908 u=dom n=ansible | TASK [Redmine. Change permissions] *********************************************
+2021-04-18 14:06:21,814 p=94908 u=dom n=ansible | Sunday 18 April 2021  14:06:21 +0200 (0:00:00.754)       0:00:04.730 ********** 
+2021-04-18 14:06:22,518 p=94908 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:06:22,559 p=94908 u=dom n=ansible | TASK [Redmine. Change permissions] *********************************************
+2021-04-18 14:06:22,559 p=94908 u=dom n=ansible | Sunday 18 April 2021  14:06:22 +0200 (0:00:00.745)       0:00:05.475 ********** 
+2021-04-18 14:06:23,124 p=94908 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:06:23,162 p=94908 u=dom n=ansible | TASK [db : MySQL. Install and setup] *******************************************
+2021-04-18 14:06:23,162 p=94908 u=dom n=ansible | Sunday 18 April 2021  14:06:23 +0200 (0:00:00.602)       0:00:06.078 ********** 
+2021-04-18 14:06:24,223 p=94908 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:06:24,261 p=94908 u=dom n=ansible | TASK [db : Configuring encoding DB] ********************************************
+2021-04-18 14:06:24,261 p=94908 u=dom n=ansible | Sunday 18 April 2021  14:06:24 +0200 (0:00:01.099)       0:00:07.177 ********** 
+2021-04-18 14:06:24,914 p=94908 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:06:24,945 p=94908 u=dom n=ansible | TASK [db : Configuring user priviliges] ****************************************
+2021-04-18 14:06:24,946 p=94908 u=dom n=ansible | Sunday 18 April 2021  14:06:24 +0200 (0:00:00.684)       0:00:07.861 ********** 
+2021-04-18 14:06:25,709 p=94908 u=dom n=ansible | [WARNING]: Module did not set no_log for update_password
+
+2021-04-18 14:06:25,709 p=94908 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:06:25,752 p=94908 u=dom n=ansible | TASK [db : Config database] ****************************************************
+2021-04-18 14:06:25,753 p=94908 u=dom n=ansible | Sunday 18 April 2021  14:06:25 +0200 (0:00:00.807)       0:00:08.668 ********** 
+2021-04-18 14:06:26,616 p=94908 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:06:26,646 p=94908 u=dom n=ansible | TASK [redmine : Redmine. Install packages] *************************************
+2021-04-18 14:06:26,646 p=94908 u=dom n=ansible | Sunday 18 April 2021  14:06:26 +0200 (0:00:00.893)       0:00:09.562 ********** 
+2021-04-18 14:06:28,430 p=94908 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:06:28,469 p=94908 u=dom n=ansible | TASK [redmine : mysql_db] ******************************************************
+2021-04-18 14:06:28,470 p=94908 u=dom n=ansible | Sunday 18 April 2021  14:06:28 +0200 (0:00:01.823)       0:00:11.385 ********** 
+2021-04-18 14:06:29,048 p=94908 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:06:29,082 p=94908 u=dom n=ansible | TASK [redmine : mysql_user] ****************************************************
+2021-04-18 14:06:29,082 p=94908 u=dom n=ansible | Sunday 18 April 2021  14:06:29 +0200 (0:00:00.612)       0:00:11.998 ********** 
+2021-04-18 14:06:29,696 p=94908 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:06:29,731 p=94908 u=dom n=ansible | TASK [redmine : Redmine. Clone repository] *************************************
+2021-04-18 14:06:29,731 p=94908 u=dom n=ansible | Sunday 18 April 2021  14:06:29 +0200 (0:00:00.649)       0:00:12.647 ********** 
+2021-04-18 14:06:30,325 p=94908 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:06:30,360 p=94908 u=dom n=ansible | TASK [redmine : Redmine. Change permissions] ***********************************
+2021-04-18 14:06:30,360 p=94908 u=dom n=ansible | Sunday 18 April 2021  14:06:30 +0200 (0:00:00.628)       0:00:13.276 ********** 
+2021-04-18 14:06:30,966 p=94908 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:06:31,001 p=94908 u=dom n=ansible | TASK [redmine : Redmine. Change permissions] ***********************************
+2021-04-18 14:06:31,001 p=94908 u=dom n=ansible | Sunday 18 April 2021  14:06:30 +0200 (0:00:00.641)       0:00:13.917 ********** 
+2021-04-18 14:06:31,569 p=94908 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:06:31,612 p=94908 u=dom n=ansible | TASK [redmine : Configuration files for virtualhost] ***************************
+2021-04-18 14:06:31,613 p=94908 u=dom n=ansible | Sunday 18 April 2021  14:06:31 +0200 (0:00:00.611)       0:00:14.528 ********** 
+2021-04-18 14:06:32,484 p=94908 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:06:32,518 p=94908 u=dom n=ansible | TASK [redmine : Redmine. Setup 01] *********************************************
+2021-04-18 14:06:32,518 p=94908 u=dom n=ansible | Sunday 18 April 2021  14:06:32 +0200 (0:00:00.905)       0:00:15.433 ********** 
+2021-04-18 14:06:42,746 p=94908 u=dom n=ansible | changed: [redmine]
+2021-04-18 14:06:42,788 p=94908 u=dom n=ansible | TASK [redmine : Session store secret generation] *******************************
+2021-04-18 14:06:42,789 p=94908 u=dom n=ansible | Sunday 18 April 2021  14:06:42 +0200 (0:00:10.270)       0:00:25.704 ********** 
+2021-04-18 14:06:43,355 p=94908 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:06:43,395 p=94908 u=dom n=ansible | TASK [redmine : Redmine. Setup 02] *********************************************
+2021-04-18 14:06:43,396 p=94908 u=dom n=ansible | Sunday 18 April 2021  14:06:43 +0200 (0:00:00.606)       0:00:26.311 ********** 
+2021-04-18 14:06:54,645 p=94908 u=dom n=ansible | changed: [redmine]
+2021-04-18 14:06:54,665 p=94908 u=dom n=ansible | TASK [redmine : Configuration files for virtualhost] ***************************
+2021-04-18 14:06:54,665 p=94908 u=dom n=ansible | Sunday 18 April 2021  14:06:54 +0200 (0:00:11.269)       0:00:37.581 ********** 
+2021-04-18 14:06:55,582 p=94908 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:06:55,650 p=94908 u=dom n=ansible | TASK [redmine : Add redmine-5.sa to host file] *********************************
+2021-04-18 14:06:55,651 p=94908 u=dom n=ansible | Sunday 18 April 2021  14:06:55 +0200 (0:00:00.985)       0:00:38.566 ********** 
+2021-04-18 14:06:56,187 p=94908 u=dom n=ansible | changed: [redmine]
+2021-04-18 14:06:56,224 p=94908 u=dom n=ansible | TASK [redmine : lineinfile] ****************************************************
+2021-04-18 14:06:56,224 p=94908 u=dom n=ansible | Sunday 18 April 2021  14:06:56 +0200 (0:00:00.573)       0:00:39.139 ********** 
+2021-04-18 14:06:56,870 p=94908 u=dom n=ansible | changed: [redmine]
+2021-04-18 14:06:56,877 p=94908 u=dom n=ansible | PLAY RECAP *********************************************************************
+2021-04-18 14:06:57,110 p=94908 u=dom n=ansible | redmine                    : ok=22   changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2021-04-18 14:06:57,112 p=94908 u=dom n=ansible | Sunday 18 April 2021  14:06:57 +0200 (0:00:00.887)       0:00:40.027 ********** 
+2021-04-18 14:06:57,113 p=94908 u=dom n=ansible | =============================================================================== 
+2021-04-18 14:06:57,114 p=94908 u=dom n=ansible | redmine : Redmine. Setup 02 -------------------------------------------- 11.27s
+2021-04-18 14:06:57,115 p=94908 u=dom n=ansible | redmine : Redmine. Setup 01 -------------------------------------------- 10.27s
+2021-04-18 14:06:57,116 p=94908 u=dom n=ansible | Gathering Facts --------------------------------------------------------- 2.00s
+2021-04-18 14:06:57,116 p=94908 u=dom n=ansible | Redmine. Install packages ----------------------------------------------- 1.95s
+2021-04-18 14:06:57,117 p=94908 u=dom n=ansible | redmine : Redmine. Install packages ------------------------------------- 1.82s
+2021-04-18 14:06:57,118 p=94908 u=dom n=ansible | db : MySQL. Install and setup ------------------------------------------- 1.10s
+2021-04-18 14:06:57,119 p=94908 u=dom n=ansible | redmine : Configuration files for virtualhost --------------------------- 0.99s
+2021-04-18 14:06:57,119 p=94908 u=dom n=ansible | redmine : Configuration files for virtualhost --------------------------- 0.91s
+2021-04-18 14:06:57,120 p=94908 u=dom n=ansible | db : Config database ---------------------------------------------------- 0.89s
+2021-04-18 14:06:57,120 p=94908 u=dom n=ansible | redmine : lineinfile ---------------------------------------------------- 0.89s
+2021-04-18 14:06:57,121 p=94908 u=dom n=ansible | db : Configuring user priviliges ---------------------------------------- 0.81s
+2021-04-18 14:06:57,121 p=94908 u=dom n=ansible | Redmine. Clone repository ----------------------------------------------- 0.75s
+2021-04-18 14:06:57,122 p=94908 u=dom n=ansible | Redmine. Change permissions --------------------------------------------- 0.75s
+2021-04-18 14:06:57,123 p=94908 u=dom n=ansible | db : Configuring encoding DB -------------------------------------------- 0.68s
+2021-04-18 14:06:57,123 p=94908 u=dom n=ansible | redmine : mysql_user ---------------------------------------------------- 0.65s
+2021-04-18 14:06:57,124 p=94908 u=dom n=ansible | redmine : Redmine. Change permissions ----------------------------------- 0.64s
+2021-04-18 14:06:57,124 p=94908 u=dom n=ansible | redmine : Redmine. Clone repository ------------------------------------- 0.63s
+2021-04-18 14:06:57,125 p=94908 u=dom n=ansible | redmine : mysql_db ------------------------------------------------------ 0.61s
+2021-04-18 14:06:57,126 p=94908 u=dom n=ansible | redmine : Redmine. Change permissions ----------------------------------- 0.61s
+2021-04-18 14:06:57,127 p=94908 u=dom n=ansible | redmine : Session store secret generation ------------------------------- 0.61s
+2021-04-18 14:06:57,128 p=94908 u=dom n=ansible | Playbook run took 0 days, 0 hours, 0 minutes, 40 seconds
+2021-04-18 14:10:18,802 p=95370 u=dom n=ansible | PLAY [redmine] *****************************************************************
+2021-04-18 14:10:18,816 p=95370 u=dom n=ansible | TASK [Gathering Facts] *********************************************************
+2021-04-18 14:10:18,816 p=95370 u=dom n=ansible | Sunday 18 April 2021  14:10:18 +0200 (0:00:00.026)       0:00:00.026 ********** 
+2021-04-18 14:10:20,862 p=95370 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:10:20,883 p=95370 u=dom n=ansible | TASK [Redmine. Install packages] ***********************************************
+2021-04-18 14:10:20,884 p=95370 u=dom n=ansible | Sunday 18 April 2021  14:10:20 +0200 (0:00:02.067)       0:00:02.093 ********** 
+2021-04-18 14:10:22,811 p=95370 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:10:22,853 p=95370 u=dom n=ansible | TASK [Redmine. Clone repository] ***********************************************
+2021-04-18 14:10:22,853 p=95370 u=dom n=ansible | Sunday 18 April 2021  14:10:22 +0200 (0:00:01.969)       0:00:04.062 ********** 
+2021-04-18 14:10:23,559 p=95370 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:10:23,602 p=95370 u=dom n=ansible | TASK [Redmine. Change permissions] *********************************************
+2021-04-18 14:10:23,602 p=95370 u=dom n=ansible | Sunday 18 April 2021  14:10:23 +0200 (0:00:00.748)       0:00:04.811 ********** 
+2021-04-18 14:10:24,324 p=95370 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:10:24,358 p=95370 u=dom n=ansible | TASK [Redmine. Change permissions] *********************************************
+2021-04-18 14:10:24,358 p=95370 u=dom n=ansible | Sunday 18 April 2021  14:10:24 +0200 (0:00:00.756)       0:00:05.568 ********** 
+2021-04-18 14:10:24,937 p=95370 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:10:24,980 p=95370 u=dom n=ansible | TASK [db : MySQL. Install and setup] *******************************************
+2021-04-18 14:10:24,980 p=95370 u=dom n=ansible | Sunday 18 April 2021  14:10:24 +0200 (0:00:00.621)       0:00:06.190 ********** 
+2021-04-18 14:10:26,052 p=95370 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:10:26,092 p=95370 u=dom n=ansible | TASK [db : Configuring encoding DB] ********************************************
+2021-04-18 14:10:26,092 p=95370 u=dom n=ansible | Sunday 18 April 2021  14:10:26 +0200 (0:00:01.112)       0:00:07.302 ********** 
+2021-04-18 14:10:26,772 p=95370 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:10:26,807 p=95370 u=dom n=ansible | TASK [db : Configuring user priviliges] ****************************************
+2021-04-18 14:10:26,807 p=95370 u=dom n=ansible | Sunday 18 April 2021  14:10:26 +0200 (0:00:00.714)       0:00:08.017 ********** 
+2021-04-18 14:10:27,466 p=95370 u=dom n=ansible | [WARNING]: Module did not set no_log for update_password
+
+2021-04-18 14:10:27,467 p=95370 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:10:27,503 p=95370 u=dom n=ansible | TASK [db : Config database] ****************************************************
+2021-04-18 14:10:27,503 p=95370 u=dom n=ansible | Sunday 18 April 2021  14:10:27 +0200 (0:00:00.695)       0:00:08.712 ********** 
+2021-04-18 14:10:28,456 p=95370 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:10:28,492 p=95370 u=dom n=ansible | TASK [redmine : Redmine. Install packages] *************************************
+2021-04-18 14:10:28,493 p=95370 u=dom n=ansible | Sunday 18 April 2021  14:10:28 +0200 (0:00:00.989)       0:00:09.702 ********** 
+2021-04-18 14:10:30,349 p=95370 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:10:30,386 p=95370 u=dom n=ansible | TASK [redmine : mysql_db] ******************************************************
+2021-04-18 14:10:30,386 p=95370 u=dom n=ansible | Sunday 18 April 2021  14:10:30 +0200 (0:00:01.893)       0:00:11.595 ********** 
+2021-04-18 14:10:30,988 p=95370 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:10:31,028 p=95370 u=dom n=ansible | TASK [redmine : mysql_user] ****************************************************
+2021-04-18 14:10:31,028 p=95370 u=dom n=ansible | Sunday 18 April 2021  14:10:31 +0200 (0:00:00.642)       0:00:12.238 ********** 
+2021-04-18 14:10:31,649 p=95370 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:10:31,691 p=95370 u=dom n=ansible | TASK [redmine : Redmine. Clone repository] *************************************
+2021-04-18 14:10:31,691 p=95370 u=dom n=ansible | Sunday 18 April 2021  14:10:31 +0200 (0:00:00.663)       0:00:12.901 ********** 
+2021-04-18 14:10:32,195 p=95370 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:10:32,226 p=95370 u=dom n=ansible | TASK [redmine : Redmine. Change permissions] ***********************************
+2021-04-18 14:10:32,226 p=95370 u=dom n=ansible | Sunday 18 April 2021  14:10:32 +0200 (0:00:00.534)       0:00:13.436 ********** 
+2021-04-18 14:10:32,819 p=95370 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:10:32,857 p=95370 u=dom n=ansible | TASK [redmine : Redmine. Change permissions] ***********************************
+2021-04-18 14:10:32,857 p=95370 u=dom n=ansible | Sunday 18 April 2021  14:10:32 +0200 (0:00:00.630)       0:00:14.066 ********** 
+2021-04-18 14:10:33,439 p=95370 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:10:33,481 p=95370 u=dom n=ansible | TASK [redmine : Configuration files for virtualhost] ***************************
+2021-04-18 14:10:33,672 p=95370 u=dom n=ansible | Sunday 18 April 2021  14:10:33 +0200 (0:00:00.814)       0:00:14.881 ********** 
+2021-04-18 14:10:34,570 p=95370 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:10:34,606 p=95370 u=dom n=ansible | TASK [redmine : Redmine. Setup 01] *********************************************
+2021-04-18 14:10:34,606 p=95370 u=dom n=ansible | Sunday 18 April 2021  14:10:34 +0200 (0:00:00.934)       0:00:15.816 ********** 
+2021-04-18 14:10:44,844 p=95370 u=dom n=ansible | changed: [redmine]
+2021-04-18 14:10:44,877 p=95370 u=dom n=ansible | TASK [redmine : Session store secret generation] *******************************
+2021-04-18 14:10:45,076 p=95370 u=dom n=ansible | Sunday 18 April 2021  14:10:45 +0200 (0:00:10.469)       0:00:26.285 ********** 
+2021-04-18 14:10:45,601 p=95370 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:10:45,637 p=95370 u=dom n=ansible | TASK [redmine : Redmine. Setup 02] *********************************************
+2021-04-18 14:10:45,637 p=95370 u=dom n=ansible | Sunday 18 April 2021  14:10:45 +0200 (0:00:00.561)       0:00:26.847 ********** 
+2021-04-18 14:10:56,888 p=95370 u=dom n=ansible | changed: [redmine]
+2021-04-18 14:10:56,927 p=95370 u=dom n=ansible | TASK [redmine : Configuration files for virtualhost] ***************************
+2021-04-18 14:10:56,928 p=95370 u=dom n=ansible | Sunday 18 April 2021  14:10:56 +0200 (0:00:11.290)       0:00:38.137 ********** 
+2021-04-18 14:10:57,778 p=95370 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:10:57,836 p=95370 u=dom n=ansible | TASK [redmine : Add redmine-5.sa to host file] *********************************
+2021-04-18 14:10:57,837 p=95370 u=dom n=ansible | Sunday 18 April 2021  14:10:57 +0200 (0:00:00.908)       0:00:39.046 ********** 
+2021-04-18 14:10:58,375 p=95370 u=dom n=ansible | changed: [redmine]
+2021-04-18 14:10:58,416 p=95370 u=dom n=ansible | TASK [redmine : lineinfile] ****************************************************
+2021-04-18 14:10:58,416 p=95370 u=dom n=ansible | Sunday 18 April 2021  14:10:58 +0200 (0:00:00.579)       0:00:39.625 ********** 
+2021-04-18 14:10:58,969 p=95370 u=dom n=ansible | changed: [redmine]
+2021-04-18 14:10:58,975 p=95370 u=dom n=ansible | PLAY RECAP *********************************************************************
+2021-04-18 14:10:58,976 p=95370 u=dom n=ansible | redmine                    : ok=22   changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2021-04-18 14:10:58,976 p=95370 u=dom n=ansible | Sunday 18 April 2021  14:10:58 +0200 (0:00:00.560)       0:00:40.186 ********** 
+2021-04-18 14:10:58,977 p=95370 u=dom n=ansible | =============================================================================== 
+2021-04-18 14:10:58,977 p=95370 u=dom n=ansible | redmine : Redmine. Setup 02 -------------------------------------------- 11.29s
+2021-04-18 14:10:58,977 p=95370 u=dom n=ansible | redmine : Redmine. Setup 01 -------------------------------------------- 10.47s
+2021-04-18 14:10:58,977 p=95370 u=dom n=ansible | Gathering Facts --------------------------------------------------------- 2.07s
+2021-04-18 14:10:58,977 p=95370 u=dom n=ansible | Redmine. Install packages ----------------------------------------------- 1.97s
+2021-04-18 14:10:58,978 p=95370 u=dom n=ansible | redmine : Redmine. Install packages ------------------------------------- 1.89s
+2021-04-18 14:10:58,978 p=95370 u=dom n=ansible | db : MySQL. Install and setup ------------------------------------------- 1.11s
+2021-04-18 14:10:58,978 p=95370 u=dom n=ansible | db : Config database ---------------------------------------------------- 0.99s
+2021-04-18 14:10:58,978 p=95370 u=dom n=ansible | redmine : Configuration files for virtualhost --------------------------- 0.93s
+2021-04-18 14:10:58,979 p=95370 u=dom n=ansible | redmine : Configuration files for virtualhost --------------------------- 0.91s
+2021-04-18 14:10:58,979 p=95370 u=dom n=ansible | redmine : Redmine. Change permissions ----------------------------------- 0.82s
+2021-04-18 14:10:58,979 p=95370 u=dom n=ansible | Redmine. Change permissions --------------------------------------------- 0.76s
+2021-04-18 14:10:58,979 p=95370 u=dom n=ansible | Redmine. Clone repository ----------------------------------------------- 0.75s
+2021-04-18 14:10:58,980 p=95370 u=dom n=ansible | db : Configuring encoding DB -------------------------------------------- 0.71s
+2021-04-18 14:10:58,980 p=95370 u=dom n=ansible | db : Configuring user priviliges ---------------------------------------- 0.70s
+2021-04-18 14:10:58,980 p=95370 u=dom n=ansible | redmine : mysql_user ---------------------------------------------------- 0.66s
+2021-04-18 14:10:58,980 p=95370 u=dom n=ansible | redmine : mysql_db ------------------------------------------------------ 0.64s
+2021-04-18 14:10:58,980 p=95370 u=dom n=ansible | redmine : Redmine. Change permissions ----------------------------------- 0.63s
+2021-04-18 14:10:58,981 p=95370 u=dom n=ansible | Redmine. Change permissions --------------------------------------------- 0.62s
+2021-04-18 14:10:58,981 p=95370 u=dom n=ansible | redmine : Add redmine-5.sa to host file --------------------------------- 0.58s
+2021-04-18 14:10:58,981 p=95370 u=dom n=ansible | redmine : lineinfile ---------------------------------------------------- 0.56s
+2021-04-18 14:10:58,981 p=95370 u=dom n=ansible | Playbook run took 0 days, 0 hours, 0 minutes, 40 seconds
+2021-04-18 14:13:18,694 p=95668 u=dom n=ansible | PLAY [redmine] *****************************************************************
+2021-04-18 14:13:18,707 p=95668 u=dom n=ansible | TASK [Gathering Facts] *********************************************************
+2021-04-18 14:13:18,707 p=95668 u=dom n=ansible | Sunday 18 April 2021  14:13:18 +0200 (0:00:00.024)       0:00:00.024 ********** 
+2021-04-18 14:13:20,774 p=95668 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:13:20,796 p=95668 u=dom n=ansible | TASK [Redmine. Install packages] ***********************************************
+2021-04-18 14:13:20,796 p=95668 u=dom n=ansible | Sunday 18 April 2021  14:13:20 +0200 (0:00:02.089)       0:00:02.113 ********** 
+2021-04-18 14:13:22,730 p=95668 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:13:22,767 p=95668 u=dom n=ansible | TASK [Redmine. Clone repository] ***********************************************
+2021-04-18 14:13:22,767 p=95668 u=dom n=ansible | Sunday 18 April 2021  14:13:22 +0200 (0:00:01.971)       0:00:04.085 ********** 
+2021-04-18 14:13:23,478 p=95668 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:13:23,521 p=95668 u=dom n=ansible | TASK [Redmine. Change permissions] *********************************************
+2021-04-18 14:13:23,521 p=95668 u=dom n=ansible | Sunday 18 April 2021  14:13:23 +0200 (0:00:00.754)       0:00:04.839 ********** 
+2021-04-18 14:13:24,242 p=95668 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:13:24,282 p=95668 u=dom n=ansible | TASK [Redmine. Change permissions] *********************************************
+2021-04-18 14:13:24,282 p=95668 u=dom n=ansible | Sunday 18 April 2021  14:13:24 +0200 (0:00:00.760)       0:00:05.599 ********** 
+2021-04-18 14:13:24,863 p=95668 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:13:24,906 p=95668 u=dom n=ansible | TASK [db : MySQL. Install and setup] *******************************************
+2021-04-18 14:13:24,906 p=95668 u=dom n=ansible | Sunday 18 April 2021  14:13:24 +0200 (0:00:00.623)       0:00:06.223 ********** 
+2021-04-18 14:13:25,891 p=95668 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:13:25,931 p=95668 u=dom n=ansible | TASK [db : Configuring encoding DB] ********************************************
+2021-04-18 14:13:25,931 p=95668 u=dom n=ansible | Sunday 18 April 2021  14:13:25 +0200 (0:00:01.025)       0:00:07.249 ********** 
+2021-04-18 14:13:26,617 p=95668 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:13:26,652 p=95668 u=dom n=ansible | TASK [db : Configuring user priviliges] ****************************************
+2021-04-18 14:13:26,652 p=95668 u=dom n=ansible | Sunday 18 April 2021  14:13:26 +0200 (0:00:00.721)       0:00:07.970 ********** 
+2021-04-18 14:13:27,398 p=95668 u=dom n=ansible | [WARNING]: Module did not set no_log for update_password
+
+2021-04-18 14:13:27,399 p=95668 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:13:27,433 p=95668 u=dom n=ansible | TASK [db : Config database] ****************************************************
+2021-04-18 14:13:27,433 p=95668 u=dom n=ansible | Sunday 18 April 2021  14:13:27 +0200 (0:00:00.780)       0:00:08.750 ********** 
+2021-04-18 14:13:28,339 p=95668 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:13:28,374 p=95668 u=dom n=ansible | TASK [redmine : Redmine. Install packages] *************************************
+2021-04-18 14:13:28,375 p=95668 u=dom n=ansible | Sunday 18 April 2021  14:13:28 +0200 (0:00:00.941)       0:00:09.692 ********** 
+2021-04-18 14:13:30,156 p=95668 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:13:30,174 p=95668 u=dom n=ansible | TASK [redmine : mysql_db] ******************************************************
+2021-04-18 14:13:30,174 p=95668 u=dom n=ansible | Sunday 18 April 2021  14:13:30 +0200 (0:00:01.799)       0:00:11.491 ********** 
+2021-04-18 14:13:30,808 p=95668 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:13:30,843 p=95668 u=dom n=ansible | TASK [redmine : mysql_user] ****************************************************
+2021-04-18 14:13:30,843 p=95668 u=dom n=ansible | Sunday 18 April 2021  14:13:30 +0200 (0:00:00.669)       0:00:12.160 ********** 
+2021-04-18 14:13:31,456 p=95668 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:13:31,494 p=95668 u=dom n=ansible | TASK [redmine : Redmine. Clone repository] *************************************
+2021-04-18 14:13:31,494 p=95668 u=dom n=ansible | Sunday 18 April 2021  14:13:31 +0200 (0:00:00.651)       0:00:12.811 ********** 
+2021-04-18 14:13:32,080 p=95668 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:13:32,118 p=95668 u=dom n=ansible | TASK [redmine : Redmine. Change permissions] ***********************************
+2021-04-18 14:13:32,118 p=95668 u=dom n=ansible | Sunday 18 April 2021  14:13:32 +0200 (0:00:00.624)       0:00:13.436 ********** 
+2021-04-18 14:13:32,724 p=95668 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:13:32,765 p=95668 u=dom n=ansible | TASK [redmine : Redmine. Change permissions] ***********************************
+2021-04-18 14:13:32,765 p=95668 u=dom n=ansible | Sunday 18 April 2021  14:13:32 +0200 (0:00:00.646)       0:00:14.082 ********** 
+2021-04-18 14:13:33,260 p=95668 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:13:33,293 p=95668 u=dom n=ansible | TASK [redmine : Configuration files for virtualhost] ***************************
+2021-04-18 14:13:33,293 p=95668 u=dom n=ansible | Sunday 18 April 2021  14:13:33 +0200 (0:00:00.528)       0:00:14.611 ********** 
+2021-04-18 14:13:34,222 p=95668 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:13:34,262 p=95668 u=dom n=ansible | TASK [redmine : Redmine. Setup 01] *********************************************
+2021-04-18 14:13:34,262 p=95668 u=dom n=ansible | Sunday 18 April 2021  14:13:34 +0200 (0:00:00.968)       0:00:15.579 ********** 
+2021-04-18 14:13:44,638 p=95668 u=dom n=ansible | changed: [redmine]
+2021-04-18 14:13:44,674 p=95668 u=dom n=ansible | TASK [redmine : Session store secret generation] *******************************
+2021-04-18 14:13:44,674 p=95668 u=dom n=ansible | Sunday 18 April 2021  14:13:44 +0200 (0:00:10.412)       0:00:25.991 ********** 
+2021-04-18 14:13:45,232 p=95668 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:13:45,276 p=95668 u=dom n=ansible | TASK [redmine : Redmine. Setup 02] *********************************************
+2021-04-18 14:13:45,458 p=95668 u=dom n=ansible | Sunday 18 April 2021  14:13:45 +0200 (0:00:00.782)       0:00:26.775 ********** 
+2021-04-18 14:13:56,730 p=95668 u=dom n=ansible | changed: [redmine]
+2021-04-18 14:13:56,780 p=95668 u=dom n=ansible | TASK [redmine : Configuration files for virtualhost] ***************************
+2021-04-18 14:13:56,780 p=95668 u=dom n=ansible | Sunday 18 April 2021  14:13:56 +0200 (0:00:11.322)       0:00:38.098 ********** 
+2021-04-18 14:13:57,700 p=95668 u=dom n=ansible | ok: [redmine]
+2021-04-18 14:13:57,818 p=95668 u=dom n=ansible | TASK [redmine : Add redmine-5.sa to host file] *********************************
+2021-04-18 14:13:57,819 p=95668 u=dom n=ansible | Sunday 18 April 2021  14:13:57 +0200 (0:00:01.038)       0:00:39.136 ********** 
+2021-04-18 14:13:58,337 p=95668 u=dom n=ansible | changed: [redmine]
+2021-04-18 14:13:58,382 p=95668 u=dom n=ansible | TASK [redmine : lineinfile] ****************************************************
+2021-04-18 14:13:58,382 p=95668 u=dom n=ansible | Sunday 18 April 2021  14:13:58 +0200 (0:00:00.563)       0:00:39.699 ********** 
+2021-04-18 14:13:58,997 p=95668 u=dom n=ansible | changed: [redmine]
+2021-04-18 14:13:59,000 p=95668 u=dom n=ansible | PLAY RECAP *********************************************************************
+2021-04-18 14:13:59,000 p=95668 u=dom n=ansible | redmine                    : ok=22   changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2021-04-18 14:13:59,000 p=95668 u=dom n=ansible | Sunday 18 April 2021  14:13:58 +0200 (0:00:00.618)       0:00:40.318 ********** 
+2021-04-18 14:13:59,000 p=95668 u=dom n=ansible | =============================================================================== 
+2021-04-18 14:13:59,001 p=95668 u=dom n=ansible | redmine : Redmine. Setup 02 -------------------------------------------- 11.32s
+2021-04-18 14:13:59,001 p=95668 u=dom n=ansible | redmine : Redmine. Setup 01 -------------------------------------------- 10.41s
+2021-04-18 14:13:59,001 p=95668 u=dom n=ansible | Gathering Facts --------------------------------------------------------- 2.09s
+2021-04-18 14:13:59,001 p=95668 u=dom n=ansible | Redmine. Install packages ----------------------------------------------- 1.97s
+2021-04-18 14:13:59,001 p=95668 u=dom n=ansible | redmine : Redmine. Install packages ------------------------------------- 1.80s
+2021-04-18 14:13:59,001 p=95668 u=dom n=ansible | redmine : Configuration files for virtualhost --------------------------- 1.04s
+2021-04-18 14:13:59,001 p=95668 u=dom n=ansible | db : MySQL. Install and setup ------------------------------------------- 1.03s
+2021-04-18 14:13:59,001 p=95668 u=dom n=ansible | redmine : Configuration files for virtualhost --------------------------- 0.97s
+2021-04-18 14:13:59,002 p=95668 u=dom n=ansible | db : Config database ---------------------------------------------------- 0.94s
+2021-04-18 14:13:59,002 p=95668 u=dom n=ansible | redmine : Session store secret generation ------------------------------- 0.78s
+2021-04-18 14:13:59,002 p=95668 u=dom n=ansible | db : Configuring user priviliges ---------------------------------------- 0.78s
+2021-04-18 14:13:59,002 p=95668 u=dom n=ansible | Redmine. Change permissions --------------------------------------------- 0.76s
+2021-04-18 14:13:59,002 p=95668 u=dom n=ansible | Redmine. Clone repository ----------------------------------------------- 0.75s
+2021-04-18 14:13:59,002 p=95668 u=dom n=ansible | db : Configuring encoding DB -------------------------------------------- 0.72s
+2021-04-18 14:13:59,002 p=95668 u=dom n=ansible | redmine : mysql_db ------------------------------------------------------ 0.67s
+2021-04-18 14:13:59,002 p=95668 u=dom n=ansible | redmine : mysql_user ---------------------------------------------------- 0.65s
+2021-04-18 14:13:59,003 p=95668 u=dom n=ansible | redmine : Redmine. Change permissions ----------------------------------- 0.65s
+2021-04-18 14:13:59,003 p=95668 u=dom n=ansible | redmine : Redmine. Clone repository ------------------------------------- 0.62s
+2021-04-18 14:13:59,003 p=95668 u=dom n=ansible | Redmine. Change permissions --------------------------------------------- 0.62s
+2021-04-18 14:13:59,003 p=95668 u=dom n=ansible | redmine : lineinfile ---------------------------------------------------- 0.62s
+2021-04-18 14:13:59,003 p=95668 u=dom n=ansible | Playbook run took 0 days, 0 hours, 0 minutes, 40 seconds

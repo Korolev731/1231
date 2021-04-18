@@ -38,12 +38,10 @@
     mode: '777'
     recurse: yes
 
-- name: Configuration files for virtualhost
-  template:
-    src: redmine.site.conf.j2
-    dest: "/etc/apache2/sites-enabled/redmine.site.conf"
-  notify:
-    - apache restart
+- name: Config database
+  template: 
+    src: database.yml.j2 
+    dest: "{{ app_home }}/config/database.yml"
 
 - name: Redmine. Setup 01
   shell: |
